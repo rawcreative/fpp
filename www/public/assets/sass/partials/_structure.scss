@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #f1f1f1;
+  font-family: $ssp;
+}
+
+a {
+  transition: all 0.25s;
+  text-decoration: none;
+}

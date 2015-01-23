@@ -1,0 +1,19 @@
+{
+  "name": "Falcon Player",
+  "version": "2.0.0",
+  "authors": [
+    "T. Debo <tim@rawcreativestudios.com>"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "breakpoint-sass": "~2.5.0",
+    "foundation-apps": "~1.0.2",
+    "susy": "~2.2.1"
+  }
+}

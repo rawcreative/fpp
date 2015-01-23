@@ -1,0 +1,36 @@
+.button {
+	display: inline-block;
+}
+.header {
+	background: white;
+	padding: 20px;
+	border-bottom: 1px solid $secondary-color;
+	@include container(100%);
+
+	.page-meta {
+		@include span(50%);
+	}
+	.control-buttons {
+		@include span(50%);
+		text-align: right;
+		
+		.button {
+			border-radius: 2px;
+			transition: background 0.35s, box-shadow 0.15s;
+			border: 1px solid darken($secondary-color, 15%);
+			color: darken($secondary-color, 60%);
+			background: linear-gradient(to bottom, #f8f8f8, #eaeaea 100%);
+			text-shadow: 0 1px 0 rgba(white, .4);
+			&:active {
+				box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+			}
+		}
+	}
+
+	h1 {
+		margin: 0;
+		font-weight: 300;
+		color: $heading-color;
+
+	}
+}

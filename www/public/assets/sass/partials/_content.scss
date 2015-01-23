@@ -1,0 +1,8 @@
+.content-wrapper {
+	margin-left: 200px;
+}
+
+.content {
+	padding: 20px;
+	@include container(100%);
+}

@@ -1,0 +1,67 @@
+
+.dashboard {
+	
+	@include with-layout(4 .10) {
+		.panel {
+			&.fppd-status {
+				@include span(4 of 10);
+			}
+
+			&.player-status {
+				@include span(6 of 10 last);
+			}
+			&.playlist-info {
+				@include span(4 of 10);
+			}
+		}
+	}
+
+	.fppd-status {
+		.panel-body {
+			@include container(100%);
+		}
+		.widget {
+			color: $heading-color;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			@include span(2);
+		
+			&:first-child {
+				border-right: 1px solid $secondary-color;
+			}
+
+			&-header {
+				font-size: 12px;
+								
+			}
+			&-icon {
+				font-size: 34px;
+			}
+
+			&-buttons {
+				border-top: 1px solid $secondary-color;
+				background: lighten($secondary-color, 5%);
+				padding: 10px;
+				.button {
+					display: inline-block;
+					vertical-align: middle;
+					margin: 0 5px;
+					@include gradient-button();
+				}
+				select {
+					width: 60%;
+					display: inline-block;
+					padding: .25rem;
+					margin-bottom: 0;
+					background-color: transparent;
+					border-color: darken($secondary-color, 15%);
+					border-radius: 2px;
+					color: #888;
+					font-size: 13px;
+
+				}
+			}
+			
+		}
+	}
+}

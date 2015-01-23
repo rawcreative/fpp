@@ -1,0 +1,25 @@
+.icon {
+	&.success {
+		color: $success-color;
+	}
+
+	&.default {
+		color: $default-color;
+	}
+
+	&.danger {
+		color: $danger-color;
+	}
+
+	&.warning {
+		color: $warning-color;
+	}
+	
+	&.info {
+		color: $info-color;
+	}
+
+	&.inverse {
+		color: $inverse-color;
+	}
+}

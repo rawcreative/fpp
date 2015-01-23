@@ -1,0 +1,116 @@
+
+$global-padding: 1rem;
+$global-spacing: rem-calc(15); 
+
+
+////////////////////////////
+// Color Set //
+///////////////////////////
+$primary-color: #00558b;
+$secondary-color: #eaeaea;
+$alert-color: #F04124;
+$info-color: #A0D3E8;
+$success-color: #43AC6A;
+$warning-color: #F08A24;
+$dark-color: #232323;
+$gray: #dfdfdf;
+$gray-dark: darken($gray, 8);
+$gray-light: lighten($gray, 8);
+$sidebar-bg-color: #363C47;
+$sidebar-txt-color: #ddd;
+$sidebar-h4-color: #788B94;
+$sidebar-a-color: #eaeaea;
+$sidebar-a-color-active: #fff;
+$heading-color: #666;
+
+///////////////////////////////////
+//  Fonts
+///////////////////////////////////
+$ssp : 'Source Sans Pro', sans-serif;
+
+///////////////////////////////////
+//  Grids
+///////////////////////////////////
+
+$susy: (
+  flow: ltr,
+  math: fluid,
+  output: float,
+  gutter-position: after,
+  container: auto,
+  container-position: center,
+  columns: 4,
+  gutters: 0,
+  column-width: false,
+  global-box-sizing: border-box,
+  last-flow: to,
+  debug: (
+    image: hide,
+    color: rgba(#66f, .25),
+    output: background,
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true,
+    clearfix: false,
+    rem: true,
+  )
+);
+
+
+///////////////////////////////////
+//  Forms
+///////////////////////////////////
+
+// Basic form variables
+$form-fontsize: 1rem;
+$form-padding: 0.5rem;
+
+// Text fields
+$input-color: #000;
+$input-color-hover: $input-color;
+$input-color-focus: $input-color;
+$input-background: #fff;
+$input-background-hover: $input-background;
+$input-background-focus: $input-background;
+$input-border: 1px solid #ccc;
+$input-border-hover: 1px solid #bbb;
+$input-border-focus: 1px solid #999;
+
+// Select menus
+$select-color: #000;
+$select-background: #fafafa;
+$select-background-hover: smartscale($select-background, 4%);
+$select-arrow: true;
+$select-arrow-color: $select-color;
+
+// Labels
+$form-label-fontsize: 0.9rem;
+$form-label-margin: 0.5rem;
+$form-label-color: #333;
+
+// Inline labels
+$inlinelabel-color: #333;
+$inlinelabel-background: #eee;
+$inlinelabel-border: $input-border;
+
+// Range slider
+$slider-background: #ddd;
+$slider-height: 1rem;
+$slider-radius: 0px;
+$slider-thumb-height: 1.5rem;
+$slider-thumb-color: $primary-color;
+$slider-thumb-radius: 0px;
+
+// Progress and meter
+$meter-height: 1.5rem;
+$meter-background: #ccc;
+$meter-fill: $primary-color;
+$meter-fill-high: $success-color;
+$meter-fill-medium: #e7cf00;
+$meter-fill-low: $alert-color;
+$meter-radius: 0; 
+
+$text-input-selectors: '[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea';

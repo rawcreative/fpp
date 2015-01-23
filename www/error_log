@@ -1,0 +1,20 @@
+[Tue Jan 20 20:48:01.145053 2015] [:error] [pid 10181] [client 127.0.0.1:60097] PHP Fatal error:  Class 'FPP\\Http\\Controllers\\View' not found in /Users/Tim/Sites/FalconUIL4/app/FPP/Http/Controllers/DashboardController.php on line 12
+[Tue Jan 20 20:48:01.145151 2015] [:error] [pid 10181] [client 127.0.0.1:60097] PHP Stack trace:
+[Tue Jan 20 20:48:01.145162 2015] [:error] [pid 10181] [client 127.0.0.1:60097] PHP   1. {main}() /Users/Tim/Sites/FalconUIL4/public/index.php:0
+[Tue Jan 20 20:48:01.145172 2015] [:error] [pid 10181] [client 127.0.0.1:60097] PHP   2. Illuminate\\Foundation\\Application->run() /Users/Tim/Sites/FalconUIL4/public/index.php:49
+[Tue Jan 20 20:48:01.145181 2015] [:error] [pid 10181] [client 127.0.0.1:60097] PHP   3. Stack\\StackedHttpKernel->handle() /Users/Tim/Sites/FalconUIL4/bootstrap/compiled.php:657
+[Tue Jan 20 20:48:01.145190 2015] [:error] [pid 10181] [client 127.0.0.1:60097] PHP   4. Illuminate\\Cookie\\Guard->handle() /Users/Tim/Sites/FalconUIL4/bootstrap/compiled.php:11029
+[Tue Jan 20 20:48:01.145199 2015] [:error] [pid 10181] [client 127.0.0.1:60097] PHP   5. Illuminate\\Cookie\\Queue->handle() /Users/Tim/Sites/FalconUIL4/bootstrap/compiled.php:8366
+[Tue Jan 20 20:48:01.145208 2015] [:error] [pid 10181] [client 127.0.0.1:60097] PHP   6. Illuminate\\Session\\Middleware->handle() /Users/Tim/Sites/FalconUIL4/bootstrap/compiled.php:8419
+[Tue Jan 20 20:48:01.145217 2015] [:error] [pid 10181] [client 127.0.0.1:60097] PHP   7. Illuminate\\Foundation\\Application->handle() /Users/Tim/Sites/FalconUIL4/bootstrap/compiled.php:7812
+[Tue Jan 20 20:48:01.145226 2015] [:error] [pid 10181] [client 127.0.0.1:60097] PHP   8. Illuminate\\Foundation\\Application->dispatch() /Users/Tim/Sites/FalconUIL4/bootstrap/compiled.php:696
+[Tue Jan 20 20:48:01.145235 2015] [:error] [pid 10181] [client 127.0.0.1:60097] PHP   9. Illuminate\\Routing\\Router->dispatch() /Users/Tim/Sites/FalconUIL4/bootstrap/compiled.php:715
+[Tue Jan 20 20:48:01.145244 2015] [:error] [pid 10181] [client 127.0.0.1:60097] PHP  10. Illuminate\\Routing\\Router->dispatchToRoute() /Users/Tim/Sites/FalconUIL4/bootstrap/compiled.php:5040
+[Tue Jan 20 20:48:01.145253 2015] [:error] [pid 10181] [client 127.0.0.1:60097] PHP  11. Illuminate\\Routing\\Route->run() /Users/Tim/Sites/FalconUIL4/bootstrap/compiled.php:5052
+[Tue Jan 20 20:48:01.145260 2015] [:error] [pid 10181] [client 127.0.0.1:60097] PHP  12. call_user_func_array() /Users/Tim/Sites/FalconUIL4/bootstrap/compiled.php:5385
+[Tue Jan 20 20:48:01.145269 2015] [:error] [pid 10181] [client 127.0.0.1:60097] PHP  13. Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}() /Users/Tim/Sites/FalconUIL4/bootstrap/compiled.php:5385
+[Tue Jan 20 20:48:01.145278 2015] [:error] [pid 10181] [client 127.0.0.1:60097] PHP  14. Illuminate\\Routing\\ControllerDispatcher->dispatch() /Users/Tim/Sites/FalconUIL4/bootstrap/compiled.php:5027
+[Tue Jan 20 20:48:01.145286 2015] [:error] [pid 10181] [client 127.0.0.1:60097] PHP  15. Illuminate\\Routing\\ControllerDispatcher->call() /Users/Tim/Sites/FalconUIL4/bootstrap/compiled.php:5822
+[Tue Jan 20 20:48:01.145295 2015] [:error] [pid 10181] [client 127.0.0.1:60097] PHP  16. Illuminate\\Routing\\Controller->callAction() /Users/Tim/Sites/FalconUIL4/bootstrap/compiled.php:5834
+[Tue Jan 20 20:48:01.145303 2015] [:error] [pid 10181] [client 127.0.0.1:60097] PHP  17. call_user_func_array() /Users/Tim/Sites/FalconUIL4/vendor/laravel/framework/src/Illuminate/Routing/Controller.php:231
+[Tue Jan 20 20:48:01.145312 2015] [:error] [pid 10181] [client 127.0.0.1:60097] PHP  18. FPP\\Http\\Controllers\\DashboardController->index() /Users/Tim/Sites/FalconUIL4/vendor/laravel/framework/src/Illuminate/Routing/Controller.php:231

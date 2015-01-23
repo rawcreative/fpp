@@ -1,0 +1,189 @@
+//////////////////////////
+// Bootstrap Color Set //
+/////////////////////////
+$default-color: #999;
+$primary-color: #428bca;
+$success-color: #5cb85c;
+$info-color: #5bc0de;
+$warning-color: #f0ad4e;
+$danger-color: #d9534f;
+$alert-color: #7857ca;
+$inverse-color: #444;
+
+// Additional Colors used to create
+// Bootstrap themed Gradients
+$default-alt-color: #f0f0f0;
+$primary-alt-color: #0088cc;
+$success-alt-color: #44ab00;
+$info-alt-color: #14abd8;
+$warning-alt-color: #f28900;
+$danger-alt-color: #d3332e;
+$alert-alt-color: #5d3ab5;
+
+
+//////////////////////
+// Basic Color Set //
+/////////////////////
+//$teal-color: #4fbdc8;
+//$blue-color: #6395cf;
+//$green-color: #7ec35d;
+//$purple-color: #7857ca;
+//$red-color: #ee4e3c;
+//$maroon-color: #b94fb5;
+//$pink-color: #ef679d;
+//$ruby-color: #e33459;
+//$orange-color: #ff802c;
+//$yellow-color: #efcf1d;
+//$grey-color: #666;
+//$dark-color: #363a3e;
+//$light-color: #ddd;
+//$white-color: #fff;
+
+
+////////////////////////////
+// Theme Color Set //
+///////////////////////////
+$sidebar-bg-color: #363C47;
+$sidebar-txt-color: #ddd;
+$sidebar-h4-color: #788B94;
+
+
+
+$teal-color: #a8e9ea;
+$teal2-color: #2dc5c7; //#43b0c3
+$teal3-color: #1e9093;
+
+$blue-color: #9de0f5;
+$blue2-color: #33bfeb;
+$blue3-color: #238bc5;
+
+$purple-color: #c7b7e5;
+$purple2-color: #a287d4;
+$purple3-color: #715da3; //#6073b4
+
+$pink-color: #ffd1ed;
+$pink2-color: #ffb2e1;
+$pink3-color: #ff7fb4;
+$red-color: #ffac9c;
+$red2-color: #ff745a;
+$red3-color: #ff4f3e;
+$orange-color: #fbb882;
+$orange2-color: #f9892e;
+$orange3-color: #e55e20;
+$yellow-color: #ffe29c;
+$yellow2-color: #ffcf5a;
+$yellow3-color: #ff9d3e;
+$green-color: #c6e69c;
+$green2-color: #a0d65a;
+$green3-color: #6fa53e;
+$grey-color: #b0daec;
+$grey2-color: #6ebbdd;
+$grey3-color: #4b87ae;
+
+$blue-color: #70D5FF;
+$blue2-color: #40C7FF;
+$blue3-color: #00B4FF;
+
+/////////////////////////
+// Neutral Color Set //
+////////////////////////
+$white-color: #ffffff;
+$light-color: #ffffff;
+$light2-color: #f0f0f0;
+$light3-color: #e5e5e5;
+$light4-color: #dddddd;
+$light5-color: #cccccc;
+$light6-color: #bbbbbb;
+$light7-color: #aaaaaa;
+
+$dark-color: #777777;
+$dark2-color: #666666;
+$dark3-color: #494949;
+$dark4-color: #323232;
+$dark5-color: #1e1c1f;
+
+//used for gradient creation
+$dark-alt-color: #555555;
+$dark2-alt-color: #444444;
+$dark3-alt-color: #333333;
+$dark4-alt-color: #2c2c2c;
+$dark5-alt-color: #151416;
+
+
+////////////////////////////////
+// Custom Element Colors Set //
+///////////////////////////////
+$facebook-color: #6395cf;
+$twitter-color: #4fbdc8;
+
+
+/////////////////////////
+// Advanced Color Set //
+////////////////////////
+$blue-a: #35b5d7;
+$blue2-a: #3093c7;
+$blue3-a: #4f96b4;
+$blue4-a: #287bab;
+$blue5-a: #1c5b86;
+$blue6-a: #205066;
+$blue7-a: #21334b;
+$green-a: #6db54b;
+$green2-a: #71aa61;
+$green3-a: #417447;
+$green4-a: #47741A;
+$green5-a: #1C4905;
+$red-a: #e4151d;
+$red2-a: #d10011;
+$red3-a: #bf0d14;
+$red4-a: #930b1f;
+$purple-a: #BB7EA6;
+$purple2-a: #7a5067;
+$purple3-a: #89264f;
+$purple4-a: #462b4c;
+$orange-a: #E94216;
+$orange2-a: #f56333;
+$orange3-a: #fb7e2a;
+$orange4-a: #ff802c;
+$yellow-a: #f0c92f;
+$yellow2-a: #E1BC4A;
+$creme-a: #feda83;
+$creme2-a: #fae3b4;
+$creme3-a: #d3c27b;
+$brown-a: #b29579;
+$brown2-a: #7b5d3a;
+$brown3-a: #563330;
+
+// To create gradients we use a transparent overlay on
+// top of an existing background color. This causes the color to lighten.
+// To prevent this we have created a secondary set of darker color variants
+$blue-b: #008aaf;
+$blue2-b: #0070ab;
+$blue3-b: #066b95;
+$blue4-b: #005789;
+$blue5-b: #00416d;
+$blue6-b: #043a53;
+$blue7-b: #09203f;
+$green-b: #368d0d;
+$green2-b: #33881b;
+$green3-b: #00520a;
+$green4-b: #274d00;
+$green5-b: #0d2f00;
+$red-b: #eb050e;
+$red2-b: #d10011;
+$red3-b: #a6050b;
+$red4-b: #930b1f;
+$purple-b: #9c457e;
+$purple2-b: #6a254b;
+$purple3-b: #71002f;
+$purple4-b: #36143e;
+$orange-b: #f93e0d;
+$orange2-b: #fe561f;
+$orange3-b: #ff7214;
+$yellow-b: #fac908;
+$yellow2-b: #e9bb2d;
+$creme-b: #ffd266;
+$creme2-b: #fedd9a;
+$creme3-b: #bca339;
+$brown-b: #99714b;
+$brown2-b: #6c4517;
+$brown3-b: #4f1a16;

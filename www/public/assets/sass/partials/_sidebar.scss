@@ -1,0 +1,43 @@
+.sidebar {
+  width: 200px;
+  position: fixed;
+  height: 100%;
+  background: $sidebar-bg-color;
+  z-index: 10;
+  padding: 20px;
+
+  .logo {
+    margin-bottom: 40px;
+  }
+  h4 {
+    text-transform: uppercase;
+    color: #999;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 20px 0 0;
+  }
+
+  .nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 3px 0;
+    }
+
+  }
+
+  a {
+    color: $sidebar-a-color;
+    font-weight: 300;
+    font-size: 14px;
+    transition: all 0.25s;
+
+      &:hover {
+        color: $sidebar-a-color-active;
+      }
+   }
+
+}
