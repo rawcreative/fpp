@@ -12,4 +12,9 @@
 */
 
 Route::get('/', ['as' => 'status', 'uses' => 'FPP\Http\Controllers\DashboardController@index']);
-Route::get('/status', ['as' => 'status', 'uses' => 'FPP\Http\Controllers\Api\v1\StatusController@index']);
+
+Route::api('v1', function () {
+
+    Route::get('/status', 'FPP\Http\Controllers\Api\v1\StatusController@index');
+
+});
