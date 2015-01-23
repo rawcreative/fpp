@@ -123,6 +123,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 		'Dingo\Api\Provider\ApiServiceProvider',
+		'BrainSocket\BrainSocketServiceProvider',
 
 	),
 
@@ -192,6 +193,7 @@ return array(
 		'View'              => 'Illuminate\Support\Facades\View',
 		'API' 				=> 'Dingo\Api\Facade\API',
 		'Model'           => 'Jenssegers\Model\Model',
+		'BrainSocket'     => 'BrainSocket\BrainSocketFacade',
 
 	),
 

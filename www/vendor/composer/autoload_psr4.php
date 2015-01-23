@@ -7,6 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Socket\\Raw\\' => array($vendorDir . '/clue/socket-raw/src'),
+    'React\\Stream\\' => array($vendorDir . '/react/stream/src'),
+    'React\\Socket\\' => array($vendorDir . '/react/socket/src'),
+    'React\\EventLoop\\' => array($vendorDir . '/react/event-loop'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'League\\Fractal\\' => array($vendorDir . '/league/fractal/src'),
     'FPP\\' => array($baseDir . '/app/FPP'),
