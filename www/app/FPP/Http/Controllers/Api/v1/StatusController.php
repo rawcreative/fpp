@@ -2,8 +2,18 @@
 namespace FPP\Http\Controllers\Api\v1;
 
 use FPP\Http\Controllers\Controller;
+use FPP\Services\FPP;
+use Illuminate\Support\Facades\Response;
 
 class StatusController extends Controller {
+
+	protected $fpp;
+
+	function __construct(FPP $fpp)
+	{
+		$this->fpp = $fpp;
+	}
+
 
 	/**
 	 * Display a listing of the resource.
@@ -13,7 +23,7 @@ class StatusController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		return Response::json($this->fpp->status());
 	}
 
 	/**

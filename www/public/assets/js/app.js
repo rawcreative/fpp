@@ -1,7 +1,7 @@
 window.app = {};
 
 app.BrainSocket = new BrainSocket(
-        new WebSocket('ws://localhost:8080'),
+        new WebSocket('ws://'+window.location.host+':8080'),
         new BrainSocketPubSub()
 );
 
