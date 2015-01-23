@@ -20,7 +20,7 @@ class ModelGeneratorCommand extends GeneratorCommand {
     protected $description = 'Generate a model';
 
     /**
-     * The path where the file will be created
+     * The path to where the file will be created.
      *
      * @return mixed
      */
@@ -32,19 +32,20 @@ class ModelGeneratorCommand extends GeneratorCommand {
     }
 
     /**
-     * Fetch the template data
+     * Fetch the template data.
      *
      * @return array
      */
     protected function getTemplateData()
     {
         return [
-            'NAME' => ucwords($this->argument('modelName'))
+            'NAME' => ucwords($this->argument('modelName')),
+            'NAMESPACE' => 'App'
         ];
     }
 
     /**
-     * Get path to the template for the generator
+     * Get path to the template for the generator.
      *
      * @return mixed
      */

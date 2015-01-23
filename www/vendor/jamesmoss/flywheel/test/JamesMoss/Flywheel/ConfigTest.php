@@ -2,31 +2,14 @@
 
 namespace JamesMoss\Flywheel;
 
-class ConfigTest extends \PHPUnit_Framework_TestCase
+use \JamesMoss\Flywheel\TestBase;
+
+class ConfigTest extends TestBase
 {
-    /**
-     * @expectedException RuntimeException
-     */
-    public function testDataLocationExistsCheck()
-    {
-        $config = new Config('/this/path/wont/ever/exist/(probably)');
-    }
-
-    /**
-     * @expectedException RuntimeException
-     * @expectedExceptionMessage not writable
-     */
-    public function testDataLocationWritableCheck()
-    {
-        $path   = __DIR__ . '/fixtures/datastore/notwritable';
-        chmod($path, 0555);
-        $config = new Config($path);
-    }
-
     public function testSlashesTidedUp()
     {
-        $path   = __DIR__ . '/fixtures/datastore/writable';
-        $config = new Config($path . '/');
+        $path   = __DIR__ . DIRECTORY_SEPARATOR . 'fixtures' . DIRECTORY_SEPARATOR . 'datastore' . DIRECTORY_SEPARATOR . 'writable';
+        $config = new Config($path . DIRECTORY_SEPARATOR);
 
         $this->assertSame($path, $config->getPath());
     }
@@ -48,5 +31,38 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
         ));
 
         $this->assertInstanceOf('JamesMoss\\Flywheel\\Formatter\\YAML', $config->getOption('formatter'));
+    }
+
+    public function testSettingQueryClass()
+    {
+        $path   = __DIR__ . '/fixtures/datastore/writable';
+        $config = new Config($path . '/', array(
+            'query_class' => '\\stdClass',
+        ));
+
+        $this->assertSame('\\stdClass', $config->getOption('query_class'));
+    }
+
+    public function testSettingDocumentClass()
+    {
+        $path   = __DIR__ . '/fixtures/datastore/writable';
+        $config = new Config($path . '/', array(
+            'document_class' => '\\stdClass',
+        ));
+
+        $this->assertSame('\\stdClass', $config->getOption('document_class'));
+    }
+
+
+    public function testSettingAutomaticQueryClass()
+    {
+        $path   = __DIR__ . '/fixtures/datastore/writable';
+        $config = new Config($path . '/');
+
+        // This isnt great testing but will do for now.
+        $className = '\\JamesMoss\\Flywheel\\';
+        $className.= function_exists('apcu_fetch') || function_exists('apc_fetch') ? 'CachedQuery' : 'Query';
+
+        $this->assertSame($className, $config->getOption('query_class'));
     }
 }

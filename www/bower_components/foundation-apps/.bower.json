@@ -54,6 +54,5 @@
   },
   "_source": "git://github.com/zurb/foundation-apps.git",
   "_target": "~1.0.2",
-  "_originalSource": "foundation-apps",
-  "_direct": true
+  "_originalSource": "foundation-apps"
 }

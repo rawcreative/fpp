@@ -11,12 +11,6 @@ var elixir = require('laravel-elixir');
  |
  */
 
-
 elixir(function(mix) {
     mix.sass('app.scss');
 });
-
-
- // var banner = '/*! HTML5 Boilerplate v' + pkg.version +
-    //                 ' | ' + pkg.license.type + ' License' +
-    //                 ' | ' + pkg.homepage + ' */\n\n';

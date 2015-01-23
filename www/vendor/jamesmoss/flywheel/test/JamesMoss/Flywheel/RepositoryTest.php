@@ -2,8 +2,11 @@
 
 namespace JamesMoss\Flywheel;
 
-class RespositoryTest extends \PHPUnit_Framework_TestCase
+use \JamesMoss\Flywheel\TestBase;
+
+class RespositoryTest extends TestBase
 {
+
     /**
      * @dataProvider validNameProvider
      */
@@ -21,7 +24,29 @@ class RespositoryTest extends \PHPUnit_Framework_TestCase
     public function testInvalidRepoName($name)
     {
         $config = new Config('/tmp');
-        $repo = new Repository($name, $config);
+        new Repository($name, $config);
+    }
+
+    /**
+     * @expectedException RuntimeException
+     */
+    public function testDataLocationExistsCheck()
+    {
+        $config = new Config('/this/path/wont/ever/exist/(probably)');
+        new Repository('test', $config);
+    }
+
+    /**
+     * @expectedException RuntimeException
+     * @expectedExceptionMessage not writable
+     */
+    public function testDataLocationWritableCheck()
+    {
+        $path   = __DIR__ . '/fixtures/datastore';
+        chmod($path . '/notwritable', 0555);
+        $config = new Config($path);
+
+        new Repository('notwritable', $config);
     }
 
     public function testGettingQueryObject()
@@ -41,18 +66,17 @@ class RespositoryTest extends \PHPUnit_Framework_TestCase
         $repo   = new Repository('_pages', $config);
 
         for ($i = 0; $i < 5; $i++) {
-
             $data = array(
-                'id'   => $i,
                 'slug' => '123',
                 'body' => 'THIS IS BODY TEXT'
             );
 
             $document = new Document($data);
+            $document->setId($i);
 
             $repo->store($document);
 
-            $name = $i . '_' . sha1($i) . '.json';
+            $name = $i . '.json';
             $this->assertSame($data, (array) json_decode(file_get_contents('/tmp/flywheel/_pages/' . $name)));
         }
     }
@@ -62,7 +86,7 @@ class RespositoryTest extends \PHPUnit_Framework_TestCase
         $config = new Config('/tmp/flywheel');
         $repo   = new Repository('_pages', $config);
         $id     = 'delete_test';
-        $name   = $id . '_' . sha1($id) . '.json';
+        $name   = $id . '.json';
         $path   = '/tmp/flywheel/_pages/' . $name;
 
         file_put_contents($path, '');
@@ -72,6 +96,60 @@ class RespositoryTest extends \PHPUnit_Framework_TestCase
         $repo->delete($id);
 
         $this->assertFalse(is_file($path));
+    }
+
+    public function testRenamingDocumentChangesDocumentID()
+    {
+        if (!is_dir('/tmp/flywheel')) {
+            mkdir('/tmp/flywheel');
+        }
+        $config = new Config('/tmp/flywheel');
+        $repo   = new Repository('_pages', $config);
+        $doc    = new Document(array(
+            'test' => '123',
+        ));
+
+        $doc->setId('testdoc123');
+
+        $repo->store($doc);
+
+        rename('/tmp/flywheel/_pages/testdoc123.json', '/tmp/flywheel/_pages/newname.json');
+
+        foreach ($repo->findAll() as $document) {
+            if ('newname' === $document->getId()) {
+                return true;
+            }
+        }
+
+        $this->fail('No file found with the new ID');
+    }
+
+    public function testChangingDocumentIDChangesFilename()
+    {
+        if (!is_dir('/tmp/flywheel')) {
+            mkdir('/tmp/flywheel');
+        }
+
+        $config = new Config('/tmp/flywheel');
+        $repo   = new Repository('_pages', $config);
+        $doc    = new Document(array(
+            'test' => '123',
+        ));
+
+        $doc->setId('test1234');
+        $repo->store($doc);
+
+        $this->assertTrue(file_exists('/tmp/flywheel/_pages/test1234.json'));
+
+        $doc->setId('9876test');
+        $repo->update($doc);
+
+        $this->assertFalse(file_exists('/tmp/flywheel/_pages/test1234.json'));
+    }
+
+    public function testLockingOnWrite()
+    {
+        $this->markTestIncomplete();
     }
 
     public function validNameProvider()

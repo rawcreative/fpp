@@ -1,6 +1,9 @@
-<?php
+<?php namespace $NAMESPACE$;
 
-class $NAME$ extends \BaseController {
+use Illuminate\Routing\Controller;
+use Redirect, Request;
+
+class $NAME$ extends Controller {
 
 	/**
 	 * Display a listing of $COLLECTION$
@@ -11,7 +14,7 @@ class $NAME$ extends \BaseController {
 	{
 		$$COLLECTION$ = $MODEL$::all();
 
-		return View::make('$COLLECTION$.index', compact('$COLLECTION$'));
+		return view('$COLLECTION$.index', compact('$COLLECTION$'));
 	}
 
 	/**
@@ -21,7 +24,7 @@ class $NAME$ extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('$COLLECTION$.create');
+		return view('$COLLECTION$.create');
 	}
 
 	/**
@@ -31,14 +34,7 @@ class $NAME$ extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), $MODEL$::$rules);
-
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
-
-		$MODEL$::create($data);
+		$MODEL$::create(Request::get());
 
 		return Redirect::route('$COLLECTION$.index');
 	}
@@ -53,7 +49,7 @@ class $NAME$ extends \BaseController {
 	{
 		$$RESOURCE$ = $MODEL$::findOrFail($id);
 
-		return View::make('$COLLECTION$.show', compact('$RESOURCE$'));
+		return view('$COLLECTION$.show', compact('$RESOURCE$'));
 	}
 
 	/**
@@ -66,7 +62,7 @@ class $NAME$ extends \BaseController {
 	{
 		$$RESOURCE$ = $MODEL$::find($id);
 
-		return View::make('$COLLECTION$.edit', compact('$RESOURCE$'));
+		return view('$COLLECTION$.edit', compact('$RESOURCE$'));
 	}
 
 	/**
@@ -79,14 +75,7 @@ class $NAME$ extends \BaseController {
 	{
 		$$RESOURCE$ = $MODEL$::findOrFail($id);
 
-		$validator = Validator::make($data = Input::all(), $MODEL$::$rules);
-
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
-
-		$$RESOURCE$->update($data);
+		$$RESOURCE$->update(Request::get());
 
 		return Redirect::route('$COLLECTION$.index');
 	}

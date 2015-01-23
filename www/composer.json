@@ -1,40 +1,35 @@
 {
-  "name": "falconchristmas/fpp",
-  "description": "Falcon Player",
-  "keywords": ["falcon", "raspberry pi", "falcon player", "falcon pi player"],
-  "license": "MIT",
-  "type": "project",
-  "authors": [
-	{
-	  "name": "Tim Debo"
-	}
-  ],
+	"name": "falconchristmas/fpp",
+	"description": "Falcon Player",
+	"keywords": ["falcon", "raspberry pi", "falcon player", "falcon pi player"],
+	"license": "MIT",
+	"type": "project",
 	"require": {
-		"laravel/framework": "4.2.*",
-		"dingo/api": "0.8.*",
-	    "jamesmoss/flywheel": "0.1.*",
-	   "clue/socket-raw": "~1.1",
-	  "jenssegers/model": "1.0.1",
-    "brainboxlabs/brain-socket": "~1.0"
-
+		"laravel/framework": "~5.0",
+		"clue/socket-raw": "dev-master",
+		"brainboxlabs/brain-socket": "dev-master",
+		"jenssegers/model": "dev-master",
+		"jamesmoss/flywheel": "dev-master"
 
 	},
-  	"require-dev": {
-	  "way/generators": "2.*",
-	  "barryvdh/laravel-ide-helper": "~1.11"
+	"require-dev": {
+	  	"way/generators": "~3.0",
+		"phpunit/phpunit": "~4.0",
+		"phpspec/phpspec": "~2.1"
 	},
 	"autoload": {
 		"classmap": [
-			"app/commands",
-			"app/database/migrations",
-			"app/database/seeds",
-			"app/tests/TestCase.php"
+			"database"
 		],
-	  "psr-4": {
-		"FPP\\": "app/FPP"
-	  }
+		"psr-4": {
+			"FPP\\": "app/"
+		}
 	},
-
+	"autoload-dev": {
+		"classmap": [
+			"tests/TestCase.php"
+		]
+	},
 	"scripts": {
 		"post-install-cmd": [
 			"php artisan clear-compiled",
@@ -51,5 +46,5 @@
 	"config": {
 		"preferred-install": "dist"
 	},
-	"minimum-stability": "stable"
+	"minimum-stability": "dev"
 }

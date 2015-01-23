@@ -89,8 +89,27 @@ class Query
 
         if ($this->where) {
             list($field, $operator, $predicate) = $this->where;
-            $documents = array_filter($documents, function ($doc) use ($field, $operator, $predicate) {
-                $value = $doc->{$field};
+            $documents = array_values(array_filter($documents, function ($doc) use ($field, $operator, $predicate) {
+                if (false === strpos($field, '.')) {
+                    $value = $doc->{$field};
+                } else {
+                    //multi-dimensional process
+                    $field = explode('.', $field);
+                    $value = $doc;
+                    foreach ($field as $fieldPart) {
+                        if ((string)(int)$fieldPart === $fieldPart) {
+                            if (!isset($value[$fieldPart])) {
+                                return false;
+                            }
+                            $value = $value[$fieldPart];
+                        } else {
+                            if (!isset($value->{$fieldPart})) {
+                                return false;
+                            }
+                            $value = $value->{$fieldPart};
+                        }
+                    }
+                }
 
                 switch (true) {
                     case ($operator === '==' && $value == $predicate): return true;
@@ -102,7 +121,7 @@ class Query
                 }
 
                 return false;
-            });
+            }));
         }
 
         if ($this->orderBy) {
@@ -145,15 +164,21 @@ class Query
             $i   = 0;
             $cmp = 0;
             while ($cmp == 0 && $i < $c) {
-                $valueA = $a->{$args[$i][0]};
-                $valueB = $b->{$args[$i][0]};
+                $keyName = $args[$i][0];
+                if($keyName == 'id') {
+                    $valueA = $a->getId();
+                    $valueB = $b->getId();
+                } else {
+                    $valueA = isset($a->{$keyName}) ? $a->{$keyName} : null;
+                    $valueB = isset($b->{$keyName}) ? $b->{$keyName} : null; 
+                }
 
                 if (is_string($valueA)) {
                     $cmp = strcmp($valueA, $valueB);
                 } elseif (is_bool($valueA)) {
                     $cmp = $valueA - $valueB;
                 } else {
-                    $cmp = ($valueA == $valueB) ? 0 : ($valueA > $valueB) ? -1 : 1;
+                    $cmp = ($valueA == $valueB) ? 0 : (($valueA > $valueB) ? -1 : 1);
                 }
 
                 if ($args[$i][1] === SORT_DESC) {

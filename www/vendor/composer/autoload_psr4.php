@@ -6,13 +6,15 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Stringy\\' => array($vendorDir . '/danielstjules/stringy/src'),
     'Socket\\Raw\\' => array($vendorDir . '/clue/socket-raw/src'),
     'React\\Stream\\' => array($vendorDir . '/react/stream/src'),
     'React\\Socket\\' => array($vendorDir . '/react/socket/src'),
     'React\\EventLoop\\' => array($vendorDir . '/react/event-loop'),
+    'Predis\\' => array($vendorDir . '/predis/predis/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
-    'League\\Fractal\\' => array($vendorDir . '/league/fractal/src'),
-    'FPP\\' => array($baseDir . '/app/FPP'),
-    'Dingo\\Api\\' => array($vendorDir . '/dingo/api/src'),
-    'Barryvdh\\LaravelIdeHelper\\' => array($vendorDir . '/barryvdh/laravel-ide-helper/src'),
+    'League\\Flysystem\\' => array($vendorDir . '/league/flysystem/src'),
+    'Jenssegers\\Model\\' => array($vendorDir . '/jenssegers/model/src'),
+    'FPP\\' => array($baseDir . '/app'),
+    'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
 );

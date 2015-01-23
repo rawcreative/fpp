@@ -1,17 +1,19 @@
-Laravel Model 
+Laravel Model
 =============
 
-[![Build Status](https://travis-ci.org/jenssegers/Laravel-Model.png?branch=master)](https://travis-ci.org/jenssegers/Laravel-Model) [![Coverage Status](https://coveralls.io/repos/jenssegers/Laravel-Model/badge.png)](https://coveralls.io/r/jenssegers/Laravel-Model)
+[![Build Status](http://img.shields.io/travis/jenssegers/laravel-model.svg)](https://travis-ci.org/jenssegers/laravel-model) [![Coverage Status](http://img.shields.io/coveralls/jenssegers/laravel-model.svg)](https://coveralls.io/r/jenssegers/laravel-model)
 
-This model provides an eloquent-like base class that can be used to build custom models in Laravel 4 or other frameworks.
+This model provides an eloquent-like base class that can be used to build custom models in Laravel or other frameworks.
 
 Example:
 
     class User extends Model {
 
-        protected $hidden = array('password');
+        protected $hidden = ['password'];
 
-        public function save() 
+        protected $casts ['age' => 'integer'];
+
+        public function save()
         {
             return API::post('/items', $this->attributes);
         }
@@ -23,13 +25,12 @@ Example:
 
         public function getBirthdayAttribute($value)
         {
-            return date('Y-m-d', $value);
+            return new DateTime("@$value");
         }
 
         public function getAgeAttribute($value)
         {
-            $date = DateTime::createFromFormat('U', $this->attributes['birthday']);
-            return $date->diff(new DateTime('now'))->y;
+            return $this->birthday->diff(new DateTime('now'))->y;
         }
     }
 
@@ -45,20 +46,17 @@ Features
  - Model to Array and JSON conversion
  - Hidden attributes in Array/JSON conversion
  - Appending accessors and mutators to Array/JSON conversion
+ - Attribute casting
 
-You can read more about these features and the original Eloquent model on http://four.laravel.com/docs/eloquent
+You can read more about these features and the original Eloquent model on http://laravel.com/docs/eloquent
 
 Installation
 ------------
 
-Add the package to your `composer.json` and run `composer update`.
+Install using composer:
 
-    {
-        "require": {
-            "jenssegers/model": "*"
-        }
-    }
+    composer require jenssegers/model
 
-And add an alias to the bottom of `app/config/app.php`:
+Optaional: and add an alias to the bottom of `config/app.php`:
 
     'Model'           => 'Jenssegers\Model\Model',
