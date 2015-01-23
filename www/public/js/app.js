@@ -5,7 +5,7 @@ app.BrainSocket = new BrainSocket(
         new BrainSocketPubSub()
 );
 
-app.BrainSocket.Event.listen('some.event',function(msg)
+app.BrainSocket.Event.listen('status.request',function(msg)
 {
     console.log(msg);
 });
