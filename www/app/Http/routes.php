@@ -33,9 +33,9 @@ Route::group(['prefix' => 'api'], function() {
 });
 
 Event::listen('status.request', function($data) {
-		$fpp = new \FPP\Services\FPP();
+		
 
-		return \BrainSocket::message('status.request',[ 'status' => $fpp->status() ]);
+		return \BrainSocket::message('status.request',[ 'status' => 'test' ] );
 });
 
 
