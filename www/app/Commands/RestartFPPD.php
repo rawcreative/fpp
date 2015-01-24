@@ -2,21 +2,12 @@
 
 use FPP\Commands\Command;
 
+use FPP\Exceptions\FPPCommandException;
 use FPP\Services\FPPCommand;
 use Illuminate\Contracts\Bus\SelfHandling;
 use Symfony\Component\Process\Process;
 
 class RestartFPPD extends Command implements SelfHandling {
-
-	/**
-	 * Create a new command instance.
-	 *
-	 * @return void
-	 */
-	public function __construct()
-	{
-		//
-	}
 
 	/**
 	 * Execute the command.
@@ -25,17 +16,26 @@ class RestartFPPD extends Command implements SelfHandling {
 	 */
 	public function handle(FPPCommand $command)
 	{
-		//
 
-		try {
+		$command->send('d');
+		$scripts = fpp_dir().'/scripts';
 
-			$command->send('d');
-			$process = new Process('')
-			$status=exec($SUDO . " " . dirname(dirname(__FILE__)) . "/scripts/fppd_stop");
+		$stop = new Process("sudo $scripts/fppd_stop");
+		$stop->run();
 
-		} catch(FPPCommandException $exception) {
-
+		if (!$stop->isSuccessful()) {
+			throw new FPPCommandException($stop->getErrorOutput());
+			return false;
 		}
+
+		$start = new Process("sudo $scripts/fppd_start");
+		$start->run();
+		if (!$start->isSuccessful()) {
+			throw new FPPCommandException($start->getErrorOutput());
+		}
+
+		event('fppd.restarted');
+
 	}
 
 }

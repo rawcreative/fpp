@@ -30,11 +30,14 @@ Route::group(['prefix' => 'api'], function() {
 
 	get('/status', 'Api\v1\StatusController@index');
 
+	get('/fppd/start', 'Api\v1\FPPDController@start');
+	get('/fppd/stop', 'Api\v1\FPPDController@stop');
+	get('/fppd/restart', 'Api\v1\FPPDController@restart');
+
 });
 
 Event::listen('status.request', function($data) {
 		
-
 		return \BrainSocket::message('status.request',[ 'status' => 'test' ] );
 });
 

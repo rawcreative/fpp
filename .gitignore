@@ -23,7 +23,7 @@ external/rasclock/.rtc-pcf2127a.*
 external/rasclock/.tmp_versions/*
 plugins/
 access_log
-www/vendor
+www/vendor/
 www/.env
 www/.idea
 www/node_modules

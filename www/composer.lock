@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d66a661e8752fa17a805f1bd298ecba1",
+    "hash": "db30f364ba9789e2ce5f6903eb3bb209",
     "packages": [
         {
             "name": "brainboxlabs/brain-socket",
@@ -804,12 +804,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "638806a6efaa37b2470133d3be1e8d6945d859ca"
+                "reference": "074160019c547154a77caaeab692e0d39b757f4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/638806a6efaa37b2470133d3be1e8d6945d859ca",
-                "reference": "638806a6efaa37b2470133d3be1e8d6945d859ca",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/074160019c547154a77caaeab692e0d39b757f4a",
+                "reference": "074160019c547154a77caaeab692e0d39b757f4a",
                 "shasum": ""
             },
             "require": {
@@ -917,7 +917,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-01-23 14:49:33"
+            "time": "2015-01-24 19:22:00"
         },
         {
             "name": "league/flysystem",
@@ -2429,12 +2429,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/phpspec.git",
-                "reference": "ab58f408ec7f19f2d7fa95830b8c5a96fef01b78"
+                "reference": "3321925488309170b54487928e7cce2d113a5494"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/phpspec/zipball/ab58f408ec7f19f2d7fa95830b8c5a96fef01b78",
-                "reference": "ab58f408ec7f19f2d7fa95830b8c5a96fef01b78",
+                "url": "https://api.github.com/repos/phpspec/phpspec/zipball/3321925488309170b54487928e7cce2d113a5494",
+                "reference": "3321925488309170b54487928e7cce2d113a5494",
                 "shasum": ""
             },
             "require": {
@@ -2498,7 +2498,7 @@
                 "testing",
                 "tests"
             ],
-            "time": "2015-01-19 17:32:45"
+            "time": "2015-01-24 10:18:33"
         },
         {
             "name": "phpspec/prophecy",
@@ -2566,12 +2566,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "5245d791c3304a356631123fd83d6b5abd16f72c"
+                "reference": "34cc484af1ca149188d0d9e91412191e398e0b67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/5245d791c3304a356631123fd83d6b5abd16f72c",
-                "reference": "5245d791c3304a356631123fd83d6b5abd16f72c",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/34cc484af1ca149188d0d9e91412191e398e0b67",
+                "reference": "34cc484af1ca149188d0d9e91412191e398e0b67",
                 "shasum": ""
             },
             "require": {
@@ -2620,7 +2620,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-01-23 07:28:47"
+            "time": "2015-01-24 10:06:35"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -2810,12 +2810,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "f975c87a40025a7659ff612360a36af49fa6bbd4"
+                "reference": "3d6600da7eb6cb37d25143eea3fd09875c3ede49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/f975c87a40025a7659ff612360a36af49fa6bbd4",
-                "reference": "f975c87a40025a7659ff612360a36af49fa6bbd4",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3d6600da7eb6cb37d25143eea3fd09875c3ede49",
+                "reference": "3d6600da7eb6cb37d25143eea3fd09875c3ede49",
                 "shasum": ""
             },
             "require": {
@@ -2874,7 +2874,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-01-23 10:26:09"
+            "time": "2015-01-24 14:25:39"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -3103,12 +3103,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/exporter.git",
-                "reference": "99aac416d2836c8b3376edfdb89209d7e921958d"
+                "reference": "35ab8d385eef068186c83e23ae83c96b0288b3ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/99aac416d2836c8b3376edfdb89209d7e921958d",
-                "reference": "99aac416d2836c8b3376edfdb89209d7e921958d",
+                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/35ab8d385eef068186c83e23ae83c96b0288b3ee",
+                "reference": "35ab8d385eef068186c83e23ae83c96b0288b3ee",
                 "shasum": ""
             },
             "require": {
@@ -3161,7 +3161,7 @@
                 "export",
                 "exporter"
             ],
-            "time": "2015-01-23 07:22:39"
+            "time": "2015-01-24 09:57:24"
         },
         {
             "name": "sebastian/global-state",
@@ -3220,12 +3220,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/recursion-context.git",
-                "reference": "1f31686ddb3d06b16674ba809fc937e45392c25e"
+                "reference": "3989662bbb30a29d20d9faa04a846af79b276252"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/1f31686ddb3d06b16674ba809fc937e45392c25e",
-                "reference": "1f31686ddb3d06b16674ba809fc937e45392c25e",
+                "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/3989662bbb30a29d20d9faa04a846af79b276252",
+                "reference": "3989662bbb30a29d20d9faa04a846af79b276252",
                 "shasum": ""
             },
             "require": {
@@ -3265,7 +3265,7 @@
             ],
             "description": "Provides functionality to recursively process PHP variables",
             "homepage": "http://www.github.com/sebastianbergmann/recursion-context",
-            "time": "2015-01-23 10:16:59"
+            "time": "2015-01-24 09:48:32"
         },
         {
             "name": "sebastian/version",

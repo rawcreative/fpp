@@ -2,14 +2,36 @@
 
 return [
 
+    /*
+	|--------------------------------------------------------------------------
+	| FPP Debug Mode
+	|--------------------------------------------------------------------------
+	|
+	|
+	*/
     'debug'     => false,
 
 
+    /*
+    |--------------------------------------------------------------------------
+    | FPP Setting Directory
+    |--------------------------------------------------------------------------
+    |
+    |
+    */
     'settings'  => '/home/pi/media/settings',
 
 
 
+    /*
+    |--------------------------------------------------------------------------
+    | FPP Media Directories & files
+    |--------------------------------------------------------------------------
+    |
+    |
+    */
     'media'     => '/home/pi/media',
+
     'music'     => '/home/pi/media/music',
     'sequences' => '/home/pi/media/sequences',
     'playlists' => '/home/pi/media/playlists',
@@ -17,16 +39,31 @@ return [
     'videos'    => '/home/pi/media/videos',
     'effects'   => '/home/pi/media/effects',
     'scripts'   => '/home/pi/media/scripts',
-    'scripts'   => '/home/pi/media/logs',
-    'scripts'   => '/home/pi/media/upload',
-    'scripts'   => '/home/pi/media/universes',
-    'scripts'   => '/home/pi/media/pixelnetDMX',
-    'scripts'   => '/home/pi/media/schedule',
-    'scripts'   => '/home/pi/media/bytesReceived',
-    'scripts'   => '/home/pi/media/channelremap',
-    'scripts'   => '/home/pi/media/exim4',
-
-
+    'logs'      => '/home/pi/media/logs',
+    'upload'    => '/home/pi/media/upload',
+    'universes' => '/home/pi/media/universes',
+    'pixelnet'  => '/home/pi/media/pixelnetDMX',
+    'schedule'  => '/home/pi/media/schedule',
+    'bytes'     => '/home/pi/media/bytesReceived',
+    'remap'     => '/home/pi/media/channelremap',
+    'exim'      => '/home/pi/media/exim4',
     'docs'      => fpp_dir() . '/docs',
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | FPP Email Settings
+    |--------------------------------------------------------------------------
+    |
+    |
+    */
+    'email'     => [
+
+        'enable'   => false,
+        'username' => '',
+        'password' => '',
+        'from'     => '',
+        'to'       => '',
+    ],
 
 ];

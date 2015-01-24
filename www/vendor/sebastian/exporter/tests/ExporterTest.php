@@ -15,6 +15,9 @@ namespace SebastianBergmann\Exporter;
  */
 class ExporterTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @var Exporter
+     */
     private $exporter;
 
     protected function setUp()
@@ -50,6 +53,7 @@ class ExporterTest extends \PHPUnit_Framework_TestCase
         return array(
             array(null, 'null'),
             array(true, 'true'),
+            array(false, 'false'),
             array(1, '1'),
             array(1.0, '1.0'),
             array(1.2, '1.2'),
@@ -172,7 +176,7 @@ EOF
     {
         $this->assertStringMatchesFormat(
             $expected,
-            $this->trimnl($this->exporter->export($value))
+            $this->trimNewline($this->exporter->export($value))
         );
     }
 
@@ -256,7 +260,7 @@ EOF;
 
         $this->assertStringMatchesFormat(
             $expected,
-            $this->trimnl($this->exporter->export($array))
+            $this->trimNewline($this->exporter->export($array))
         );
     }
 
@@ -292,7 +296,7 @@ EOF;
     {
         $this->assertSame(
             $expected,
-            $this->trimnl($this->exporter->shortenedExport($value))
+            $this->trimNewline($this->exporter->shortenedExport($value))
         );
     }
 
@@ -317,7 +321,12 @@ EOF;
         );
     }
 
-    protected function trimnl($string)
+    public function testNonObjectCanBeReturnedAsArray()
+    {
+        $this->assertEquals(array(true), $this->exporter->toArray(true));
+    }
+
+    private function trimNewline($string)
     {
         return preg_replace('/[ ]*\n/', "\n", $string);
     }

@@ -41,3 +41,19 @@
 [Fri Jan 23 15:01:58.340111 2015] [:error] [pid 36760] [client 127.0.0.1:62525] PHP  39. Illuminate\\Routing\\Controller->callAction() /Users/Tim/Sites/FalconUI/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php:162
 [Fri Jan 23 15:01:58.340118 2015] [:error] [pid 36760] [client 127.0.0.1:62525] PHP  40. call_user_func_array() /Users/Tim/Sites/FalconUI/vendor/laravel/framework/src/Illuminate/Routing/Controller.php:245
 [Fri Jan 23 15:01:58.340127 2015] [:error] [pid 36760] [client 127.0.0.1:62525] PHP  41. FPP\\Http\\Controllers\\Api\\v1\\StatusController->index() /Users/Tim/Sites/FalconUI/vendor/laravel/framework/src/Illuminate/Routing/Controller.php:245
+[Sat Jan 24 14:59:03.641445 2015] [:error] [pid 41718] [client 127.0.0.1:51821] PHP Warning:  require(/Users/Tim/Sites/FPP/www/bootstrap/../vendor/autoload.php): failed to open stream: No such file or directory in /Users/Tim/Sites/FPP/www/bootstrap/autoload.php on line 17
+[Sat Jan 24 14:59:03.641786 2015] [:error] [pid 41718] [client 127.0.0.1:51821] PHP Stack trace:
+[Sat Jan 24 14:59:03.641799 2015] [:error] [pid 41718] [client 127.0.0.1:51821] PHP   1. {main}() /Users/Tim/Sites/FPP/www/public/index.php:0
+[Sat Jan 24 14:59:03.641808 2015] [:error] [pid 41718] [client 127.0.0.1:51821] PHP   2. require() /Users/Tim/Sites/FPP/www/public/index.php:21
+[Sat Jan 24 14:59:03.641897 2015] [:error] [pid 41718] [client 127.0.0.1:51821] PHP Fatal error:  require(): Failed opening required '/Users/Tim/Sites/FPP/www/bootstrap/../vendor/autoload.php' (include_path='.:') in /Users/Tim/Sites/FPP/www/bootstrap/autoload.php on line 17
+[Sat Jan 24 14:59:03.641913 2015] [:error] [pid 41718] [client 127.0.0.1:51821] PHP Stack trace:
+[Sat Jan 24 14:59:03.641923 2015] [:error] [pid 41718] [client 127.0.0.1:51821] PHP   1. {main}() /Users/Tim/Sites/FPP/www/public/index.php:0
+[Sat Jan 24 14:59:03.641934 2015] [:error] [pid 41718] [client 127.0.0.1:51821] PHP   2. require() /Users/Tim/Sites/FPP/www/public/index.php:21
+[Sat Jan 24 14:59:33.404326 2015] [:error] [pid 41721] [client 127.0.0.1:51826] PHP Fatal error:  Call to undefined function Illuminate\\Foundation\\array_first() in /Users/Tim/Sites/FPP/www/storage/framework/compiled.php on line 1413
+[Sat Jan 24 14:59:33.404408 2015] [:error] [pid 41721] [client 127.0.0.1:51826] PHP Stack trace:
+[Sat Jan 24 14:59:33.404419 2015] [:error] [pid 41721] [client 127.0.0.1:51826] PHP   1. {main}() /Users/Tim/Sites/FPP/www/public/index.php:0
+[Sat Jan 24 14:59:33.404428 2015] [:error] [pid 41721] [client 127.0.0.1:51826] PHP   2. require_once() /Users/Tim/Sites/FPP/www/public/index.php:35
+[Sat Jan 24 14:59:33.404436 2015] [:error] [pid 41721] [client 127.0.0.1:51826] PHP   3. Illuminate\\Foundation\\Application->__construct() /Users/Tim/Sites/FPP/www/bootstrap/app.php:16
+[Sat Jan 24 14:59:33.404446 2015] [:error] [pid 41721] [client 127.0.0.1:51826] PHP   4. Illuminate\\Foundation\\Application->registerBaseServiceProviders() /Users/Tim/Sites/FPP/www/storage/framework/compiled.php:1275
+[Sat Jan 24 14:59:33.404454 2015] [:error] [pid 41721] [client 127.0.0.1:51826] PHP   5. Illuminate\\Foundation\\Application->register() /Users/Tim/Sites/FPP/www/storage/framework/compiled.php:1293
+[Sat Jan 24 14:59:33.404473 2015] [:error] [pid 41721] [client 127.0.0.1:51826] PHP   6. Illuminate\\Foundation\\Application->getProvider() /Users/Tim/Sites/FPP/www/storage/framework/compiled.php:1394

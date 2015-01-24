@@ -16,6 +16,7 @@ class EventServiceProvider extends ServiceProvider {
 		'event.name' => [
 			'EventListener',
 		],
+
 //		'status.request' => [
 //			'FPP\Handlers\Events\StatusRequest@handle'
 //		]
