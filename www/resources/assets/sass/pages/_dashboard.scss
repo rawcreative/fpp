@@ -2,18 +2,38 @@
 .dashboard {
 	
 	@include with-layout(4 .10) {
+		
 		.panel {
-			&.fppd-status {
-				@include span(4 of 10);
+			
+			@include breakpoint($desk-sm) {
+				&.fppd-status {
+					@include span(5 of 10);
+				}
+
+				&.player-status {
+					@include span(5 of 10 last);
+				}
+
+				&.playlist-info {
+					@include span(5 of 10);
+				}
 			}
 
-			&.player-status {
-				@include span(6 of 10 last);
-			}
-			&.playlist-info {
-				@include span(4 of 10);
+			@include breakpoint($desktop-min) {
+				&.fppd-status {
+					@include span(4 of 10);
+				}
+
+				&.player-status {
+					@include span(6 of 10 last);
+				}
+
+				&.playlist-info {
+					@include span(4 of 10);
+				}
 			}
 		}
+
 	}
 
 	.fppd-status {
@@ -45,7 +65,7 @@
 				.button {
 					display: inline-block;
 					vertical-align: middle;
-					margin: 0 5px;
+					margin: 0 1%;
 					@include gradient-button();
 				}
 				select {

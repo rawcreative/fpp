@@ -28,6 +28,9 @@ $heading-color: #666;
 ///////////////////////////////////
 $ssp : 'Source Sans Pro', sans-serif;
 
+
+
+
 ///////////////////////////////////
 //  Grids
 ///////////////////////////////////
@@ -114,3 +117,27 @@ $meter-fill-low: $alert-color;
 $meter-radius: 0; 
 
 $text-input-selectors: '[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea';
+
+
+///////////////////////////////////
+//  Breakpoints
+///////////////////////////////////
+
+$mobile           : 321px !default;
+$mobile-pt        : $mobile;
+$mobile-ls        : max-width 480px !default;
+$mobile-ls-min    : 481px !default;
+$iphone5-ls       : max-width 568px !default;
+$iphone5-ls-min   : 569px !default;
+$iphone6-pt       : 375px !default;
+$phone6-pt-min    : 376px !default;
+$iphone6-ls       : 667px !default;
+$phone6-ls-min    : 668px !default;
+$tablet-pt        : max-width 768px !default;
+$tablet-pt-min    : 769px !default;
+$tablet-ls        : max-width 1024px !default;
+$tablet-ls-min    : 1025px !default;
+$desktop          : max-width 1280px !default;
+$desktop-min      : 1281px !default;
+$desk-sm          : 980px !default;
+

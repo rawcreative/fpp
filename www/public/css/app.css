@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'Source Sans Pro';
   src: url('../fonts/SourceSansPro-Light.eot');
@@ -685,14 +686,24 @@ a {
       pointer-events: none; }
 
 .sidebar {
-  width: 200px;
+  width: 155px;
   position: fixed;
   height: 100%;
   background: #363C47;
   z-index: 10;
-  padding: 20px; }
+  padding: 20px;
+  transition: width 0.25s; }
+  @media  (min-width: 769px) {
+    .sidebar {
+      width: 155px; } }
+  @media  (min-width: 1281px) {
+    .sidebar {
+      width: 200px; } }
   .sidebar .logo {
     margin-bottom: 40px; }
+    .sidebar .logo img {
+      width: 100%;
+      height: auto; }
   .sidebar h4 {
     text-transform: uppercase;
     color: #999;
@@ -715,7 +726,13 @@ a {
       color: #fff; }
 
 .content-wrapper {
-  margin-left: 200px; }
+  transition: margin 0.35s; }
+  @media  (min-width: 769px) {
+    .content-wrapper {
+      margin-left: 155px; } }
+  @media  (min-width: 1281px) {
+    .content-wrapper {
+      margin-left: 200px; } }
 
 .content {
   padding: 20px;
@@ -734,6 +751,7 @@ a {
   background: white;
   padding: 20px;
   border-bottom: 1px solid #eaeaea;
+  text-align: center;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto; }
@@ -741,48 +759,59 @@ a {
     content: " ";
     display: block;
     clear: both; }
-  .header .page-meta {
-    
-    
-    
-    width: 50%;
-    float: left;
-    
-    
-    
-     }
-  .header .control-buttons {
-    
-    
-    
-    width: 50%;
-    float: left;
-    
-    
-    
-    
-    text-align: right; }
-    .header .control-buttons .button {
-      border-radius: 2px;
-      transition: background 0.35s, box-shadow 0.15s;
-      border: 1px solid #c4c4c4;
-      color: #515151;
-      background: linear-gradient(to bottom, #f8f8f8, #eaeaea 100%);
-      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
-      .header .control-buttons .button:active {
-        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
   .header h1 {
     margin: 0;
     font-weight: 300;
     color: #666; }
+  .header .page-meta {
+    padding: 10px; }
+  .header .button {
+    border-radius: 2px;
+    transition: background 0.35s, box-shadow 0.15s;
+    border: 1px solid #c4c4c4;
+    color: #515151;
+    background: linear-gradient(to bottom, #f8f8f8, #eaeaea 100%);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+    .header .button:active {
+      box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
+  @media  (min-width: 980px) {
+    .header .page-meta {
+      padding: 0;
+      text-align: left;
+      
+      
+      
+      width: 50%;
+      float: left;
+      
+      
+      
+       }
+    .header .control-buttons {
+      text-align: right;
+      
+      
+      
+      width: 50%;
+      float: left;
+      
+      
+      
+       } }
 
 .footer {
   position: fixed;
-  width: calc(100% - 200px);
+  width: 100%;
   bottom: 0;
   right: 0;
   background: white;
   padding: 20px; }
+  @media  (min-width: 769px) {
+    .footer {
+      width: calc(100%-155px); } }
+  @media  (min-width: 1281px) {
+    .footer {
+      width: calc(100%-200px); } }
   .footer .attribution {
     float: right; }
     .footer .attribution a {
@@ -1071,36 +1100,68 @@ meter {
   meter:-moz-meter-sub-sub-optimum::-moz-meter-bar {
     background: #F04124; }
 
-.dashboard .panel.fppd-status {
-  
-  
-  
-  width: 39.44954%;
-  float: left;
-  
-  margin-right: 0.91743%;
-  
-   }
-.dashboard .panel.player-status {
-  
-  
-  
-  width: 59.63303%;
-  float: right;
-  
-  margin-right: 0;
-  
-   }
-.dashboard .panel.playlist-info {
-  
-  
-  
-  width: 39.44954%;
-  float: left;
-  
-  margin-right: 0.91743%;
-  
-   }
+@media  (min-width: 980px) {
+  .dashboard .panel.fppd-status {
+    
+    
+    
+    width: 49.54128%;
+    float: left;
+    
+    margin-right: 0.91743%;
+    
+     }
+  .dashboard .panel.player-status {
+    
+    
+    
+    width: 49.54128%;
+    float: right;
+    
+    margin-right: 0;
+    
+     }
+  .dashboard .panel.playlist-info {
+    
+    
+    
+    width: 49.54128%;
+    float: left;
+    
+    margin-right: 0.91743%;
+    
+     } }
+@media  (min-width: 1281px) {
+  .dashboard .panel.fppd-status {
+    
+    
+    
+    width: 39.44954%;
+    float: left;
+    
+    margin-right: 0.91743%;
+    
+     }
+  .dashboard .panel.player-status {
+    
+    
+    
+    width: 59.63303%;
+    float: right;
+    
+    margin-right: 0;
+    
+     }
+  .dashboard .panel.playlist-info {
+    
+    
+    
+    width: 39.44954%;
+    float: left;
+    
+    margin-right: 0.91743%;
+    
+     } }
 .dashboard .fppd-status .panel-body {
   max-width: 100%;
   margin-left: auto;
@@ -1135,7 +1196,7 @@ meter {
     .dashboard .fppd-status .widget-buttons .button {
       display: inline-block;
       vertical-align: middle;
-      margin: 0 5px;
+      margin: 0 1%;
       border-radius: 2px;
       transition: background 0.35s, box-shadow 0.15s;
       border: 1px solid #c4c4c4;
@@ -1147,7 +1208,7 @@ meter {
     .dashboard .fppd-status .widget-buttons select {
       width: 60%;
       display: inline-block;
-      padding: 0.25rem;
+      padding: .25rem;
       margin-bottom: 0;
       background-color: transparent;
       border-color: #c4c4c4;

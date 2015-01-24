@@ -1,5 +1,14 @@
 .content-wrapper {
-	margin-left: 200px;
+	
+	transition: margin 0.35s;
+
+	@include breakpoint($tablet-pt-min) {
+		margin-left: 155px;
+	}
+
+	@include breakpoint($desktop-min) {
+		margin-left: 200px;
+	}
 }
 
 .content {
