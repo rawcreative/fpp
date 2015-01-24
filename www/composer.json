@@ -9,7 +9,8 @@
 		"clue/socket-raw": "dev-master",
 		"brainboxlabs/brain-socket": "dev-master",
 		"jenssegers/model": "dev-master",
-		"jamesmoss/flywheel": "dev-master"
+		"jamesmoss/flywheel": "dev-master",
+		"mrrio/shellwrap": "dev-master"
 
 	},
 	"require-dev": {
@@ -23,7 +24,10 @@
 		],
 		"psr-4": {
 			"FPP\\": "app/"
-		}
+		},
+	  "files" : [
+		"app/helpers.php"
+	  ]
 	},
 	"autoload-dev": {
 		"classmap": [

@@ -1,7 +1,19 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Tim
- * Date: 1/24/15
- * Time: 1:56 PM
- */
+
+
+function fpp_dir() {
+    return dirname(base_path());
+}
+
+
+if(!function_exists('fpp_media')) {
+
+    function fpp_media($directory = false) {
+        $conf = 'fpp.media';
+
+        if($directory)
+            $conf = 'fpp.'.$directory;
+
+        return config($conf);
+    }
+}
