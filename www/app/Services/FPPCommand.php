@@ -29,6 +29,7 @@ class FPPCommand
      */
     public function send($message)
     {
+        @unlink($this->clientPath);
 
         $socket = $this->socket = $this->factory->createUdg();
         $socket->setBlocking(false);
@@ -36,7 +37,9 @@ class FPPCommand
         $socket->connect($this->socketPath);
         $socket->send($message, 0);
         $response = $this->receive();
-        $this->cleanUp();
+
+        $this->socket->close();
+
         return $response;
     }
 
@@ -59,14 +62,6 @@ class FPPCommand
         return $buffer;
     }
 
-    /**
-     * Close socket and unlink client file
-     */
-    protected function cleanUp()
-    {
-        $this->socket->close();
-        @unlink($this->clientPath);
-    }
 
 
 }
