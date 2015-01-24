@@ -1,7 +1,7 @@
 {
-    "assetsDir": "public/assets/",
+    "assetsDir": "resources/assets/",
 
-    "cssOutput": "public/assets/css/",
+    "cssOutput": "public/css/",
 
-    "jsOutput": "public/assets/js/"
+    "jsOutput": "public/js/"
 }

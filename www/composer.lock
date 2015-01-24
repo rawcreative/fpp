@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "61d4db0c6a4eacb77cefa5d393e95d44",
+    "hash": "d66a661e8752fa17a805f1bd298ecba1",
     "packages": [
         {
             "name": "brainboxlabs/brain-socket",
@@ -1073,6 +1073,56 @@
                 "psr-3"
             ],
             "time": "2015-01-20 10:31:44"
+        },
+        {
+            "name": "mrrio/shellwrap",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MrRio/shellwrap.git",
+                "reference": "bf773fc4f992351826e41a486fe457227abc37e0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MrRio/shellwrap/zipball/bf773fc4f992351826e41a486fe457227abc37e0",
+                "reference": "bf773fc4f992351826e41a486fe457227abc37e0",
+                "shasum": ""
+            },
+            "require": {
+                "d11wtq/boris": "1.0.*",
+                "php": ">=5.3.0"
+            },
+            "bin": [
+                "bin/shellwrap"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "MrRio": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "James Hall",
+                    "email": "james@snapshotmedia.co.uk",
+                    "homepage": "http://twitter.com/MrRio",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Use any command-line tool as a PHP function.",
+            "homepage": "http://github.com/MrRio/shellwrap",
+            "keywords": [
+                "api",
+                "command",
+                "command-line",
+                "exec",
+                "shell"
+            ],
+            "time": "2014-11-11 19:08:16"
         },
         {
             "name": "mtdowling/cron-expression",
@@ -3352,7 +3402,8 @@
         "clue/socket-raw": 20,
         "brainboxlabs/brain-socket": 20,
         "jenssegers/model": 20,
-        "jamesmoss/flywheel": 20
+        "jamesmoss/flywheel": 20,
+        "mrrio/shellwrap": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
