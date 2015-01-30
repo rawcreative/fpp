@@ -18,18 +18,16 @@ class StartFPPD extends Command implements SelfHandling {
 	public function handle()
 	{
 		$scripts = fpp_dir().'/scripts';
-//		$process = new Process("sudo $scripts/fppd_start");
-//		$process->run();
-//
-//		if (!$process->isSuccessful()) {
-//			throw new FPPCommandException($process->getErrorOutput());
-//
-//		}
+
 		$sh = new Shell;
-		try {
-			$sh::sudo("$scripts/fppd_stop");
-		} catch (ShellWrapException $e) {
-			throw new FPPCommandException('Exception executing fppd_stop');
+		if($sh('if ps cax | grep -q fppd; then echo \"true\"; else echo \"false\"; fi') == 'false') {
+			try {
+				$sh::sudo("$scripts/fppd_stop");
+			} catch (ShellWrapException $e) {
+				throw new FPPCommandException('Exception executing fppd_stop');
+			}
+		} else {
+			throw new FPPCommandException('FPPD already running!');
 		}
 
 
