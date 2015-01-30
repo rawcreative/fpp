@@ -23,15 +23,20 @@ class RestartFPPD extends Command implements SelfHandling {
 		$scripts = fpp_dir().'/scripts';
 
 		//$stop = new Process("sudo $scripts/fppd_stop");
-		$stop = new Shell;
+		$sh = new Shell;
+
 		try {
-			$stop("sudo $scripts/fppd_stop");
+			$sh::sudo("$scripts/fppd_stop");
+
 		} catch (ShellWrapException $e) {
-			throw new FPPCommandException('Exception executing fppd_stop');
+
+				throw new FPPCommandException('Exception executing fppd_stop');
 		}
 
 		try {
-			$stop("sudo $scripts/fppd_start");
+
+				$sh::sudo("$scripts/fppd_start");
+
 		} catch (ShellWrapException $e) {
 			throw new FPPCommandException('Exception executing fppd_start');
 		}

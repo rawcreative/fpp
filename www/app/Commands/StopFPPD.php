@@ -5,7 +5,9 @@ use FPP\Commands\Command;
 use FPP\Exceptions\FPPCommandException;
 use FPP\Services\FPPCommand;
 use Illuminate\Contracts\Bus\SelfHandling;
+use MrRio\ShellWrapException;
 use Symfony\Component\Process\Process;
+use MrRio\ShellWrap as Shell;
 
 class StopFPPD extends Command implements SelfHandling {
 
@@ -19,12 +21,14 @@ class StopFPPD extends Command implements SelfHandling {
 	{
 		$command->send('d');
 		$scripts = fpp_dir().'/scripts';
-		$process = new Process("sudo $scripts/fppd_stop");
-		$process->run();
+		$sh = new Shell;
+		try {
+			$sh::sudo("$scripts/fppd_stop");
 
-		if (!$process->isSuccessful()) {
-			throw new FPPCommandException($process->getErrorOutput());
+		} catch (ShellWrapException $e) {
+			throw new FPPCommandException('Exception executing fppd_stop');
 		}
+
 
 		event('fppd.stopped');
 	}

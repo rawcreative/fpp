@@ -25,9 +25,9 @@ class StartFPPD extends Command implements SelfHandling {
 //			throw new FPPCommandException($process->getErrorOutput());
 //
 //		}
-		$stop = new Shell;
+		$sh = new Shell;
 		try {
-			$stop("sudo $scripts/fppd_stop");
+			$sh::sudo("$scripts/fppd_stop");
 		} catch (ShellWrapException $e) {
 			throw new FPPCommandException('Exception executing fppd_stop');
 		}
