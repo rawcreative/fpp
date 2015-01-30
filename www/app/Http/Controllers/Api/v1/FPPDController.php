@@ -23,6 +23,8 @@ class FPPDController extends Controller {
 			return response()->json(['error' => $e->getMessage()]);
 		}
 
+		return response()->json(['result' => 'success']);
+
 	}
 
 	public function stop()
@@ -33,6 +35,7 @@ class FPPDController extends Controller {
 		catch(FPPCommandException $e) {
 			return response()->json(['error' => $e->getMessage()]);
 		}
+		return response()->json(['result' => 'success']);
 	}
 
 	public function restart()
@@ -43,6 +46,7 @@ class FPPDController extends Controller {
 		catch(FPPCommandException $e) {
 			return response()->json(['error' => $e->getMessage()]);
 		}
+		return response()->json(['result' => 'success']);
 	}
 
 
