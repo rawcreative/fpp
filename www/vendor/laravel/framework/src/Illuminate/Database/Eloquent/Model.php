@@ -1460,7 +1460,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
 
 		// To sync all of the relationships to the database, we will simply spin through
 		// the relationships and save each model via this "push" method, which allows
-		// us to recurs into all of these nested relations for this model instance.
+		// us to recurse into all of these nested relations for the model instance.
 		foreach ($this->relations as $models)
 		{
 			$models = $models instanceof Collection
@@ -1486,7 +1486,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
 		$query = $this->newQueryWithoutScopes();
 
 		// If the "saving" event returns false we'll bail out of the save and return
-		// false, indicating that the save failed. This gives an opportunities to
+		// false, indicating that the save failed. This provides a chance for any
 		// listeners to cancel save operations if validations fail or whatever.
 		if ($this->fireModelEvent('saving') === false)
 		{
@@ -1720,6 +1720,8 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
 	 */
 	public function touch()
 	{
+		if ( ! $this->timestamps) return false;
+
 		$this->updateTimestamps();
 
 		return $this->save();

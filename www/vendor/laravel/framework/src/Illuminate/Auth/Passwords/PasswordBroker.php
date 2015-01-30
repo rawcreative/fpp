@@ -19,7 +19,7 @@ class PasswordBroker implements PasswordBrokerContract {
 	/**
 	 * The user provider implementation.
 	 *
-	 * @var \Illuminate\Auth\UserProviderInterface
+	 * @var \Illuminate\Contracts\Auth\UserProvider
 	 */
 	protected $users;
 
@@ -190,7 +190,7 @@ class PasswordBroker implements PasswordBrokerContract {
 	 * @param  array  $credentials
 	 * @return bool
 	 */
-	protected function validateNewPassword(array $credentials)
+	public function validateNewPassword(array $credentials)
 	{
 		list($password, $confirm) = [
 			$credentials['password'], $credentials['password_confirmation']

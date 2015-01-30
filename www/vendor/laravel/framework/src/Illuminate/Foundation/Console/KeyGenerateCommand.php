@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Str;
 use Illuminate\Console\Command;
+use Symfony\Component\Console\Input\InputOption;
 
 class KeyGenerateCommand extends Command {
 
@@ -28,14 +29,18 @@ class KeyGenerateCommand extends Command {
 	{
 		$key = $this->getRandomKey();
 
-		foreach ([base_path('.env'), base_path('.env.example')] as $path)
+		if ($this->option('show'))
 		{
-			if (file_exists($path))
-			{
-				file_put_contents($path, str_replace(
-					$this->laravel['config']['app.key'], $key, file_get_contents($path)
-				));
-			}
+			return $this->line('<comment>'.$key.'</comment>');
+		}
+
+		$path = base_path('.env');
+
+		if (file_exists($path))
+		{
+			file_put_contents($path, str_replace(
+				$this->laravel['config']['app.key'], $key, file_get_contents($path)
+			));
 		}
 
 		$this->laravel['config']['app.key'] = $key;
@@ -51,6 +56,18 @@ class KeyGenerateCommand extends Command {
 	protected function getRandomKey()
 	{
 		return Str::random(32);
+	}
+
+	/**
+	 * Get the console command options.
+	 *
+	 * @return array
+	 */
+	protected function getOptions()
+	{
+		return array(
+			array('show', null, InputOption::VALUE_NONE, 'Simply display the key instead of modifying files.'),
+		);
 	}
 
 }

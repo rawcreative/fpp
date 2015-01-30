@@ -20,7 +20,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
 	 *
 	 * @var string
 	 */
-	const VERSION = '5.0-dev';
+	const VERSION = '5.1-dev';
 
 	/**
 	 * The base path for the Laravel installation.
@@ -77,6 +77,13 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
 	 * @var array
 	 */
 	protected $deferredServices = array();
+
+	/**
+	 * The custom storage path defined by the developer.
+	 *
+	 * @var string
+	 */
+	protected $storagePath;
 
 	/**
 	 * The environment file to load during bootstrapping.
@@ -261,7 +268,22 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
 	 */
 	public function storagePath()
 	{
-		return $this->basePath.'/storage';
+		return $this->storagePath ?: $this->basePath.'/storage';
+	}
+
+	/**
+	 * Set the storage directory.
+	 *
+	 * @param  string  $path
+	 * @return $this
+	 */
+	public function useStoragePath($path)
+	{
+		$this->storagePath = $path;
+
+		$this->instance('path.storage', $path);
+
+		return $this;
 	}
 
 	/**

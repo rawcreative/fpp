@@ -460,10 +460,10 @@ class Application
     {
         $namespaces = array();
         foreach ($this->commands as $command) {
-            $namespaces[] = $this->extractNamespace($command->getName());
+            $namespaces = array_merge($namespaces, $this->extractAllNamespaces($command->getName()));
 
             foreach ($command->getAliases() as $alias) {
-                $namespaces[] = $this->extractNamespace($alias);
+                $namespaces = array_merge($namespaces, $this->extractAllNamespaces($alias));
             }
         }
 
@@ -624,10 +624,12 @@ class Application
      *
      * @return string A string representing the Application
      *
-     * @deprecated Deprecated since version 2.3, to be removed in 3.0.
+     * @deprecated since version 2.3, to be removed in 3.0.
      */
     public function asText($namespace = null, $raw = false)
     {
+        trigger_error('The '.__METHOD__.' method is deprecated since version 2.3 and will be removed in 3.0.', E_USER_DEPRECATED);
+
         $descriptor = new TextDescriptor();
         $output = new BufferedOutput(BufferedOutput::VERBOSITY_NORMAL, !$raw);
         $descriptor->describe($output, $this, array('namespace' => $namespace, 'raw_output' => true));
@@ -643,10 +645,12 @@ class Application
      *
      * @return string|\DOMDocument An XML string representing the Application
      *
-     * @deprecated Deprecated since version 2.3, to be removed in 3.0.
+     * @deprecated since version 2.3, to be removed in 3.0.
      */
     public function asXml($namespace = null, $asDom = false)
     {
+        trigger_error('The '.__METHOD__.' method is deprecated since version 2.3 and will be removed in 3.0.', E_USER_DEPRECATED);
+
         $descriptor = new XmlDescriptor();
 
         if ($asDom) {
@@ -708,8 +712,8 @@ class Application
                 $trace = $e->getTrace();
                 array_unshift($trace, array(
                     'function' => '',
-                    'file' => $e->getFile() != null ? $e->getFile() : 'n/a',
-                    'line' => $e->getLine() != null ? $e->getLine() : 'n/a',
+                    'file' => $e->getFile() !== null ? $e->getFile() : 'n/a',
+                    'line' => $e->getLine() !== null ? $e->getLine() : 'n/a',
                     'args' => array(),
                 ));
 
@@ -950,9 +954,9 @@ class Application
     {
         return new HelperSet(array(
             new FormatterHelper(),
-            new DialogHelper(),
-            new ProgressHelper(),
-            new TableHelper(),
+            new DialogHelper(false),
+            new ProgressHelper(false),
+            new TableHelper(false),
             new DebugFormatterHelper(),
             new ProcessHelper(),
             new QuestionHelper(),
@@ -1145,5 +1149,29 @@ class Application
         mb_convert_variables($encoding, 'utf8', $lines);
 
         return $lines;
+    }
+
+    /**
+     * Returns all namespaces of the command name.
+     *
+     * @param string $name The full name of the command
+     *
+     * @return array The namespaces of the command
+     */
+    private function extractAllNamespaces($name)
+    {
+        // -1 as third argument is needed to skip the command short name when exploding
+        $parts = explode(':', $name, -1);
+        $namespaces = array();
+
+        foreach ($parts as $part) {
+            if (count($namespaces)) {
+                $namespaces[] = end($namespaces).':'.$part;
+            } else {
+                $namespaces[] = $part;
+            }
+        }
+
+        return $namespaces;
     }
 }

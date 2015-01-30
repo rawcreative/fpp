@@ -37,8 +37,9 @@ class FPPCommand
         $socket->connect($this->socketPath);
         $socket->send($message, 0);
         $response = $this->receive();
-
         $this->socket->close();
+
+        unlink($this->clientPath);
 
         return $response;
     }
