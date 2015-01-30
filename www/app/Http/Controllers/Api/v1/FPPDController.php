@@ -36,7 +36,7 @@ class FPPDController extends Controller {
 	public function restart()
 	{
 		try {
-			$this->dispatch(new ResartFPPD());
+			$this->dispatch(new RestartFPPD());
 		}
 		catch(FPPCommandException $e) {
 			return response()->json(['error' => $e->getMessage()]);

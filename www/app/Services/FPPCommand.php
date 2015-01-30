@@ -39,7 +39,7 @@ class FPPCommand
         $response = $this->receive();
         $this->socket->close();
 
-        unlink($this->clientPath);
+        @unlink($this->clientPath);
 
         return $response;
     }
