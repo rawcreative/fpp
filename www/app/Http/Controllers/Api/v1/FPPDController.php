@@ -1,6 +1,8 @@
 <?php namespace FPP\Http\Controllers\Api\v1;
 
+use FPP\Commands\RestartFPPD;
 use FPP\Commands\StartFPPD;
+use FPP\Commands\StopFPPD;
 use FPP\Exceptions\FPPCommandException;
 use FPP\Http\Requests;
 use FPP\Http\Controllers\Controller;
