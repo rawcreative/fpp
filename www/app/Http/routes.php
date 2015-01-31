@@ -25,10 +25,14 @@ Route::controllers([
  * Settings
  */
 
-get('/settings',		['as' => 'settings', 		 'uses' => 'Settings\SettingsController@index']);
-get('/settings/network',['as' => 'settings.network', 'uses' => 'Settings\SettingsController@showNetwork']);
-get('/settings/logs',	['as' => 'settings.logs',    'uses' => 'Settings\SettingsController@showLogs']);
-get('/settings/email',	['as' => 'settings.email',   'uses' => 'Settings\SettingsController@showEmail']);
+get('/settings',		 ['as' => 'settings', 		 		 'uses' => 'Settings\SettingsController@index']);
+post('/settings',		 ['as' => 'settings.store', 	     'uses' => 'Settings\SettingsController@store']);
+get('/settings/network', ['as' => 'settings.network', 		 'uses' => 'Settings\SettingsController@showNetwork']);
+post('/settings/network',['as' => 'settings.network.store',  'uses' => 'Settings\SettingsController@storeNetwork']);
+get('/settings/logs',	 ['as' => 'settings.logs',    		 'uses' => 'Settings\SettingsController@showLogs']);
+post('/settings/logs',	 ['as' => 'settings.logs.store',     'uses' => 'Settings\SettingsController@storeLogs']);
+get('/settings/email',	 ['as' => 'settings.email',   		 'uses' => 'Settings\SettingsController@showEmail']);
+post('/settings/email',	 ['as' => 'settings.email.store',    'uses' => 'Settings\SettingsController@storeEmail']);
 
 
 /**

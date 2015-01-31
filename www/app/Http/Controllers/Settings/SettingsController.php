@@ -53,6 +53,23 @@ class SettingsController extends Controller {
 		//
 	}
 
+
+	public function storeNetwork()
+	{
+		//
+	}
+
+	public function storeEmail()
+	{
+		//
+	}
+
+	public function storeLogs()
+	{
+		//
+	}
+
+
 	/**
 	 * Display the specified resource.
 	 *
