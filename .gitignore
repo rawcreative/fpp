@@ -26,3 +26,4 @@ access_log
 www/.env
 www/.idea
 www/node_modules
+www/vendor

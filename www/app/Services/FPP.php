@@ -53,13 +53,12 @@ class FPP
     public function getSoundCards()
     {
         $cardArr = [];
-        $sh = new Shell;
-        $cards = $sh("for card in /proc/asound/card*/id; do echo -n \$card | sed 's/.*card\\([0-9]*\\).*/\\1:/g'; cat \$card; done");
+        exec("for card in /proc/asound/card*/id; do echo -n \$card | sed 's/.*card\\([0-9]*\\).*/\\1:/g'; cat \$card; done", $output, $return_val);
 
-        if(!$cards)
+        if(!$return_val)
             Log::error('Error getting alsa cards for output!');
 
-        foreach($cards as $card) {
+        foreach($output as $card) {
             $card = explode(':', $card);
             $cardArr[$card[1]] = $card[0];
         }
