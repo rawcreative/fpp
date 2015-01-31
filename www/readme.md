@@ -77,6 +77,11 @@ Once those are running, we now have to install the app dependencies:
 
 Composer will download all the required packages and generate the autoloader. Once it's finished you should be able to access the new interface just as normal
 
+Just in case permissions are out of whack run:
+
+	sudo chown -R pi:pi /opt/fpp/www
+
+
 
 
 .. more soon ..
