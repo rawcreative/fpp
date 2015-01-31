@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'DashboardController@index');
+Route::get('/', ['as' => 'dashboard', 'uses' => 'DashboardController@index']);
 
 
 
@@ -20,6 +20,12 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
+
+/**
+ * Settings
+ */
+
+get('/settings',['as' => 'settings', 'uses' => 'Settings\SettingsController@index']);
 
 /**
  * API

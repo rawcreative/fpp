@@ -3,6 +3,8 @@ namespace FPP\Services;
 
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
+use MrRio\ShellWrap as Shell;
 
 class FPP
 {
@@ -46,6 +48,24 @@ class FPP
         }
 
         return $data;
+    }
+
+    public function getSoundCards()
+    {
+        $cardArr = [];
+        $sh = new Shell;
+        $cards = $sh("for card in /proc/asound/card*/id; do echo -n \$card | sed 's/.*card\\([0-9]*\\).*/\\1:/g'; cat \$card; done");
+
+        if(!$cards)
+            Log::error('Error getting alsa cards for output!');
+
+        foreach($cards as $card) {
+            $card = explode(':', $card);
+            $cardArr[$card[1]] = $card[0];
+        }
+
+        return $cardArr;
+
     }
 
 

@@ -14,6 +14,8 @@
   "dependencies": {
     "breakpoint-sass": "~2.5.0",
     "foundation-apps": "~1.0.2",
-    "susy": "~2.2.1"
+    "susy": "~2.2.1",
+    "react": "~0.12.2",
+    "reflux": "~0.2.4"
   }
 }

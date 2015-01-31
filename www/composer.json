@@ -10,7 +10,8 @@
 		"brainboxlabs/brain-socket": "dev-master",
 		"jenssegers/model": "dev-master",
 		"jamesmoss/flywheel": "dev-master",
-		"mrrio/shellwrap": "dev-master"
+		"mrrio/shellwrap": "dev-master",
+		"illuminate/html": "~5.0@dev"
 
 	},
 	"require-dev": {
