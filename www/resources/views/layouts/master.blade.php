@@ -20,7 +20,7 @@
 
 </head>
 
-<body class="@yield('body-class', 'page-content')">
+<body class="@yield('body-class', 'page')">
 <div id="wrapper" class="wrapper">
     <div id="main" role="main">
         @section('left-sidebar')

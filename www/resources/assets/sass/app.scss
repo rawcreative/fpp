@@ -7,10 +7,13 @@
 @import "bower_components/susy/sass/susy";
 
 // Components
+//@import "bower_components/foundation-apps/scss/components/typography";
+@import "partials/typography";
 @import "partials/fonts";
 @import "partials/normalize";
 @import "partials/structure";
 @import "partials/buttons";
+@import "partials/navigation";
 @import "partials/sidebar";
 @import "partials/content";
 @import "partials/header";
@@ -19,10 +22,14 @@
 @import "partials/panels";
 @import "partials/icons";
 @import "bower_components/foundation-apps/scss/components/forms";
+@import "partials/switch";
+//@import "bower_components/foundation-apps/scss/components/switch";
+
+
 // Pages
 
 @import "pages/dashboard";
-
+@import "pages/settings";
 
 // Icons
 @import "vendor/ionicons.scss";

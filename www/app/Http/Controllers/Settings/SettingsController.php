@@ -2,6 +2,7 @@
 
 use FPP\Http\Requests;
 use FPP\Http\Controllers\Controller;
+use FPP\Services\FPP;
 
 class SettingsController extends Controller {
 
@@ -10,9 +11,26 @@ class SettingsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(FPP $fpp)
 	{
-		return view('settings.index');
+		$soundCards = $fpp->getSoundCards();
+
+		return view('settings.index', compact('soundCards'));
+	}
+
+	public function showNetwork()
+	{
+		return view('settings.network');
+	}
+
+	public function showEmail()
+	{
+		return view('settings.email');
+	}
+
+	public function showLogs()
+	{
+		return view('settings.logs');
 	}
 
 	/**

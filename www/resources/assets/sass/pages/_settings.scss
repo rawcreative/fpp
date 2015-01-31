@@ -1,0 +1,81 @@
+.content-wrapper.settings {
+	
+	background: #fafafa;
+	position: relative;
+	min-height: calc(100vh - 40px);
+	
+	.settings-sidebar {
+		
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom:0;
+		width: 200px;
+		padding: 20px;
+		background: $settings-sb-bg;	
+		border-right: 1px solid darken($settings-sb-bg, 5%);
+		h2 {
+			margin: 0 0 15px;
+			//text-align: center;
+			font-weight: 300;
+
+		}	
+
+	}
+
+	.page-content {
+		margin-left: 200px;
+		padding: 20px 30px;
+	}
+	.page-title {
+		padding: 0 0 40px;
+		h2 {
+			margin: 0;
+			font-weight: 300;
+		}
+	}
+
+	.field {
+		margin-bottom:15px;
+
+		&.inline {
+			label {
+				display: inline-block;
+				vertical-align: middle;
+				margin: 0 10px 0 0;
+			}
+
+			input {
+				display: inline-block;
+				vertical-align: bottom;
+			}
+
+			
+		}
+		
+		&.columns {
+			@include container(100%);
+
+			.left {
+				@include span(2 of 3);
+			}
+			.right {
+				text-align: right;
+				@include span(1 of 3);
+			}
+		}
+
+	}
+	.form-actions {
+		text-align: right;
+		padding: 20px 0;
+		.button {
+			margin-right: 0;
+		}
+	}
+	
+}
+
+
+
+

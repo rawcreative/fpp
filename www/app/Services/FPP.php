@@ -60,7 +60,7 @@ class FPP
 
         foreach($output as $card) {
             $card = explode(':', $card);
-            $cardArr[$card[1]] = $card[0];
+            $cardArr[$card[0]] = $card[1];
         }
 
         return $cardArr;

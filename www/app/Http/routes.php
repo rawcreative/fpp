@@ -25,7 +25,11 @@ Route::controllers([
  * Settings
  */
 
-get('/settings',['as' => 'settings', 'uses' => 'Settings\SettingsController@index']);
+get('/settings',		['as' => 'settings', 		 'uses' => 'Settings\SettingsController@index']);
+get('/settings/network',['as' => 'settings.network', 'uses' => 'Settings\SettingsController@showNetwork']);
+get('/settings/logs',	['as' => 'settings.logs',    'uses' => 'Settings\SettingsController@showLogs']);
+get('/settings/email',	['as' => 'settings.email',   'uses' => 'Settings\SettingsController@showEmail']);
+
 
 /**
  * API
