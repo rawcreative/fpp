@@ -22,7 +22,6 @@ class RestartFPPD extends Command implements SelfHandling {
 		$command->send('d');
 		$scripts = fpp_dir().'/scripts';
 
-		//$stop = new Process("sudo $scripts/fppd_stop");
 		$sh = new Shell;
 
 		try {
@@ -41,17 +40,6 @@ class RestartFPPD extends Command implements SelfHandling {
 			throw new FPPCommandException('Exception executing fppd_start');
 		}
 
-
-//		if (!$stop->isSuccessful()) {
-//			throw new FPPCommandException($stop->getErrorOutput());
-//			return false;
-//		}
-
-//		$start = new Process("sudo $scripts/fppd_start");
-//		$start->run();
-//		if (!$start->isSuccessful()) {
-//			throw new FPPCommandException($start->getErrorOutput());
-//		}
 
 		event('fppd.restarted');
 
