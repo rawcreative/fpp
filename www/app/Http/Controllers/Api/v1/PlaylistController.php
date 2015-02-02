@@ -23,7 +23,7 @@ class PlaylistController extends Controller
 
             $csv       = Reader::createFromPath(trailingslashit(config('fpp.playlists')) . $playlist);
             $firstLast = $csv->fetchOne();
-            $entries   = $csv->setOffset(1)->fetchAssoc(['type', 'sequence', 'media']);
+            $entries   = array_filter($csv->setOffset(1)->fetchAssoc(['type', 'sequence', 'media']));
 
             return response()->json([
                 'response' => [
