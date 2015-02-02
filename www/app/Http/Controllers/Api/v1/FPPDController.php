@@ -24,7 +24,7 @@ class FPPDController extends Controller {
 			return response()->json(['error' => $e->getMessage()]);
 		}
 
-		return response()->json(['result' => 'success']);
+		return response()->json(['response' => 'success']);
 
 	}
 
@@ -36,7 +36,7 @@ class FPPDController extends Controller {
 		catch(FPPCommandException $e) {
 			return response()->json(['error' => $e->getMessage()]);
 		}
-		return response()->json(['result' => 'success']);
+		return response()->json(['response' => 'success']);
 	}
 
 	public function restart()
@@ -47,7 +47,7 @@ class FPPDController extends Controller {
 		catch(FPPCommandException $e) {
 			return response()->json(['error' => $e->getMessage()]);
 		}
-		return response()->json(['result' => 'success']);
+		return response()->json(['response' => 'success']);
 	}
 
 
@@ -55,7 +55,7 @@ class FPPDController extends Controller {
 	{
 		$fpp = app('FPP\Services\FPP');
 
-		return response()->json(['result' => ['mode' =>$fpp->getFPPDMode()]]);
+		return response()->json(['response' => ['mode' =>$fpp->getFPPDMode()]]);
 	}
 
 	public function setMode($mode)
@@ -68,6 +68,6 @@ class FPPDController extends Controller {
 	{
 		$sh = new Shell;
 		$status = $sh('if ps cax | grep -q fppd; then echo \"true\"; else echo \"false\"; fi');
-		return response()->json(['result' => $status]);
+		return response()->json(['reponse' => $status]);
 	}
 }
