@@ -5,9 +5,6 @@
 @section('header')
 @stop
 @section('content')
-	@section('settings.sidebar')
-		@include('settings.sidebar')
-	@show
 	
 	<div class="page-content email">
 		<header class="page-title">

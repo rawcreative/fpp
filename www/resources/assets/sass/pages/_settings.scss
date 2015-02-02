@@ -24,7 +24,7 @@
 	}
 
 	.page-content {
-		margin-left: 200px;
+	//	margin-left: 200px;
 		padding: 20px 30px;
 	}
 	.page-title {
@@ -73,7 +73,34 @@
 			margin-right: 0;
 		}
 	}
-	
+
+	.settings-section {
+		padding-bottom: 20px;
+		h3 {
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-size: 15px;
+			font-weight: 600;
+			color: #666;
+			margin-bottom: 15px;
+		}
+	}
+	@include with-layout(4 .1) {
+		@include breakpoint($desktop-min) {
+			.main {
+				@include container(100%);
+			}
+
+			.settings-section {
+				@include span(2);
+
+				&.dns-settings {
+					@include span(2 last);
+				}
+			}
+		}
+	}
+
 }
 
 

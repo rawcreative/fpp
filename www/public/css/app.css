@@ -6,13 +6,13 @@ div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, t
 
 /* Default Link Styles */
 a {
-  color: #00558b;
+  color: #788B94;
   text-decoration: none;
   line-height: inherit; }
   a[ui-sref] {
     cursor: pointer; }
   a:hover, a:focus {
-    color: #004978; }
+    color: #667881; }
   a img {
     border: none; }
 
@@ -96,7 +96,7 @@ small {
 code {
   font-family: Consolas, 'Liberation Mono', Courier, monospace;
   font-weight: normal;
-  color: #464646;
+  color: #868686;
   background-color: #f9f9f9;
   border-width: 1px;
   border-style: solid;
@@ -556,7 +556,7 @@ a {
   font-size: 0.9rem;
   display: inline-block;
   margin: 0 1rem 1rem 0;
-  background: #428bca;
+  background: #788B94;
   color: #fff; }
   .button .iconic {
     width: 1em;
@@ -565,7 +565,7 @@ a {
     margin-right: 0.25em;
     margin-top: -2px; }
   .button:hover, .button:focus {
-    background: #3277b2;
+    background: #65777f;
     color: #fff; }
   .button[data-popup-toggle]::after {
     border-top-color: #fff; }
@@ -688,27 +688,27 @@ a {
         fill: #fff;
         stroke: #fff; }
   .button.hollow {
-    border: 1px solid #428bca;
+    border: 1px solid #788B94;
     background: transparent;
-    color: #428bca; }
+    color: #788B94; }
     .button.hollow:hover, .button.hollow:focus {
-      border-color: #71a8d7;
+      border-color: #9aa8af;
       background: transparent;
-      color: #71a8d7; }
+      color: #9aa8af; }
     .button.hollow[data-popup-toggle]::after {
-      border-top-color: #428bca; }
+      border-top-color: #788B94; }
     .button.hollow .iconic * {
-      fill: #428bca;
-      stroke: #428bca; }
+      fill: #788B94;
+      stroke: #788B94; }
       .button.hollow .iconic *.iconic-property-accent {
-        fill: #428bca;
-        stroke: #428bca; }
+        fill: #788B94;
+        stroke: #788B94; }
     .button.hollow:hover .iconic * {
-      fill: #71a8d7;
-      stroke: #71a8d7; }
+      fill: #9aa8af;
+      stroke: #9aa8af; }
       .button.hollow:hover .iconic *.iconic-property-accent {
-        fill: #71a8d7;
-        stroke: #71a8d7; }
+        fill: #9aa8af;
+        stroke: #9aa8af; }
     .button.hollow.secondary {
       border: 1px solid #eaeaea;
       background: transparent;
@@ -1200,7 +1200,7 @@ input[type="range"] {
     outline: 0; }
   input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    background: #00558b;
+    background: #788B94;
     width: 1.5rem;
     height: 1.5rem; }
   input[type="range"]::-moz-range-track {
@@ -1211,7 +1211,7 @@ input[type="range"] {
     cursor: pointer; }
   input[type="range"]::-moz-range-thumb {
     -moz-appearance: none;
-    background: #00558b;
+    background: #788B94;
     width: 1.5rem;
     height: 1.5rem; }
   input[type="range"]::-ms-track {
@@ -1220,7 +1220,7 @@ input[type="range"] {
     background: #ccc;
     cursor: pointer; }
   input[type="range"]::-ms-thumb {
-    background: #00558b;
+    background: #788B94;
     width: 1.5rem;
     height: 1.5rem; }
 
@@ -1231,7 +1231,7 @@ output {
 
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
-  background: #428bca; }
+  background: #788B94; }
 
 progress, meter {
   -webkit-appearance: none;
@@ -1246,9 +1246,9 @@ progress, meter {
 progress::-webkit-progress-bar {
   background: #ccc; }
 progress::-webkit-progress-value {
-  background: #00558b; }
+  background: #788B94; }
 progress::-moz-progress-bar {
-  background: #00558b; }
+  background: #788B94; }
 progress.high::-webkit-progress-value {
   background: #43AC6A; }
 progress.high::-moz-progress-bar {
@@ -1273,7 +1273,7 @@ meter {
   meter::-webkit-meter-even-less-good-value {
     background: #F04124; }
   meter::-moz-meter-bar {
-    background: #428bca; }
+    background: #788B94; }
   meter:-moz-meter-optimum::-moz-meter-bar {
     background: #43AC6A; }
   meter:-moz-meter-sub-optimum::-moz-meter-bar {
@@ -1453,6 +1453,99 @@ meter {
       border-radius: 2px;
       color: #888;
       font-size: 13px; }
+.dashboard .player-status .panel-body {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px; }
+  .dashboard .player-status .panel-body:after {
+    content: " ";
+    display: block;
+    clear: both; }
+.dashboard .player-status .player-row {
+  clear: both;
+  margin-bottom: 10px; }
+.dashboard .player-status .player-header {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-flow: row-wrap;
+      -ms-flex-flow: row-wrap;
+          flex-flow: row-wrap;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .dashboard .player-status .player-header .label {
+    text-transform: uppercase;
+    color: #aaaaaa;
+    font-size: 13px;
+    letter-spacing: 1px; }
+  .dashboard .player-status .player-header .status {
+    -webkit-flex: 1 auto;
+        -ms-flex: 1 auto;
+            flex: 1 auto; }
+  .dashboard .player-status .player-header > .playlist {
+    -webkit-flex: 3 0px;
+        -ms-flex: 3 0px;
+            flex: 3 0px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row-wrap;
+        -ms-flex-flow: row-wrap;
+            flex-flow: row-wrap;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .dashboard .player-status .player-header > .playlist .label {
+      -webkit-flex: 0 auto;
+          -ms-flex: 0 auto;
+              flex: 0 auto;
+      padding: 0 5px 0 0; }
+    .dashboard .player-status .player-header > .playlist .playlist-select {
+      -webkit-flex: 3 0px;
+          -ms-flex: 3 0px;
+              flex: 3 0px; }
+      .dashboard .player-status .player-header > .playlist .playlist-select .playlist, .dashboard .player-status .player-header > .playlist .playlist-select .button {
+        display: inline-block; }
+      .dashboard .player-status .player-header > .playlist .playlist-select .playlist {
+        padding: .25rem;
+        border-radius: 2px;
+        border-color: #c4c4c4;
+        font-size: 13px;
+        width: 85%;
+        margin: 0; }
+      .dashboard .player-status .player-header > .playlist .playlist-select .button {
+        vertical-align: middle;
+        margin: 0; }
+.dashboard .player-status .player-buttons .button {
+  border-radius: 25px; }
+.dashboard .player-status .player-buttons .volume .icon {
+  font-size: 22px;
+  vertical-align: middle;
+  color: #788B94; }
+.dashboard .player-status .player-buttons .volume-input {
+  height: 5px;
+  display: inline-block;
+  width: 90%; }
+  .dashboard .player-status .player-buttons .volume-input::-webkit-slider-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 10px; }
+  .dashboard .player-status .player-buttons .volume-input::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 10px; }
+  .dashboard .player-status .player-buttons .volume-input::-ms-thumb-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 10px; }
 
 .content-wrapper.settings {
   background: #fafafa;
@@ -1471,7 +1564,6 @@ meter {
       margin: 0 0 15px;
       font-weight: 300; }
   .content-wrapper.settings .page-content {
-    margin-left: 200px;
     padding: 20px 30px; }
   .content-wrapper.settings .page-title {
     padding: 0 0 40px; }
@@ -1521,6 +1613,44 @@ meter {
     padding: 20px 0; }
     .content-wrapper.settings .form-actions .button {
       margin-right: 0; }
+  .content-wrapper.settings .settings-section {
+    padding-bottom: 20px; }
+    .content-wrapper.settings .settings-section h3 {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #666;
+      margin-bottom: 15px; }
+  @media  (min-width: 1281px) {
+    .content-wrapper.settings .main {
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto; }
+      .content-wrapper.settings .main:after {
+        content: " ";
+        display: block;
+        clear: both; }
+    .content-wrapper.settings .settings-section {
+      
+      
+      
+      width: 48.83721%;
+      float: left;
+      
+      margin-right: 2.32558%;
+      
+       }
+      .content-wrapper.settings .settings-section.dns-settings {
+        
+        
+        
+        width: 48.83721%;
+        float: right;
+        
+        margin-right: 0;
+        
+         } }
 
 /*!
   Ionicons, v2.0.0

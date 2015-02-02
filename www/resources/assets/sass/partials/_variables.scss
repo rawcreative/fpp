@@ -32,17 +32,6 @@
  $body-font-style: normal;
  $body-antialiased: true;
 
-// Application Colors
-// $primary-color: #00558b;
-// $secondary-color: #f1f1f1;
-// $alert-color: #F04124;
-// $info-color: #A0D3E8;
-// $success-color: #43AC6A;
-// $warning-color: #F08A24;
-// $dark-color: #232323;
-// $gray: #dfdfdf;
-// $gray-dark: darken($gray, 8);
-// $gray-light: lighten($gray, 8);
 
 // We use these to make sure border radius matches unless we want it different.
  $global-radius: 2px;
@@ -55,8 +44,10 @@
 ////////////////////////////
 // Color Set //
 ///////////////////////////
-$primary-color: #00558b;
+//$primary-color: #00558b;
+$primary-color: #788B94;
 $secondary-color: #eaeaea;
+
 $alert-color: #F04124;
 $info-color: #A0D3E8;
 $success-color: #43AC6A;

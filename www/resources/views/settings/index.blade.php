@@ -5,9 +5,6 @@
 @section('header')
 @stop
 @section('content')
-	@section('settings.sidebar')
-		@include('settings.sidebar')
-	@show
 	
 	<div class="page-content">
 		<header class="page-title">
@@ -63,10 +60,7 @@
 				<div class="field columns">
 					<div class="left"><span>Audio Output Device</span></div>
 					<div class="right">
-						
 							{!! Form::select('audio_device', $soundCards) !!}
-							
-						
 					</div>
 				</div>
 
