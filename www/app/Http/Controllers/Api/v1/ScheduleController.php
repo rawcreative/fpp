@@ -3,6 +3,7 @@
 use FPP\Http\Requests;
 use FPP\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
+use League\Csv\Reader;
 
 class ScheduleController extends Controller
 {
