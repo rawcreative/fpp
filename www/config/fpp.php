@@ -10,8 +10,6 @@ return [
 	|
 	*/
     'debug'     => false,
-
-
     /*
     |--------------------------------------------------------------------------
     | FPP Setting Directory
@@ -19,10 +17,19 @@ return [
     |
     |
     */
-    'settings'  => '/home/pi/media/settings',
+    'settings'  => [
+        'settings_file' => '/home/pi/media/settings',
+        'defaults'      => [
+            'fppdMode'               => 'player',
+            'alwaysTransmit'         => false,
+            'PiFaceDetected'         => false,
+            'FalconHardwareDetected' => false,
+            'restartFlag'            => false,
+            'E131Enabled'            => true,
+            'rebootFlag'             => false,
 
-
-
+        ]
+    ],
     /*
     |--------------------------------------------------------------------------
     | FPP Media Directories & files
@@ -31,7 +38,6 @@ return [
     |
     */
     'media'     => '/home/pi/media',
-
     'music'     => '/home/pi/media/music',
     'sequences' => '/home/pi/media/sequences',
     'playlists' => '/home/pi/media/playlists',
@@ -48,8 +54,6 @@ return [
     'remap'     => '/home/pi/media/channelremap',
     'exim'      => '/home/pi/media/exim4',
     'docs'      => fpp_dir() . '/docs',
-
-
     /*
     |--------------------------------------------------------------------------
     | FPP Email Settings
