@@ -52,6 +52,8 @@ Route::group(['prefix' => 'api'], function() {
 	get('/playlists', 'Api\v1\PlaylistController@getPlaylists');
 	get('/playlist/{playlist}', 'Api\v1\PlaylistController@getPlaylist');
 
+	get('/schedule', 'Api\v1\ScheduleController@getSchedule');
+
 });
 
 Event::listen('status.request', function($data) {

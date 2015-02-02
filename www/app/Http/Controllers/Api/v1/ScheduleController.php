@@ -2,81 +2,40 @@
 
 use FPP\Http\Requests;
 use FPP\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
-class ScheduleController extends Controller {
+class ScheduleController extends Controller
+{
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		//
-	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
+    public function getSchedule()
+    {
+        if (Storage::disk('pi')->exists("schedule")) {
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
+            $csv = Reader::createFromPath(config('fpp.schedule'));
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
+            $entries = $csv->fetchAssoc([
+                'enabled',
+                'playlist',
+                'startDay',
+                'startHour',
+                'startMinute',
+                'startSecond',
+                'endHour',
+                'endMinute',
+                'endSecond',
+                'repeat',
+                'startDate',
+                'endDate',
+            ]);
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
-
+            return response()->json([
+                'response' => [
+                    'schedule' => [
+                         'entries'    => $entries
+                    ]
+                ]
+            ]);
+        }
+    }
 }
