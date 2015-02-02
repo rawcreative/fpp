@@ -82,8 +82,19 @@ Just in case permissions are out of whack run:
 	sudo chown -R pi:pi /opt/fpp/www
 
 
+## Frameworks and packages
+
+The v2 build uses the Laravel PHP framework along with many open source packages to significantly speed up development time. For docs/help with Laravel or an individual package, visit their respective docs via the links below. List subject to change:
+    
+ - Laravel - [http://laravel.com/docs](Docs)
+ - BrainSocket - handles websockets [https://github.com/BrainBoxLabs/brain-socket](Github)
+ - CSV - CSV manipulation library [http://csv.thephpleague.com/](Docs)
+ - ShellWrap - Handy Shell wrapper for PHP [https://github.com/MrRio/shellwrap](Github)
+ - API - RESTful api library [https://github.com/dingo/api/wiki](Docs)
+
 
 ## Development
+
 
 The v2 build uses modern front-end development build tools and dependency managers to streamline the development workflow. The current tooling used is:
 
@@ -92,6 +103,8 @@ The v2 build uses modern front-end development build tools and dependency manage
  - Bower for front-end package management
  
 Since all of the production ready files are built using these tools, you will need to have them installed on your system to properly compile and build the project. The minimum requirement for this is having Node installed on your machine. Once you have node installed, installing the build tools is simple:
+
+**Note:** To keep things simple for the time being I have left the bower_components and node_modules directories in the repo instead of ignoring them. 
 
 To install the required build tools, on the command line navigate to the www/ directory and type:
 
