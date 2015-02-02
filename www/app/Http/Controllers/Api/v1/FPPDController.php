@@ -6,7 +6,8 @@ use FPP\Commands\StopFPPD;
 use FPP\Exceptions\FPPCommandException;
 use FPP\Http\Requests;
 use FPP\Http\Controllers\Controller;
-
+use FPP\Services\FPP;
+use MrRio\ShellWrap as Shell;
 use Illuminate\Foundation\Bus\DispatchesCommands;
 use Illuminate\Http\Request;
 
@@ -52,7 +53,9 @@ class FPPDController extends Controller {
 
 	public function getMode()
 	{
-		//return fppd mode
+		$fpp = app('FPP\Services\FPP');
+
+		return response()->json(['result' => ['mode' =>$fpp->getFPPDMode()]]);
 	}
 
 	public function setMode($mode)
@@ -63,6 +66,8 @@ class FPPDController extends Controller {
 
 	public function isRunning()
 	{
-		// return fppd status (boolean)
+		$sh = new Shell;
+		$status = $sh('if ps cax | grep -q fppd; then echo \"true\"; else echo \"false\"; fi');
+		return response()->json(['result' => $status]);
 	}
 }

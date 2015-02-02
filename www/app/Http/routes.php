@@ -47,6 +47,7 @@ Route::group(['prefix' => 'api'], function() {
 	get('/fppd/start', 'Api\v1\FPPDController@start');
 	get('/fppd/stop', 'Api\v1\FPPDController@stop');
 	get('/fppd/restart', 'Api\v1\FPPDController@restart');
+	get('/fppd/mode', 'Api\v1\FPPDController@getMode');
 
 });
 

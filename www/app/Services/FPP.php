@@ -106,7 +106,7 @@ class FPP
             if (Storage::exists(config('fpp.settings.settings_file'))) {
                 $raw = Storage::get(config('fpp.settings.settings_file'));
                 $settings = $this->parseSettings($raw);
-                Cache::put('fpp_settings', $settings);
+                Cache::put('fpp_settings', $settings, 5);
                 return $settings;
             }
             return config('fpp.settings.defaults');
