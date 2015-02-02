@@ -86,11 +86,11 @@ Just in case permissions are out of whack run:
 
 The v2 build uses the Laravel PHP framework along with many open source packages to significantly speed up development time. For docs/help with Laravel or an individual package, visit their respective docs via the links below. List subject to change:
     
- - Laravel - [http://laravel.com/docs](Docs)
- - BrainSocket - handles websockets [https://github.com/BrainBoxLabs/brain-socket](Github)
- - CSV - CSV manipulation library [http://csv.thephpleague.com/](Docs)
- - ShellWrap - Handy Shell wrapper for PHP [https://github.com/MrRio/shellwrap](Github)
- - API - RESTful api library [https://github.com/dingo/api/wiki](Docs)
+ - Laravel - [Docs](http://laravel.com/docs)
+ - BrainSocket - handles websockets [Github](https://github.com/BrainBoxLabs/brain-socket)
+ - CSV - CSV manipulation library [Docs](http://csv.thephpleague.com/)
+ - ShellWrap - Handy Shell wrapper for PHP [Github](https://github.com/MrRio/shellwrap)
+ - API - RESTful api library [Docs](https://github.com/dingo/api/wiki)
 
 
 ## Development
