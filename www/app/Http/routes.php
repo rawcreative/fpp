@@ -50,7 +50,7 @@ Route::group(['prefix' => 'api'], function() {
 	get('/fppd/mode', 'Api\v1\FPPDController@getMode');
 
 	get('/playlists', 'Api\v1\PlaylistController@getPlaylists');
-	get('/playlist/{$playlist}', 'Api\v1\PlaylistController@getPlaylist');
+	get('/playlist/{playlist}', 'Api\v1\PlaylistController@getPlaylist');
 
 });
 
