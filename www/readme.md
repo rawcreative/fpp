@@ -83,5 +83,31 @@ Just in case permissions are out of whack run:
 
 
 
+## Development
+
+The v2 build uses modern front-end development build tools and dependency managers to streamline the development workflow. The current tooling used is:
+
+ - Gulp for CSS and JS compilation, linting and building
+ - Sass for CSS preprocessing
+ - Bower for front-end package management
+ 
+Since all of the production ready files are built using these tools, you will need to have them installed on your system to properly compile and build the project. The minimum requirement for this is having Node installed on your machine. Once you have node installed, installing the build tools is simple:
+
+To install the required build tools, on the command line navigate to the www/ directory and type:
+
+    npm install
+
+
+If you do not have the bower package manager installed:
+    
+    npm install -g bower
+
+Once Bower is installed, install the dependencies:
+
+    bower install
+
+
+Run 'gulp watch' to start watching the filesystem for changes in .scss and .js files. Gulp will automatically compile, lint and concat the files and place them in the proper directories.
+
 
 .. more soon ..
