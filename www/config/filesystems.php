@@ -50,7 +50,7 @@ return [
 
 		'pi' => [
 			'driver' => 'local',
-			'root' => '/home/pi'
+			'root' => '/home/pi/media'
 		],
 
 		's3' => [

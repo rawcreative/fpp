@@ -49,6 +49,8 @@ Route::group(['prefix' => 'api'], function() {
 	get('/fppd/restart', 'Api\v1\FPPDController@restart');
 	get('/fppd/mode', 'Api\v1\FPPDController@getMode');
 
+	get('/playlists', 'Api\v1\PlaylistController@getPlaylists');
+
 });
 
 Event::listen('status.request', function($data) {

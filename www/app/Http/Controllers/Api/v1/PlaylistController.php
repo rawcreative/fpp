@@ -7,7 +7,11 @@ class PlaylistController extends Controller {
 
 	public function getPlaylists()
 	{
+		$playlists = array_filter(scandir(config('fpp.playlists')), function($file) {
+			return $file != '.' && $file != '..';
+		});
 
+		return response()->json(['response' => ['playlists'=>$playlists]]);
 	}
 
 	public function getPlaylist($id)
