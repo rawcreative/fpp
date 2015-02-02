@@ -5,78 +5,71 @@ use FPP\Http\Controllers\Controller;
 
 class PlaylistController extends Controller {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
+	public function getPlaylists()
 	{
-		//
+
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
+	public function getPlaylist($id)
 	{
-		//
+
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
+	public function createPlaylist()
 	{
-		//
+
 	}
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
+	public function updatePlaylist()
 	{
-		//
+
 	}
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
+	public function deletePlaylist($id)
 	{
-		//
+
 	}
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
+	public function addEntry($entry)
 	{
-		//
+
 	}
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
+	public function deleteEntry($id)
 	{
-		//
+
 	}
+
+	public function getPlaylistSettings($id)
+	{
+
+	}
+
+	public function getPlaylistEntries($id)
+	{
+
+	}
+
+	public function addFirstItem()
+	{
+
+	}
+
+	public function deleteFirstItem($id)
+	{
+
+	}
+
+	public function addLastItem()
+	{
+
+	}
+
+	public function deleteLastItem($id)
+	{
+
+	}
+
+
 
 }

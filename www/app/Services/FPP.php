@@ -3,12 +3,15 @@ namespace FPP\Services;
 
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use MrRio\ShellWrap as Shell;
 
 class FPP
 {
     private $command;
+
 
     function __construct(FPPCommand $command)
     {
@@ -67,5 +70,63 @@ class FPP
 
     }
 
+    public function getGitBranch()
+    {
 
+        $tag = Shell::git("branch --list | grep '\\*' | awk '{print \$2}'");
+
+        if(!$tag)
+            return 'Unknown';
+
+        return $tag;
+    }
+
+    public function getGitTag()
+    {
+
+        $tag = Shell::git('describe --tags');
+
+        if(!$tag)
+            return 'Unknown';
+
+        return $tag;
+    }
+
+
+    public function getFPPDMode()
+    {
+        $settings = $this->getSettings();
+
+        return $settings['fppdMode'];
+    }
+
+    public function getSettings()
+    {
+        if(!Cache::has('fpp_settings')) {
+            if (Storage::exists(config('fpp.settings.settings_file'))) {
+                $raw = Storage::get(config('fpp.settings.settings_file'));
+                $settings = $this->parseSettings($raw);
+                Cache::put('fpp_settings', $settings);
+                return $settings;
+            }
+            return config('fpp.settings.defaults');
+
+        }
+        return Cache::get('fpp_settings');
+
+    }
+
+    protected function parseSettings($data)
+    {
+        $parsed = [];
+        $rows = explode("\n", $data);
+
+        foreach($rows as $row) {
+
+            $rowData = explode('=', $row);
+            $parsed[trim($row[0])] = trim($row[1]);
+        }
+
+        return $parsed;
+    }
 }

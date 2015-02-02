@@ -50,4 +50,19 @@ class FPPDController extends Controller {
 	}
 
 
+	public function getMode()
+	{
+		//return fppd mode
+	}
+
+	public function setMode($mode)
+	{
+
+	}
+
+
+	public function isRunning()
+	{
+		// return fppd status (boolean)
+	}
 }
