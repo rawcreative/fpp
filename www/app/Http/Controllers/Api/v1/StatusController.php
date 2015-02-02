@@ -15,7 +15,7 @@ class StatusController extends Controller {
 	 */
 	public function index(FPP $fpp)
 	{
-		return response()->json($fpp->status());
+		return response()->json(['response' => $fpp->status()]);
 	}
 
 	/**
