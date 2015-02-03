@@ -20,7 +20,7 @@ The v2 interface uses Composer, which is a PHP package and dependency manager. Y
 
 To make it easy to switch between the v1 and v2 interfaces during development, install NGINX and PHP-fpm. This way we can simple stop apache and start nginx after changing branches, instead of having to manually edit the vhost files.
 
-    sudo apt-get install nginx php5-fpm php5-mcrypt
+    sudo apt-get install nginx php5-fpm php5-mcrypt php5-sqlite
 
 
 Once installed, replace the contents of /etc/nginx/sites-available/default with below:
