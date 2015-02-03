@@ -98,4 +98,15 @@ class FPPDController extends Controller {
 		$status = $sh('if ps cax | grep -q fppd; then echo \"true\"; else echo \"false\"; fi');
 		return response()->json(['reponse' => $status]);
 	}
+
+	/**
+	 * Returns FPP status
+	 *
+	 * @param FPP $fpp
+	 * @return \Symfony\Component\HttpFoundation\Response
+	 */
+	public function status(FPP $fpp)
+	{
+		return response()->json(['response' => $fpp->status()]);
+	}
 }

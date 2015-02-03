@@ -8,17 +8,23 @@ use Illuminate\Http\Request;
 class MediaController extends Controller
 {
 
+    /**
+     * Retrieve all music files from media dir
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function getMusicFiles()
     {
-//        $files = array_values(array_filter(scandir(config('fpp.music')), function ($file) {
-//            return $file != '.' && $file != '..';
-//        }));
-
         $files = $this->getFiles(config('fpp.music'));
 
         return response()->json(['response' => ['musicFiles' => $files]]);
     }
 
+    /**
+     * Retrieve all sequence files from media dir
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function getSequenceFiles()
     {
 
@@ -27,6 +33,11 @@ class MediaController extends Controller
         return response()->json(['response' => ['sequenceFiles' => $files]]);
     }
 
+    /**
+     * Retrieve all video files from /media/videos
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function getVideoFiles()
     {
         $files = $this->getFiles(config('fpp.videos'));
@@ -34,6 +45,11 @@ class MediaController extends Controller
         return response()->json(['response' => ['videoFiles' => $files]]);
     }
 
+    /**
+     * Retrieve all files from media dir
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function getAllFiles()
     {
         $files = $this->getFiles();
@@ -59,7 +75,7 @@ class MediaController extends Controller
             return $files;
         }
 
-       return array_values(array_filter(Storage::disk('pi')->allFiles('/'), function ($file) {
+        return array_values(array_filter(Storage::disk('pi')->allFiles('/'), function ($file) {
             return ($file[0] != ".");
         }));
 

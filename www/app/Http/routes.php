@@ -42,12 +42,12 @@ post('/settings/email',	 ['as' => 'settings.email.store',    'uses' => 'Settings
 
 Route::group(['prefix' => 'api'], function() {
 
-	get('/status', 'Api\v1\StatusController@index');
 
 	get('/fppd/start', 'Api\v1\FPPDController@start');
 	get('/fppd/stop', 'Api\v1\FPPDController@stop');
 	get('/fppd/restart', 'Api\v1\FPPDController@restart');
 	get('/fppd/mode', 'Api\v1\FPPDController@getMode');
+	get('/fppd/status', 'Api\v1\FPPDController@status');
 
 	get('/playlists', 'Api\v1\PlaylistController@getPlaylists');
 	get('/playlist/{playlist}', 'Api\v1\PlaylistController@getPlaylist');
