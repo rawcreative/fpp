@@ -18,7 +18,7 @@ The v2 interface uses Composer, which is a PHP package and dependency manager. Y
     curl -sS https://getcomposer.org/installer | php
 
 
-To make it easy to switch between the v1 and v2 interfaces during development, install NGINX and PHP-fpm. This way we can simple stop apache and start nginx after changing branches, instead of having to manually edit the vhost files.
+To make it easy to switch between the v1 and v2 interfaces during development, install NGINX and PHP-fpm. This way we can simple stop apache and start nginx after changing branches, instead of having to manually edit the vhost files. If you'd prefer to just keep apache for the time being, you'll need to change the DocumentRoot to /opt/fpp/www/public in /etc/apache2/sites-available/default so that the app is displayed properly
 
     sudo apt-get install nginx php5-fpm php5-mcrypt php5-sqlite
 
@@ -81,6 +81,29 @@ Just in case permissions are out of whack run:
 
 	sudo chown -R pi:pi /opt/fpp/www
 
+## API Endpoints - WIP
+
+Here's a list of the currently functional API endpoints. I haven't implemented any rate limiting, authentication or have any of the transformers in place yet so the actual response format might change for some of the endpoints, but it's fairly close. If you use Chrome, install the JSON-view extension (https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc) so you can more easily see a pretty-printed version of the JSON in the browser Or use the Postman chrome app: https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm for requests.
+
+
+    /api/fppd/start
+    /api/fppd/stop
+    /api/fppd/restart
+    /api/fppd/mode
+    /api/fppd/status
+    
+    /api/playlists
+    /api/playlist/{playlist}
+    
+    /api/schedule
+    
+    /api/files
+    /api/files/music
+    /api/files/video
+    /api/files/sequence
+    
+    /api/universes
+
 
 ## Frameworks and packages
 
@@ -98,9 +121,9 @@ The v2 build uses the Laravel PHP framework along with many open source packages
 
 The v2 build uses modern front-end development build tools and dependency managers to streamline the development workflow. The current tooling used is:
 
- - Gulp for CSS and JS compilation, linting and building
- - Sass for CSS preprocessing
- - Bower for front-end package management
+ - Gulp for CSS and JS compilation, linting and building [Gulp Website](http://gulpjs.com)
+ - Sass for CSS preprocessing [Sass Website](http://sass-lang.com)
+ - Bower for front-end package management [Bower Website](http://bower.io)
  
 Since all of the production ready files are built using these tools, you will need to have them installed on your system to properly compile and build the project. The minimum requirement for this is having Node installed on your machine. Once you have node installed, installing the build tools is simple:
 

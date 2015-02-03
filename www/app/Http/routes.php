@@ -11,14 +11,17 @@
 |
 */
 
-Route::get('/', ['as' => 'dashboard', 'uses' => 'DashboardController@index']);
-
-
-
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+
+/**
+ * UI Routes
+ */
+
+Route::get('/', ['as' => 'dashboard', 'uses' => 'DashboardController@index']);
 
 
 /**
@@ -36,7 +39,7 @@ post('/settings/email',	 ['as' => 'settings.email.store',    'uses' => 'Settings
 
 
 /**
- * API
+ * API Routes
  *
  */
 
@@ -63,6 +66,7 @@ Route::group(['namespace' => 'Api\v1', 'prefix' => 'api'], function() {
 
 });
 
+// Temporary
 Event::listen('status.request', function($data) {
 		
 		return \BrainSocket::message('status.request',[ 'status' => 'test' ] );
