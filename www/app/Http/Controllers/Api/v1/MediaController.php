@@ -19,7 +19,7 @@ class MediaController extends Controller
         return response()->json(['response' => ['musicFiles' => $files]]);
     }
 
-    public function getSequences()
+    public function getSequenceFiles()
     {
 
         $files = $this->getFiles(config('fpp.sequences'));
