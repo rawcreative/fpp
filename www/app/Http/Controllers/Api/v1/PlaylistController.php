@@ -8,6 +8,11 @@ use League\Csv\Reader;
 class PlaylistController extends Controller
 {
 
+    /**
+     * Returns playlists
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function getPlaylists()
     {
         $playlists = array_values(array_filter(scandir(config('fpp.playlists')), function ($file) {
@@ -17,6 +22,12 @@ class PlaylistController extends Controller
         return response()->json(['response' => ['playlists' => $playlists]]);
     }
 
+    /**
+     * Returns playlist detail
+     *
+     * @param $playlist
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function getPlaylist($playlist)
     {
         if (Storage::disk('pi')->exists("playlists/$playlist")) {

@@ -15,6 +15,11 @@ class FPPDController extends Controller {
 
 	use DispatchesCommands;
 
+	/**
+	 * Start FPPD
+	 *
+	 * @return \Symfony\Component\HttpFoundation\Response
+	 */
 	public function start()
 	{
 		try {
@@ -28,6 +33,11 @@ class FPPDController extends Controller {
 
 	}
 
+	/**
+	 * Stop FPPD
+	 *
+	 * @return \Symfony\Component\HttpFoundation\Response
+	 */
 	public function stop()
 	{
 		try {
@@ -39,6 +49,11 @@ class FPPDController extends Controller {
 		return response()->json(['response' => 'success']);
 	}
 
+	/**
+	 * Restart FPPD
+	 *
+	 * @return \Symfony\Component\HttpFoundation\Response
+	 */
 	public function restart()
 	{
 		try {
@@ -50,7 +65,11 @@ class FPPDController extends Controller {
 		return response()->json(['response' => 'success']);
 	}
 
-
+	/**
+	 * Returns FPPD mode
+	 *
+	 * @return \Symfony\Component\HttpFoundation\Response
+	 */
 	public function getMode()
 	{
 		$fpp = app('FPP\Services\FPP');
@@ -58,12 +77,21 @@ class FPPDController extends Controller {
 		return response()->json(['response' => ['mode' =>$fpp->getFPPDMode()]]);
 	}
 
+
+	/**
+	 * Set FPPD Mode
+	 * @param $mode
+	 */
 	public function setMode($mode)
 	{
 
 	}
 
-
+	/**
+	 * Return boolean
+	 *
+	 * @return \Symfony\Component\HttpFoundation\Response
+	 */
 	public function isRunning()
 	{
 		$sh = new Shell;

@@ -8,7 +8,11 @@ use League\Csv\Reader;
 class ScheduleController extends Controller
 {
 
-
+    /**
+     * Returns schedule entries
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function getSchedule()
     {
         if (Storage::disk('pi')->exists("schedule")) {

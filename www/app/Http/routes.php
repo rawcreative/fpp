@@ -54,6 +54,11 @@ Route::group(['prefix' => 'api'], function() {
 
 	get('/schedule', 'Api\v1\ScheduleController@getSchedule');
 
+	get('/files', 'Api\v1\MediaController@getAllFiles');
+	get('/files/music', 'Api\v1\MediaController@getMusicFiles');
+	get('/files/video', 'Api\v1\MediaController@getVideoFiles');
+	get('/files/sequence', 'Api\v1\MediaController@getSequenceFiles');
+
 });
 
 Event::listen('status.request', function($data) {
