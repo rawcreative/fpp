@@ -40,24 +40,24 @@ post('/settings/email',	 ['as' => 'settings.email.store',    'uses' => 'Settings
  *
  */
 
-Route::group(['prefix' => 'api'], function() {
+Route::group(['namespace' => 'Api\v1', 'prefix' => 'api'], function() {
 
 
-	get('/fppd/start', 'Api\v1\FPPDController@start');
-	get('/fppd/stop', 'Api\v1\FPPDController@stop');
-	get('/fppd/restart', 'Api\v1\FPPDController@restart');
-	get('/fppd/mode', 'Api\v1\FPPDController@getMode');
-	get('/fppd/status', 'Api\v1\FPPDController@status');
+	get('/fppd/start', 'FPPDController@start');
+	get('/fppd/stop', 'FPPDController@stop');
+	get('/fppd/restart', 'FPPDController@restart');
+	get('/fppd/mode', 'FPPDController@getMode');
+	get('/fppd/status', 'FPPDController@status');
 
-	get('/playlists', 'Api\v1\PlaylistController@getPlaylists');
-	get('/playlist/{playlist}', 'Api\v1\PlaylistController@getPlaylist');
+	get('/playlists', 'PlaylistController@getPlaylists');
+	get('/playlist/{playlist}', 'PlaylistController@getPlaylist');
 
-	get('/schedule', 'Api\v1\ScheduleController@getSchedule');
+	get('/schedule', 'ScheduleController@getSchedule');
 
-	get('/files', 'Api\v1\MediaController@getAllFiles');
-	get('/files/music', 'Api\v1\MediaController@getMusicFiles');
-	get('/files/video', 'Api\v1\MediaController@getVideoFiles');
-	get('/files/sequence', 'Api\v1\MediaController@getSequenceFiles');
+	get('/files', 'MediaController@getAllFiles');
+	get('/files/music', 'MediaController@getMusicFiles');
+	get('/files/video', 'MediaController@getVideoFiles');
+	get('/files/sequence', 'MediaController@getSequenceFiles');
 
 });
 

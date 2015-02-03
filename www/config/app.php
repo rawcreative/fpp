@@ -137,6 +137,7 @@ return [
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Html\HtmlServiceProvider',
 		'BrainSocket\BrainSocketServiceProvider',
+		//'Dingo\Api\Provider\ApiServiceProvider',
 		//'Way\Generators\GeneratorsServiceProvider',
 
 
@@ -198,6 +199,7 @@ return [
 		'Html' 		=> 'Illuminate\Html\HtmlFacade',
 		'BrainSocket'     => 'BrainSocket\BrainSocketFacade',
 		'Model'           => 'Jenssegers\Model\Model',
+		//'API' => 'Dingo\Api\Facade\API',
 
 	],
 
