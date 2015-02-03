@@ -13,12 +13,12 @@ class UniverseController extends Controller {
 	public function getUniverses()
 	{
 		if(!Cache::has('fpp_universes')) {
-			if (Storage::disk('pi')->exists("universes")) {
+
 				$csv       = Reader::createFromPath(config('fpp.universes'));
 				$entries   = $csv->fetchAssoc(['active', 'universe', 'startAddress', 'size', 'type', 'unicastAddress']);
 
 				Cache::put('fpp_universes', $entries, 60);
-			}
+
 		} else {
 			$entries = Cache::get('fpp_universes');
 		}
