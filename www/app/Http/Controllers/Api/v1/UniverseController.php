@@ -41,6 +41,11 @@ class UniverseController extends Controller
 
     }
 
+    public function addUniverse($payload)
+    {
+
+    }
+
     public function deleteUniverse($universe)
     {
 

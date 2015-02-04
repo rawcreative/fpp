@@ -103,6 +103,7 @@ Here's a list of the currently functional API endpoints. I haven't implemented a
     /api/files/sequence
     
     /api/universes
+    /api/universe/{universe#}  
 
 
 ## Frameworks and packages
