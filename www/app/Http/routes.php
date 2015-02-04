@@ -62,7 +62,7 @@ Route::group(['namespace' => 'Api\v1', 'prefix' => 'api'], function() {
 	get('/files/video', 'MediaController@getVideoFiles');
 	get('/files/sequence', 'MediaController@getSequenceFiles');
 
-	get('/universes', 'UniverseController@getUniverses');
+	get('/universes', 'UniverseController@universes');
 
 });
 
