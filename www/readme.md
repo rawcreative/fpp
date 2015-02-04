@@ -17,6 +17,11 @@ The v2 interface uses Composer, which is a PHP package and dependency manager. Y
     
     curl -sS https://getcomposer.org/installer | php
 
+To avoid having to type `php composer.phar` everytime you run composer, let's move it someplace where it's globally accessible:
+    
+    sudo mv ./composer.phar /usr/local/bin/composer
+    
+Now you can access composer anywhere just via `composer` 
 
 To make it easy to switch between the v1 and v2 interfaces during development, install NGINX and PHP-fpm. This way we can simple stop apache and start nginx after changing branches, instead of having to manually edit the vhost files. If you'd prefer to just keep apache for the time being, you'll need to change the DocumentRoot to /opt/fpp/www/public in /etc/apache2/sites-available/default so that the app is displayed properly
 
