@@ -27,7 +27,7 @@ class UniverseController extends Controller
     {
         $universes = collect($this->getUniverses());
 
-        $results = $universes->where('universe', $universe);
+        $results = $universes->where('universe', $universe)->first();
 
         if ( ! empty($results)) {
             return response()->json([
