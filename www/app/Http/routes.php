@@ -63,6 +63,7 @@ Route::group(['namespace' => 'Api\v1', 'prefix' => 'api'], function() {
 	get('/files/sequence', 'MediaController@getSequenceFiles');
 
 	get('/universes', 'UniverseController@universes');
+	get('/universe/{universe}', 'UniverseController@getUniverse');
 
 });
 
