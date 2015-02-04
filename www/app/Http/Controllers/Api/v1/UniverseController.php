@@ -8,38 +8,60 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
 use League\Csv\Reader;
 
-class UniverseController extends Controller {
+class UniverseController extends Controller
+{
 
-	public function getUniverses()
-	{
-		if(!Cache::has('fpp_universes')) {
+    public function universes()
+    {
+        $universes = $this->getUniverses();
 
-				$csv       = Reader::createFromPath(config('fpp.universes'));
-				$entries   = $csv->fetchAssoc(['active', 'universe', 'startAddress', 'size', 'type', 'unicastAddress']);
+        return response()->json([
+            'response' => [
+                'universes' => $universes
+            ]
+        ]);
 
-				Cache::put('fpp_universes', $entries, 60);
+    }
 
-		} else {
-			$entries = Cache::get('fpp_universes');
-		}
+    public function getUniverse($universe)
+    {
+        $universes = collect($this->getUniverses());
 
-		return response()->json([
-			'response' => [
-				'universes' => $entries
-			]
-		]);
+        $results = $universes->where('universe', $universe);
 
-	}
+        if ( ! empty($results)) {
+            return response()->json([
+                'response' => [
+                    'universe' => $results
+                ]
+            ]);
+        }
 
-	public function getUniverse($universe)
-	{
+        return reponse()->json(['error' => 'Universe not found']);
 
-	}
+    }
 
-	public function deleteUniverse($universe)
-	{
+    public function deleteUniverse($universe)
+    {
 
-	}
-	
+    }
+
+    protected function getUniverses()
+    {
+        $universes = [];
+        if ( ! Cache::has('fpp_universes')) {
+
+            $csv       = Reader::createFromPath(config('fpp.universes'));
+            $universes = $csv->fetchAssoc(['active', 'universe', 'startAddress', 'size', 'type', 'unicastAddress']);
+
+            Cache::put('fpp_universes', $universes, 60);
+
+        } else {
+            $universes = Cache::get('fpp_universes');
+        }
+
+        return $universes;
+    }
+
 
 }
