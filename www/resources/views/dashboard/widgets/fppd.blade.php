@@ -13,7 +13,7 @@
 		</div>			
 
 		<div class="widget text-center current-status">
-			<span class="widget-header">Status</span>
+			<span class="widget-header">Mode</span>
 			<span class="widget-icon"><i class="icon ion-record secondary"></i></span>
 			<span class="widget-text">Standalone</span>
 			<div class="widget-buttons">

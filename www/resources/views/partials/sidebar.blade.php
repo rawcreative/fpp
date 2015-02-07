@@ -26,19 +26,12 @@
         </div>
 
         <div class="menu-section">
-            <h4>Input/Output</h4>
-            <ul class="nav">
-                <li class="{{set_active('/')}}"> <a href="">Channel Outputs</a></li>
-                <li class="{{set_active('/')}}"> <a href="#">Overlay Models</a></li>
-            </ul>
-        </div>
-
-        <div class="menu-section">
             <h4>Settings</h4>
             <ul class="nav">
                 <li class="{{set_active('settings')}}"> <a href="{{route('settings')}}" >General</a></li>
                 <li class="{{set_active('settings/network')}}"> <a href="{{route('settings.network')}}">Network</a></li>
-                <li class="{{set_active('settings/email')}}"> <a href="{{route('settings.email')}}">Email</a></li>
+                <li class="{{set_active('/outputs')}}"> <a href="{{ route('outputs') }}">Channel Outputs</a></li>
+                <li class="{{set_active('/')}}"> <a href="#">Overlay Models</a></li>
                 <li class="{{set_active('settings/logs')}}"> <a href="{{route('settings.logs')}}">Logs</a></li>
             </ul>
         </div>

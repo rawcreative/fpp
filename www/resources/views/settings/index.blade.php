@@ -11,6 +11,8 @@
 			<h2>FPP General Settings</h2>
 		</header>
 		<div class="main">
+			<section>
+				<h3>Hardware Settings</h3>
 			{!! Form::open() !!}
 				
 				<div class="field columns">
@@ -65,12 +67,24 @@
 				</div>
 
 				<div class="form-actions">
-					{!! Form::submit('Save Settings', ['class' => 'button']) !!}
+					{!! Form::submit('Save All Settings', ['class' => 'button']) !!}
 
 				</div>
 					
 
 			{!! Form::close() !!}
+			</section>
+			<section>
+				<h3>Email Settings</h3>
+				{!! Form::open() !!}
+					<div class="form-actions">
+						{!! Form::submit('Save All Settings', ['class' => 'button']) !!}
+
+					</div>
+						
+
+				{!! Form::close() !!}
+			</section>
 		</div>		
 	</div>
 
