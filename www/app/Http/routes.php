@@ -23,6 +23,7 @@ Route::controllers([
 
 Route::get('/', ['as' => 'dashboard', 'uses' => 'DashboardController@index']);
 
+get('/io', ['as' => 'outputs', 'uses' => 'IO\ChannelController@index']);
 
 /**
  * Settings

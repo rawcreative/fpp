@@ -12,7 +12,7 @@ class ChannelController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		return view('io.index');
 	}
 
 	/**
