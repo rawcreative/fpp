@@ -112,16 +112,28 @@ Here's a list of the currently functional API endpoints. I haven't implemented a
     /api/universe/{universe#}  
 
 
-## Frameworks and packages
+## Frameworks, packages & libraries
 
 The v2 build uses the Laravel PHP framework along with many open source packages to significantly speed up development time. For docs/help with Laravel or an individual package, visit their respective docs via the links below. List subject to change:
-    
+
+### Back-end / PHP 
  - Laravel - [Docs](http://laravel.com/docs)
  - BrainSocket - handles websockets [Github](https://github.com/BrainBoxLabs/brain-socket)
  - CSV - CSV manipulation library [Docs](http://csv.thephpleague.com/)
  - ShellWrap - Handy Shell wrapper for PHP [Github](https://github.com/MrRio/shellwrap)
  - API - RESTful api library [Docs](https://github.com/dingo/api/wiki)
 
+### Front-end 
+
+ - jQuery (JS)
+ - Underscore (JS)
+ - Foundation framework (Sass/CSS, JS)
+ - Susy grid framework (Sass/CSS)
+ - Breakpoint (Sass/CSS)
+ - React (JS)
+ - Reflux (JS, Modified Flux architecture for React)
+
+**Note:** Aside from jQuery & Underscore, any/all of the JS frameworks/libraries may potentially change. As of now I'm simply experimenting with various options to see what might work best, but am leaning towards using React/Reflux for things like the Dashboard/Status page, Playlist and Scheduler because of the complexity of those pages. 
 
 ## Development
 
