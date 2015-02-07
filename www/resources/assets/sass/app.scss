@@ -27,9 +27,10 @@
 
 
 // Pages
-
+@import "pages/common";
 @import "pages/dashboard";
 @import "pages/settings";
+@import "pages/outputs";
 
 // Icons
 @import "vendor/ionicons.scss";

@@ -183,7 +183,7 @@ $button-gradient: linear-gradient(to bottom, #f8f8f8, #eaeaea 100%);
     &.secondary { @include button-style($secondary-color) }
     &.success   { @include button-style($success-color) }
     &.warning   { @include button-style($warning-color) }
-    &.alert     { @include button-style($alert-color) }
+    &.alert     { @include button-style($danger-color) }
     &.info      { @include button-style($info-color) }
     &.dark      { @include button-style($dark-color) }
     
@@ -192,7 +192,7 @@ $button-gradient: linear-gradient(to bottom, #f8f8f8, #eaeaea 100%);
         &.secondary { @include button-style($secondary-color, $style: hollow); }
         &.success   { @include button-style($success-color, $style: hollow); }
         &.warning   { @include button-style($warning-color, $style: hollow); }
-        &.alert     { @include button-style($alert-color, $style: hollow); }
+        &.alert     { @include button-style($danger-color, $style: hollow); }
         &.info      { @include button-style($info-color, $style: hollow); }
         &.dark      { @include button-style($dark-color, $style: hollow); }
       }

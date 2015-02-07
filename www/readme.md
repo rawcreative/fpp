@@ -72,8 +72,9 @@ Next, open /etc/php5/fpm/pool.d/www.conf and change the user and group to:
 Next, stop apache and start Nginx & php-fpm:
 
 	sudo service apache2 stop
-	sudo service nginx start
 	sudo service php5-fpm start
+	sudo service nginx start
+	
 
 Once those are running, we now have to install the app dependencies:
 

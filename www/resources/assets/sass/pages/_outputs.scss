@@ -1,0 +1,63 @@
+.content-wrapper.outputs {
+	
+	
+}
+
+.universe-list {
+	max-width: 700px;
+	margin: 0 auto;
+
+	.universe {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 5px 0;
+		
+		&-index {
+			width: 24px;
+			text-align: center;
+		}
+		&-active {
+			width: 50px;
+			text-align: center;
+		}
+		&-number {
+			width: 65px;
+		}
+		&-start {
+			width: 100px;
+		}
+		&-size {
+			width: 80px;
+		}
+		&-type {
+			flex: 2 auto;
+		}
+		&-address {
+			flex: 2 auto;
+		}
+		.button {
+			margin: 0;
+			font-size: 15px;
+			padding: 5px 10px;
+			border: none;
+		}
+
+		&.header-row {
+			text-transform: uppercase;
+			font-size: 12px;
+			font-weight: 600;
+			text-align: center;
+			border-bottom: 1px solid mix($primary-color, white, 60%);
+			margin-bottom: 5px;
+
+		}
+	}
+	.cell {
+		padding: 0 5px;
+	}
+	
+	input, select {
+		margin: 0;
+	}
+}
