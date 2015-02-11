@@ -3,10 +3,12 @@ namespace FPP\Services;
 
 
 use Carbon\Carbon;
+use FPP\Exceptions\FPPCommandException;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use MrRio\ShellWrap as Shell;
+use Socket\Raw\Exception;
 
 class FPP
 {
@@ -20,13 +22,20 @@ class FPP
 
     public function status()
     {
-        $status = $this->getStatus();
+        try {
+            $status = $this->getStatus();
 
-        return $this->parseStatus($status);
+            return $this->parseStatus($status);
+        } catch(Exception $e) {
+            return ['fppd' => 'stopped'];
+        }
+
+
     }
 
     protected function getStatus()
     {
+
         return $this->command->send('s');
     }
 
@@ -36,6 +45,7 @@ class FPP
         $status = explode(',', $status);
         $time   = Carbon::now();
         $data   = [
+            'fppd'        => 'running',
             'mode'        => $status[0],
             'status'      => $status[1],
             'volume'      => $status[2],
