@@ -21,9 +21,9 @@ class StopFPPD extends Command implements SelfHandling {
 	{
 		$command->send('d');
 		$scripts = fpp_dir().'/scripts';
-		$sh = new Shell;
+
 		try {
-			$sh::sudo("$scripts/fppd_stop");
+			Shell::sudo("$scripts/fppd_stop");
 
 		} catch (ShellWrapException $e) {
 			throw new FPPCommandException('Exception executing fppd_stop');
