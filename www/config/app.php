@@ -201,6 +201,7 @@ return [
 		'BrainSocket'     => 'BrainSocket\BrainSocketFacade',
 		'Model'           => 'Jenssegers\Model\Model',
 		'Debugbar' => 'Barryvdh\Debugbar\Facade',
+		'Pi'	=> 'FPP\Facades\Pi',
 		//'API' => 'Dingo\Api\Facade\API',
 
 	],
