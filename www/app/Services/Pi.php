@@ -27,15 +27,15 @@ class Pi {
 
     public function getTimezone()
     {
-        if(!Cache::has('timezone')) {
+
             if (Storage::disk('pi')->exists('timezone')) {
                 $timezone = Storage::disk('pi')->get('timezone');
 
-                Cache::put('timezone', $timezone);
+
                 return $timezone;
             }
             return Carbon::now()->timezoneName;
-        }
-        return Cache::get('timezone');
+
+
     }
 }
