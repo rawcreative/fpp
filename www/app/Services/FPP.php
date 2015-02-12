@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use MrRio\ShellWrap as Shell;
+use Pi;
 use Socket\Raw\Exception;
 
 class FPP
@@ -43,7 +44,7 @@ class FPP
     {
 
         $status = explode(',', $status);
-        $time   = Carbon::now();
+        $time   = Carbon::now(Pi::getTimezone());
         $data   = [
             'fppd'        => 'running',
             'mode'        => $status[0],

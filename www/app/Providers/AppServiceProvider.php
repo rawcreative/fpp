@@ -29,6 +29,11 @@ class AppServiceProvider extends ServiceProvider {
 			'Illuminate\Contracts\Auth\Registrar',
 			'FPP\Services\Registrar'
 		);
+
+		$this->app->bind('pi', function ($app) {
+
+			return new \FPP\Services\Pi;
+		});
 	}
 
 }
