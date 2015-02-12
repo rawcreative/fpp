@@ -29,9 +29,7 @@ class Pi {
     {
 
             if (Storage::disk('pi')->exists('timezone')) {
-                $timezone = Storage::disk('pi')->get('timezone');
-
-
+                $timezone = trim(Storage::disk('pi')->get('timezone'));
                 return $timezone;
             }
             return Carbon::now()->timezoneName;
