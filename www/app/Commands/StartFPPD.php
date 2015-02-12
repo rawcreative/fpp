@@ -19,7 +19,7 @@ class StartFPPD extends Command implements SelfHandling {
 	{
 		$scripts = fpp_dir().'/scripts';
 
-		$status = exec('if ps cax | grep -q fppd; then echo \"true\"; else echo \"false\"; fi');
+		$status = exec("if ps cax | grep -q fppd; then echo \"true\"; else echo \"false\"; fi");
 		if( $status == 'false') {
 			try {
 				Shell::sudo("$scripts/fppd_start");
