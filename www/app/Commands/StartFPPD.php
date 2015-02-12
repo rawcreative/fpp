@@ -19,10 +19,10 @@ class StartFPPD extends Command implements SelfHandling {
 	{
 		$scripts = fpp_dir().'/scripts';
 
-		$sh = new Shell;
-		if($sh('if ps cax | grep -q fppd; then echo \"true\"; else echo \"false\"; fi') == 'false') {
+
+		if(exec('if ps cax | grep -q fppd; then echo \"true\"; else echo \"false\"; fi') == 'false') {
 			try {
-				$sh("sudo $scripts/fppd_start");
+				Shell::sudo("$scripts/fppd_start");
 			} catch (ShellWrapException $e) {
 				throw new FPPCommandException('Exception executing fppd_start');
 			}
