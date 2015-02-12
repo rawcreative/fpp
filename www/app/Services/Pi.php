@@ -28,8 +28,8 @@ class Pi {
     public function getTimezone()
     {
         if(!Cache::has('timezone')) {
-            if (Storage::exists(config('fpp.media').'/timezone')) {
-                $timezone = Storage::get(config('fpp.media').'/timezone');
+            if (Storage::disk('pi')->exists(config('fpp.media').'/timezone')) {
+                $timezone = Storage::disk('pi')->get(config('fpp.media').'/timezone');
 
                 Cache::put('timezone', $timezone);
                 return $timezone;
