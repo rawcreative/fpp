@@ -4,6 +4,7 @@ namespace FPP\Services;
 
 use Carbon\Carbon;
 use FPP\Exceptions\FPPCommandException;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
@@ -14,11 +15,18 @@ use Socket\Raw\Exception;
 class FPP
 {
     private $command;
-
+    private $modes;
 
     function __construct(FPPCommand $command)
     {
         $this->command = $command;
+        $this->modes = new Collection([
+            '0' => 'unknown',
+            '1' => 'bridge',
+            '2' => 'player',
+            '6' => 'master',
+            '8' => 'remote'
+        ]);
     }
 
     public function status()
@@ -42,14 +50,16 @@ class FPP
 
     protected function parseStatus($status)
     {
+        // date format: D M d H:i:s T Y
 
         $status = explode(',', $status);
-        $time   = Carbon::now(Pi::getTimezone());
+        $time   = Carbon::now(Pi::getTimezone())->format('D M d H:i:s T Y');
+
         $data   = [
             'fppd'        => 'running',
-            'mode'        => $status[0],
-            'status'      => $status[1],
-            'volume'      => $status[2],
+            'mode'        => $this->parseFPPDMode($status[0]),
+            'status'      => (int)$status[1],
+            'volume'      => (int)$status[2],
             'playlist'    => $status[3],
             'currentDate' => $time,
             'repeatMode'  => 0
@@ -111,6 +121,12 @@ class FPP
         return $settings['fppdMode'];
     }
 
+
+    public function parseFPPDMode($mode)
+    {
+       return $this->modes->get($mode, 'player');
+    }
+
     public function getSettings()
     {
         if(!Cache::has('fpp_settings')) {
@@ -140,4 +156,6 @@ class FPP
 
         return $parsed;
     }
+
+
 }
