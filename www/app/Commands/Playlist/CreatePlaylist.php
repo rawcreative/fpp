@@ -1,4 +1,4 @@
-<?php namespace FPP\Commands;
+<?php namespace FPP\Commands\Playlist;
 
 use FPP\Commands\Command;
 

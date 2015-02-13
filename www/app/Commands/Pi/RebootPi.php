@@ -1,10 +1,10 @@
-<?php namespace FPP\Commands;
+<?php namespace FPP\Commands\Pi;
 
 use FPP\Commands\Command;
 
 use Illuminate\Contracts\Bus\SelfHandling;
 
-class AddE131Universe extends Command implements SelfHandling {
+class RebootPi extends Command implements SelfHandling {
 
 	/**
 	 * Create a new command instance.

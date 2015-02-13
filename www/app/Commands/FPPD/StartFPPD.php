@@ -1,4 +1,4 @@
-<?php namespace FPP\Commands;
+<?php namespace FPP\Commands\FPPD;
 
 use FPP\Commands\Command;
 

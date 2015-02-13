@@ -4,7 +4,7 @@ use FPP\Commands\Command;
 
 use Illuminate\Contracts\Bus\SelfHandling;
 
-class AddPixelnetOutput extends Command implements SelfHandling {
+class SaveFPDv1 extends Command implements SelfHandling {
 
 	/**
 	 * Create a new command instance.
