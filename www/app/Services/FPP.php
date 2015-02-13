@@ -91,28 +91,11 @@ class FPP
 
     }
 
-    public function getGitBranch()
+    public function isFPPDRunning()
     {
-
-        $tag = Shell::git("branch --list | grep '\\*' | awk '{print \$2}'");
-
-        if(!$tag)
-            return 'Unknown';
-
-        return $tag;
+        $status = exec("if ps cax | grep -q fppd; then echo \"true\"; else echo \"false\"; fi");
+        return ($status === 'true');
     }
-
-    public function getGitTag()
-    {
-
-        $tag = Shell::git('describe --tags');
-
-        if(!$tag)
-            return 'Unknown';
-
-        return $tag;
-    }
-
 
     public function getFPPDMode()
     {
@@ -126,6 +109,7 @@ class FPP
     {
        return $this->modes->get($mode, 'player');
     }
+
 
     public function getSettings()
     {
