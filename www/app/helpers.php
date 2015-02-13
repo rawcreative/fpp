@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Returns the path to the fpp directory
+ */
 if ( ! function_exists('fpp_dir')) {
     function fpp_dir()
     {
@@ -9,7 +12,6 @@ if ( ! function_exists('fpp_dir')) {
 
 
 if ( ! function_exists('fpp_media')) {
-
     function fpp_media($directory = false)
     {
         $conf = 'fpp.media';

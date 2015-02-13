@@ -14,8 +14,9 @@ class SettingsController extends Controller {
 	public function index(FPP $fpp)
 	{
 		$soundCards = $fpp->getSoundCards();
+		$settings = $fpp->getSettings();
 
-		return view('settings.index', compact('soundCards'));
+		return view('settings.index', compact('soundCards', 'settings'));
 	}
 
 	public function showNetwork()

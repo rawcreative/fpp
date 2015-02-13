@@ -4,6 +4,7 @@ namespace FPP\Services;
 
 use Carbon\Carbon;
 use FPP\Exceptions\FPPCommandException;
+use FPP\Exceptions\FPPSettingsException;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
@@ -20,7 +21,7 @@ class FPP
     function __construct(FPPCommand $command)
     {
         $this->command = $command;
-        $this->modes = new Collection([
+        $this->modes   = new Collection([
             '0' => 'unknown',
             '1' => 'bridge',
             '2' => 'player',
@@ -35,7 +36,7 @@ class FPP
             $status = $this->getStatus();
 
             return $this->parseStatus($status);
-        } catch(Exception $e) {
+        } catch (Exception $e) {
             return ['fppd' => 'stopped'];
         }
 
@@ -55,7 +56,7 @@ class FPP
         $status = explode(',', $status);
         $time   = Carbon::now(Pi::getTimezone())->format('D M d H:i:s T Y');
 
-        $data   = [
+        $data = [
             'fppd'        => 'running',
             'mode'        => $this->parseFPPDMode($status[0]),
             'status'      => (int)$status[1],
@@ -77,13 +78,15 @@ class FPP
     public function getSoundCards()
     {
         $cardArr = [];
-        exec("for card in /proc/asound/card*/id; do echo -n \$card | sed 's/.*card\\([0-9]*\\).*/\\1:/g'; cat \$card; done", $output, $return_val);
+        exec("for card in /proc/asound/card*/id; do echo -n \$card | sed 's/.*card\\([0-9]*\\).*/\\1:/g'; cat \$card; done",
+            $output, $return_val);
 
-        if(!$return_val)
+        if ( ! $return_val) {
             Log::error('Error getting alsa cards for output!');
+        }
 
-        foreach($output as $card) {
-            $card = explode(':', $card);
+        foreach ($output as $card) {
+            $card              = explode(':', $card);
             $cardArr[$card[0]] = $card[1];
         }
 
@@ -107,34 +110,57 @@ class FPP
 
     public function parseFPPDMode($mode)
     {
-       return $this->modes->get($mode, 'player');
+        return $this->modes->get($mode, 'player');
     }
 
-
+    /**
+     * Retrieve all settings in the fpp settings file in array format
+     *
+     * @return array|mixed
+     */
     public function getSettings()
     {
-        if(!Cache::has('fpp_settings')) {
-            if (Storage::exists(config('fpp.settings.settings_file'))) {
-                $raw = Storage::get(config('fpp.settings.settings_file'));
-                $settings = $this->parseSettings($raw);
-                Cache::put('fpp_settings', $settings, 5);
-                return $settings;
-            }
-            return config('fpp.settings.defaults');
 
+        if (Storage::disk('pi')->exists('settings')) {
+            $raw      = Storage::disk('pi')->get('settings');
+//            $settings = $this->parseSettings($raw);
+            $settings = parse_ini_string($raw);
+            return $settings;
         }
-        return Cache::get('fpp_settings');
+        return config('fpp.settings.defaults');
+
 
     }
 
+    /**
+     * Retrieve specified setting from fpp settings file
+     *
+     * @param $setting
+     * @return mixed
+     */
+    public function getSetting($setting)
+    {
+        $settings = collect($this->getSettings());
+
+        return $settings->get($setting, function() {
+            throw new FPPSettingsException('FPP Setting Not Found!');
+        });
+    }
+
+    /**
+     * Internal method to parse raw settings file data
+     *
+     * @param $data
+     * @return array
+     */
     protected function parseSettings($data)
     {
         $parsed = [];
-        $rows = explode("\n", $data);
+        $rows   = explode("\n", $data);
 
-        foreach($rows as $row) {
+        foreach ($rows as $row) {
 
-            $rowData = explode('=', $row);
+            $rowData               = explode('=', $row);
             $parsed[trim($row[0])] = trim($row[1]);
         }
 

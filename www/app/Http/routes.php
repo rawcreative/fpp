@@ -25,6 +25,8 @@ Route::get('/', ['as' => 'dashboard', 'uses' => 'DashboardController@index']);
 
 get('/io', ['as' => 'outputs', 'uses' => 'IO\ChannelController@index']);
 
+get('/schedule', ['as' => 'schedule', 'uses' => 'Content\ScheduleController@index']);
+
 /**
  * Settings
  */
@@ -52,6 +54,7 @@ Route::group(['namespace' => 'Api\v1', 'prefix' => 'api'], function() {
 	get('/fppd/restart', 'FPPDController@restart');
 	get('/fppd/mode', 'FPPDController@getMode');
 	get('/fppd/status', 'FPPDController@status');
+	get('/fppd/fstatus', 'FPPDController@fstatus');
 
 	get('/playlists', 'PlaylistController@getPlaylists');
 	get('/playlist/{playlist}', 'PlaylistController@getPlaylist');
@@ -65,6 +68,10 @@ Route::group(['namespace' => 'Api\v1', 'prefix' => 'api'], function() {
 
 	get('/universes', 'UniverseController@universes');
 	get('/universe/{universe}', 'UniverseController@getUniverse');
+
+	get('/settings', 'SettingController@getAllSettings');
+	get('/setting/{setting}', 'SettingController@getSetting');
+	put('/setting/{setting}', 'SettingController@update');
 
 });
 
