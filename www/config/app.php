@@ -202,6 +202,7 @@ return [
 		'Model'           => 'Jenssegers\Model\Model',
 		'Debugbar' => 'Barryvdh\Debugbar\Facade',
 		'Pi'	=> 'FPP\Facades\Pi',
+		'FPP'	=> 'FPP\Facades\FPP',
 		//'API' => 'Dingo\Api\Facade\API',
 
 	],

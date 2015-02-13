@@ -34,6 +34,11 @@ class AppServiceProvider extends ServiceProvider {
 
 			return new \FPP\Services\Pi;
 		});
+
+		$this->app->bind('fpp', function ($app) {
+
+			return $app->make('\FPP\Services\FPP');
+		});
 	}
 
 }
