@@ -1,9 +1,9 @@
 <?php namespace FPP\Http\Controllers\Api\v1;
 
 use Carbon\Carbon;
-use FPP\Commands\RestartFPPD;
-use FPP\Commands\StartFPPD;
-use FPP\Commands\StopFPPD;
+use FPP\Commands\FPPD\RestartFPPD;
+use FPP\Commands\FPPD\StartFPPD;
+use FPP\Commands\FPPD\StopFPPD;
 use FPP\Exceptions\FPPCommandException;
 use FPP\Http\Requests;
 use FPP\Http\Controllers\Controller;
@@ -127,7 +127,8 @@ class FPPDController extends Controller {
 	public function fstatus()
 	{
 		$status = [
-			'mode' => 2,
+			'fppd' => 'running',
+			'mode' => 'standalone',
 			'status' => 0,
 			'volume' => 0,
 			'playlist' => 'No playlist scheduled.',
