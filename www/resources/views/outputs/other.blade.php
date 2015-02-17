@@ -19,9 +19,7 @@
 						<span class="universe-start">Start</span>
 						<span class="universe-size">Count</span>
 						<span class="universe-config">Output Config</span>
-						
 					</div>
-					
 				</div>
 			</div>
 		</div>		

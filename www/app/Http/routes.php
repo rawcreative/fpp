@@ -21,7 +21,7 @@ Route::controllers([
  * UI Routes
  */
 
-Route::get('/', ['as' => 'dashboard', 'uses' => 'DashboardController@index']);
+get('/', ['as' => 'dashboard', 'uses' => 'DashboardController@index']);
 
 get('/schedule', ['as' => 'schedule', 'uses' => 'Content\ScheduleController@index']);
 
@@ -29,9 +29,12 @@ get('/schedule', ['as' => 'schedule', 'uses' => 'Content\ScheduleController@inde
 /**
  * Outputs
  */
+
 get('/outputs', ['as' => 'outputs', 'uses' => 'IO\E131Controller@index']);
 get('/outputs/pixelnet', ['as' => 'outputs.pixelnet', 'uses' => 'IO\PixelnetController@index']);
 get('/outputs/other', ['as' => 'outputs.other', 'uses' => 'IO\ChannelController@index']);
+
+
 /**
  * Settings
  */
