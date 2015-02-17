@@ -24,6 +24,19 @@ if ( ! function_exists('fpp_media')) {
     }
 }
 
+if ( ! function_exists('fpp_config')) {
+    function fpp_config($config)
+    {
+
+        if (env('APP_DEV')) {
+            return storage_path().getenv('FPP_'.strtoupper($config));
+        }
+
+        return config('fpp.'.$config);
+    }
+}
+
+
 if ( ! function_exists('set_active')) {
 
     function set_active($path, $active = 'active')

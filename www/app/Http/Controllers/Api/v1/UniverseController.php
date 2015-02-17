@@ -3,6 +3,7 @@
 use FPP\Http\Requests;
 use FPP\Http\Controllers\Controller;
 
+use FPP\Services\Outputs\E131;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
@@ -10,10 +11,16 @@ use League\Csv\Reader;
 
 class UniverseController extends Controller
 {
+    public $e131;
+
+    public function __construct(E131 $e131)
+    {
+        $this->e131 = $e131;
+    }
 
     public function universes()
     {
-        $universes = $this->getUniverses();
+        $universes = $this->e131->getUniverses();
 
         return response()->json([
             'response' => [
@@ -25,9 +32,8 @@ class UniverseController extends Controller
 
     public function getUniverse($universe)
     {
-        $universes = collect($this->getUniverses());
 
-        $results = $universes->where('universe', $universe)->first();
+        $results = $this->e131->getUniverse($universe);
 
         if ( ! empty($results)) {
             return response()->json([
@@ -51,22 +57,6 @@ class UniverseController extends Controller
 
     }
 
-    protected function getUniverses()
-    {
-        $universes = [];
-        if ( ! Cache::has('fpp_universes')) {
-
-            $csv       = Reader::createFromPath(config('fpp.universes'));
-            $universes = $csv->fetchAssoc(['active', 'universe', 'startAddress', 'size', 'type', 'unicastAddress']);
-
-            Cache::put('fpp_universes', $universes, 60);
-
-        } else {
-            $universes = Cache::get('fpp_universes');
-        }
-
-        return $universes;
-    }
 
 
 }

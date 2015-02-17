@@ -3,7 +3,17 @@
 use FPP\Http\Requests;
 use FPP\Http\Controllers\Controller;
 
-class ChannelController extends Controller {
+use FPP\Services\Outputs\E131;
+use Illuminate\Http\Request;
+
+class E131Controller extends Controller {
+
+	public $e131;
+
+	public function __construct(E131 $e131)
+	{
+		$this->e131 = $e131;
+	}
 
 	/**
 	 * Display a listing of the resource.
@@ -12,7 +22,8 @@ class ChannelController extends Controller {
 	 */
 	public function index()
 	{
-		return view('outputs.other');
+		$universes = $this->e131->getUniverses();
+		return view('outputs.index', compact('universes'));
 	}
 
 	/**

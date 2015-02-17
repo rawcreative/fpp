@@ -1878,18 +1878,29 @@ meter {
     top: 0;
     left: 0;
     bottom: 0;
-    width: 200px;
+    width: 155px;
     padding: 20px;
     background: #f4f4f4;
-    border-right: 1px solid #e7e7e7; }
+    border-right: 1px solid #e7e7e7;
+    transition: width 0.35s; }
     .content-wrapper.settings .settings-sidebar h2 {
       margin: 0 0 15px;
       font-weight: 300; }
+    @media  (min-width: 1281px) {
+      .content-wrapper.settings .settings-sidebar {
+        width: 200px; } }
   .content-wrapper.settings .page-content {
-    margin-left: 200px;
-    padding: 20px 30px; }
+    margin-left: 0;
+    padding: 20px 30px;
+    transition: margin 0.35s; }
     .content-wrapper.settings .page-content.network {
       margin-left: 0; }
+    @media  (min-width: 769px) {
+      .content-wrapper.settings .page-content {
+        margin-left: 155px; } }
+    @media  (min-width: 1281px) {
+      .content-wrapper.settings .page-content {
+        margin-left: 200px; } }
   .content-wrapper.settings .page-title {
     padding: 0 0 40px; }
     .content-wrapper.settings .page-title h2 {
@@ -1992,9 +2003,11 @@ meter {
         
          } }
 
+.content-wrapper.outputs .main {
+  padding: 0 0 40px; }
+
 .universe-list {
-  max-width: 700px;
-  margin: 0 auto; }
+  max-width: 800px; }
   .universe-list .universe {
     display: -webkit-flex;
     display: -ms-flexbox;

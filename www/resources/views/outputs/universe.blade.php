@@ -4,13 +4,13 @@
 		{!! Form::checkbox('active', '1', $universe->active) !!}
 	</div>
 	<div class="cell universe-number">
-		{!! Form::number('universe_number', $universe->universe) !!}
+		{!! Form::text('universe_number', $universe->universe) !!}
 	</div>
 	<div class="cell universe-start">
-		{!! Form::number('universe_start', $universe->startAddress) !!}
+		{!! Form::text('universe_start', $universe->startAddress) !!}
 	</div>
 	<div class="cell universe-size">
-		{!! Form::number('universe_size', $universe->size) !!}
+		{!! Form::text('universe_size', $universe->size) !!}
 	</div>
 	<div class="cell universe-type">
 		{!! Form::select('universe_type', [

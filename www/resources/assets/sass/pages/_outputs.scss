@@ -1,11 +1,13 @@
 .content-wrapper.outputs {
 	
-	
+	.main {
+		padding: 0 0 40px;
+	}
 }
 
 .universe-list {
-	max-width: 700px;
-	margin: 0 auto;
+	max-width: 800px;
+	//margin: 0 auto;
 
 	.universe {
 		display: flex;

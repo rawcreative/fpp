@@ -3,7 +3,9 @@
 use FPP\Http\Requests;
 use FPP\Http\Controllers\Controller;
 
-class ChannelController extends Controller {
+use Illuminate\Http\Request;
+
+class PixelnetController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -12,7 +14,7 @@ class ChannelController extends Controller {
 	 */
 	public function index()
 	{
-		return view('outputs.other');
+		return view('outputs.pixelnet');
 	}
 
 	/**

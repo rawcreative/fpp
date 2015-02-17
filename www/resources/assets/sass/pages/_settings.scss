@@ -10,10 +10,11 @@
 		top: 0;
 		left: 0;
 		bottom:0;
-		width: 200px;
+		width: $sidebar-width;
 		padding: 20px;
 		background: $settings-sb-bg;	
 		border-right: 1px solid darken($settings-sb-bg, 5%);
+		transition: width 0.35s;
 		h2 {
 			margin: 0 0 15px;
 			//text-align: center;
@@ -21,13 +22,25 @@
 
 		}	
 
+		@include breakpoint($desktop-min) {
+			width: $sidebar-width-desktop;
+		}
+
 	}
 
 	.page-content {
-		margin-left: 200px;
+		margin-left: 0;
 		padding: 20px 30px;
+		transition: margin 0.35s;
 		&.network {
 			margin-left: 0;
+		}
+		
+		@include breakpoint($tablet-pt-min) {
+			margin-left: $sidebar-width;
+		}
+		@include breakpoint($desktop-min) {
+			margin-left: $sidebar-width-desktop;
 		}
 	}
 	.page-title {
