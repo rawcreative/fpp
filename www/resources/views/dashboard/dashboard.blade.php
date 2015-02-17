@@ -10,8 +10,8 @@
 	@include('dashboard.widgets.fppd')
 
 	@include('dashboard.widgets.player')
-	
-	@include('dashboard.widgets.playlist')
-	
+		
+	<div id="dashboard"></div>
+	<script src="{{asset('js/dashboard-bundle.js')}}"></script>
 </div>
 @stop

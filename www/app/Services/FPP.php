@@ -3,13 +3,10 @@ namespace FPP\Services;
 
 
 use Carbon\Carbon;
-use FPP\Exceptions\FPPCommandException;
 use FPP\Exceptions\FPPSettingsException;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
-use MrRio\ShellWrap as Shell;
 use Pi;
 use Socket\Raw\Exception;
 
@@ -75,6 +72,11 @@ class FPP
         return $data;
     }
 
+    public function parseFPPDMode($mode)
+    {
+        return $this->modes->get($mode, 'player');
+    }
+
     public function getSoundCards()
     {
         $cardArr = [];
@@ -107,12 +109,6 @@ class FPP
         return $settings['fppdMode'];
     }
 
-
-    public function parseFPPDMode($mode)
-    {
-        return $this->modes->get($mode, 'player');
-    }
-
     /**
      * Retrieve all settings in the fpp settings file in array format
      *
@@ -122,7 +118,7 @@ class FPP
     {
 
         if (Storage::disk('pi')->exists('settings')) {
-            $raw      = Storage::disk('pi')->get('settings');
+            $raw = Storage::disk('pi')->get('settings');
 //            $settings = $this->parseSettings($raw);
             $settings = parse_ini_string($raw);
             return $settings;
@@ -142,7 +138,7 @@ class FPP
     {
         $settings = collect($this->getSettings());
 
-        return $settings->get($setting, function() {
+        return $settings->get($setting, function () {
             throw new FPPSettingsException('FPP Setting Not Found!');
         });
     }

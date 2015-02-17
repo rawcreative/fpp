@@ -1,4 +1,5 @@
 @import "partials/variables";
+@import "partials/theme";
 @import "partials/colors";
 @import "partials/functions";
 @import "mixins/icons";
@@ -34,3 +35,4 @@
 
 // Icons
 @import "vendor/ionicons.scss";
+@import "partials/font-icons";

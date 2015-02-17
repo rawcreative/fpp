@@ -1,6 +1,7 @@
 
 var React = require('react');
 
+
 var Universe = React.createClass({
 
 	propTypes: {
@@ -49,6 +50,7 @@ var Universe = React.createClass({
 				</div>
 				<div className="cell universe-address"><input type="text" ref="unicastAddress" defaultValue={ this.props.unicastAddress } /></div>
 				<button onClick={this.handleDelete} className="button hollow alert"><i className="ion-close"></i></button>
+				
 			</div>
 		);
 	}

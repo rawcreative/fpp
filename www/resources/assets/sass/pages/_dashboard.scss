@@ -12,6 +12,7 @@
 
 				&.player-status {
 					@include span(5 of 10 last);
+					min-height: 202px;
 				}
 
 				&.playlist-info {
@@ -39,6 +40,7 @@
 	.fppd-status {
 		.panel-body {
 			@include container(100%);
+			padding: 0;
 		}
 		.widget {
 			color: $heading-color;
@@ -56,6 +58,9 @@
 			}
 			&-icon {
 				font-size: 34px;
+				img {
+					width: 31px;
+				}
 			}
 
 			&-buttons {
@@ -66,7 +71,13 @@
 					display: inline-block;
 					vertical-align: middle;
 					margin: 0 1%;
+					text-transform: uppercase;
+					letter-spacing: 1px;
 					@include gradient-button();
+					i { margin-right: 3px; }
+					&:focus {
+						outline: none;
+					}
 				}
 				select {
 					width: 60%;
@@ -82,6 +93,18 @@
 				}
 			}
 			
+		}
+
+		.mode-icon {
+
+			background: #788B94;
+			color: white;
+			padding: 3px 10px;
+			border-radius: 35px;
+			font-size: 20px;
+			vertical-align: top;
+			line-height: 35px;
+
 		}
 	}
 

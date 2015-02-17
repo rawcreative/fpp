@@ -27,6 +27,11 @@ return [
             'restartFlag'            => false,
             'E131Enabled'            => true,
             'rebootFlag'             => false,
+            'restartFlag'            => false,
+            'screensaver'            => false,
+            'forceLocalAudio'        => false,
+            'E131Bridging'           => false,
+            'emailenable'           => false,
 
         ]
     ],

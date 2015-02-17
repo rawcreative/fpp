@@ -34,6 +34,17 @@ class SettingsController extends Controller {
 		return view('settings.logs');
 	}
 
+	public function showDate()
+	{
+		return view('settings.date');
+	}
+
+	public function storeDate()
+	{
+
+	}
+
+
 	/**
 	 * Show the form for creating a new resource.
 	 *

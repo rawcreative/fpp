@@ -24,8 +24,11 @@
 	}
 
 	.page-content {
-	//	margin-left: 200px;
+		margin-left: 200px;
 		padding: 20px 30px;
+		&.network {
+			margin-left: 0;
+		}
 	}
 	.page-title {
 		padding: 0 0 40px;
@@ -62,6 +65,20 @@
 			.right {
 				text-align: right;
 				@include span(1 of 3);
+			}
+
+			&.half {
+				.left,.right {
+					text-align: left;
+					@include span(1 of 2);
+				}
+				.left {
+					padding-right: 10px;
+				}
+				.right {
+
+					padding-left: 10px;
+				}
 			}
 		}
 

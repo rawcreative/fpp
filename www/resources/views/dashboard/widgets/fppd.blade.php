@@ -1,5 +1,17 @@
-<div class="panel fppd-status">
-	<div class="panel-header"><span class="panel-title">FPPD</span></div>
+<div class="panel fppd-status" data-pages="portlet">
+	<div class="panel-heading separator">
+		<div class="panel-title">FPPD</div>
+		<div class="panel-controls">
+		    <ul>
+		      <li><a href="#" class="portlet-collapse" data-toggle="collapse"><i class="portlet-icon portlet-icon-collapse"></i></a>
+		      </li>
+		      <li><a href="#" class="portlet-refresh" data-toggle="refresh"><i class="portlet-icon portlet-icon-refresh"></i></a>
+		      </li>
+		      <li><a href="#" class="portlet-close" data-toggle="close"><i class="portlet-icon portlet-icon-close"></i></a>
+		      </li>
+		    </ul>
+	  </div>
+	</div>
 	<div class="panel-body">
 		
 		<div class="widget text-center current-status fppd-running">
@@ -14,7 +26,7 @@
 
 		<div class="widget text-center current-status">
 			<span class="widget-header">Mode</span>
-			<span class="widget-icon"><i class="icon ion-record secondary"></i></span>
+			<span class="widget-icon"><img src="{{asset('images/standalone-icon.svg')}}"></span>
 			<span class="widget-text">Standalone</span>
 			<div class="widget-buttons">
 				<select class="fppd-mode-select">

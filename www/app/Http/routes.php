@@ -39,6 +39,8 @@ get('/settings/logs',	 ['as' => 'settings.logs',    		 'uses' => 'Settings\Setti
 post('/settings/logs',	 ['as' => 'settings.logs.store',     'uses' => 'Settings\SettingsController@storeLogs']);
 get('/settings/email',	 ['as' => 'settings.email',   		 'uses' => 'Settings\SettingsController@showEmail']);
 post('/settings/email',	 ['as' => 'settings.email.store',    'uses' => 'Settings\SettingsController@storeEmail']);
+get('/settings/date',	 ['as' => 'settings.date',   		 'uses' => 'Settings\SettingsController@showDate']);
+post('/settings/date',	 ['as' => 'settings.date.store',    'uses' => 'Settings\SettingsController@storeDate']);
 
 
 /**

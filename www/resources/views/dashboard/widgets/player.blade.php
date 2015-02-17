@@ -1,5 +1,19 @@
-<div class="panel player-status">
-	<div class="panel-header"><span class="panel-title">Player</span></div>
+<div class="panel player-status" data-pages="portlet">
+	<div class="panel-heading separator">
+		<div class="panel-title">Player</div>
+		<div class="panel-controls">
+		    <ul>
+		      <li><a href="#" class="portlet-collapse" data-toggle="collapse"><i class="portlet-icon portlet-icon-collapse"></i></a>
+		      </li>
+		      <li><a href="#" class="portlet-refresh" data-toggle="refresh"><i class="portlet-icon portlet-icon-refresh"></i></a>
+		      </li>
+		      <li><a href="#" class="portlet-maximize" data-toggle="maximize"><i class="portlet-icon portlet-icon-maximize"></i></a>
+		      </li>
+		      <li><a href="#" class="portlet-close" data-toggle="close"><i class="portlet-icon portlet-icon-close"></i></a>
+		      </li>
+		    </ul>
+	  </div>
+	</div>
 	<div class="panel-body">
 		<div class="player-header player-row">
 			<div class="status">
@@ -26,5 +40,5 @@
 			</div>
 		</div>
 	</div>
-	<div class="panel-footer"></div>
+	
 </div>

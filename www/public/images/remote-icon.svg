@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>remote-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Artboard-3" sketch:type="MSArtboardGroup" transform="translate(-141.000000, -227.000000)">
+            <g id="remote-icon" sketch:type="MSLayerGroup" transform="translate(141.000000, 227.000000)">
+                <path d="M14,28 C21.7319865,28 28,21.7319865 28,14 C28,6.2680135 21.7319865,0 14,0 C6.2680135,0 0,6.2680135 0,14 C0,21.7319865 6.2680135,28 14,28 Z" id="Oval" fill="#788B94" sketch:type="MSShapeGroup"></path>
+                <path d="M13.136,14.072 L14.2,14.072 C14.741336,14.072 15.1543319,13.9576678 15.439,13.729 C15.7236681,13.5003322 15.866,13.1620022 15.866,12.714 C15.866,12.2659978 15.7236681,11.9533342 15.439,11.776 C15.1543319,11.5986658 14.741336,11.51 14.2,11.51 L13.136,11.51 L13.136,14.072 L13.136,14.072 Z M16.02,19 L14.27,15.71 L13.136,15.71 L13.136,19 L11.078,19 L11.078,9.872 L14.368,9.872 C14.8533358,9.872 15.3083312,9.9186662 15.733,10.012 C16.1576688,10.1053338 16.5286651,10.2616656 16.846,10.481 C17.1633349,10.7003344 17.4153324,10.9919982 17.602,11.356 C17.7886676,11.7200018 17.882,12.172664 17.882,12.714 C17.882,13.3860034 17.7350015,13.9389978 17.441,14.373 C17.1469985,14.8070022 16.7526691,15.1313323 16.258,15.346 L18.33,19 L16.02,19 L16.02,19 Z" id="Letter" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

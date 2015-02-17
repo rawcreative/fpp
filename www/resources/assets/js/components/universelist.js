@@ -1,6 +1,6 @@
 var React = require('react');
 var Universe = require('./universe');
-
+var Button = require('./button');
 var UniverseList = React.createClass({
 	
 	handleSubmit: function() {
@@ -49,7 +49,7 @@ var UniverseList = React.createClass({
 					
 				</div>
 				{nodes}
-				<button className="save-universes" onClick={this.handleSubmit} >Save</button>
+				<Button className="save-universes" onClick={this.handleSubmit} label="Save" />
 			</div>
 		);
 	}

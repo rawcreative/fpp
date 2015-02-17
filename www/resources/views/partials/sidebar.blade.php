@@ -20,7 +20,7 @@
             <ul class="nav">
                 <li class="{{set_active('/')}}"> <a href="">File Manager</a></li>
                 <li class="{{set_active('/')}}"> <a href="#">Playlists</a></li>
-                <li class="{{set_active('/')}}"> <a href="#">Schedule</a></li>
+                <li class="{{set_active('/')}}"> <a href="{{route('schedule')}}">Schedule</a></li>
                 <li class="{{set_active('/')}}"> <a href="#">Plugins</a></li>
             </ul>
         </div>
@@ -32,7 +32,7 @@
                 <li class="{{set_active('settings/network')}}"> <a href="{{route('settings.network')}}">Network</a></li>
                 <li class="{{set_active('/outputs')}}"> <a href="{{ route('outputs') }}">Channel Outputs</a></li>
                 <li class="{{set_active('/')}}"> <a href="#">Overlay Models</a></li>
-                <li class="{{set_active('settings/logs')}}"> <a href="{{route('settings.logs')}}">Logs</a></li>
+               
             </ul>
         </div>
     </div>
