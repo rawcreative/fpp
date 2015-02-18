@@ -3,7 +3,9 @@
 use FPP\Http\Requests;
 use FPP\Http\Controllers\Controller;
 
-class NetworkController extends Controller {
+use Illuminate\Http\Request;
+
+class LogsController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -12,7 +14,7 @@ class NetworkController extends Controller {
 	 */
 	public function index()
 	{
-		return view('settings.network');
+		return view('settings.logs');
 	}
 
 	/**

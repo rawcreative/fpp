@@ -41,14 +41,18 @@ get('/outputs/other', ['as' => 'outputs.other', 'uses' => 'IO\ChannelController@
 
 get('/settings',		 ['as' => 'settings', 		 		 'uses' => 'Settings\SettingsController@index']);
 post('/settings',		 ['as' => 'settings.store', 	     'uses' => 'Settings\SettingsController@store']);
-get('/settings/network', ['as' => 'settings.network', 		 'uses' => 'Settings\SettingsController@showNetwork']);
-post('/settings/network',['as' => 'settings.network.store',  'uses' => 'Settings\SettingsController@storeNetwork']);
-get('/settings/logs',	 ['as' => 'settings.logs',    		 'uses' => 'Settings\SettingsController@showLogs']);
-post('/settings/logs',	 ['as' => 'settings.logs.store',     'uses' => 'Settings\SettingsController@storeLogs']);
-get('/settings/email',	 ['as' => 'settings.email',   		 'uses' => 'Settings\SettingsController@showEmail']);
-post('/settings/email',	 ['as' => 'settings.email.store',    'uses' => 'Settings\SettingsController@storeEmail']);
-get('/settings/date',	 ['as' => 'settings.date',   		 'uses' => 'Settings\SettingsController@showDate']);
-post('/settings/date',	 ['as' => 'settings.date.store',    'uses' => 'Settings\SettingsController@storeDate']);
+
+get('/settings/network', ['as' => 'settings.network', 		 'uses' => 'Settings\NetworkController@index']);
+post('/settings/network',['as' => 'settings.network.store',  'uses' => 'Settings\NetworkController@store']);
+
+get('/settings/logs',	 ['as' => 'settings.logs',    		 'uses' => 'Settings\LogsController@index']);
+post('/settings/logs',	 ['as' => 'settings.logs.store',     'uses' => 'Settings\LogsController@store']);
+
+get('/settings/email',	 ['as' => 'settings.email',   		 'uses' => 'Settings\EmailController@index']);
+post('/settings/email',	 ['as' => 'settings.email.store',    'uses' => 'Settings\EmailController@store']);
+
+get('/settings/date',	 ['as' => 'settings.date',   		 'uses' => 'Settings\DateTimeController@index']);
+post('/settings/date',	 ['as' => 'settings.date.store',    'uses' => 'Settings\DateTimeController@store']);
 
 
 /**

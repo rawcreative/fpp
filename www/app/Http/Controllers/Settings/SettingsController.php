@@ -19,31 +19,6 @@ class SettingsController extends Controller {
 		return view('settings.index', compact('soundCards', 'settings'));
 	}
 
-	public function showNetwork()
-	{
-		return view('settings.network');
-	}
-
-	public function showEmail()
-	{
-		return view('settings.email');
-	}
-
-	public function showLogs()
-	{
-		return view('settings.logs');
-	}
-
-	public function showDate()
-	{
-		return view('settings.date');
-	}
-
-	public function storeDate()
-	{
-
-	}
-
 
 	/**
 	 * Show the form for creating a new resource.
@@ -61,22 +36,6 @@ class SettingsController extends Controller {
 	 * @return Response
 	 */
 	public function store()
-	{
-		//
-	}
-
-
-	public function storeNetwork()
-	{
-		//
-	}
-
-	public function storeEmail()
-	{
-		//
-	}
-
-	public function storeLogs()
 	{
 		//
 	}
