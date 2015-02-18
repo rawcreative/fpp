@@ -4,7 +4,33 @@
 		padding: 0 0 40px;
 	}
 }
+@mixin output-row($selector: universe) {
+	.#{$selector} {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 5px 0;
 
+		@content;
+
+		.button {
+			margin: 0;
+			font-size: 15px;
+			padding: 5px 10px;
+			border: none;
+		}
+
+		&.header-row {
+			text-transform: uppercase;
+			font-size: 12px;
+			font-weight: 600;
+			text-align: center;
+			border-bottom: 1px solid mix($primary-color, white, 60%);
+			margin-bottom: 5px;
+
+		}
+	}
+}
 .universe-list {
 	max-width: 800px;
 	//margin: 0 auto;
@@ -54,12 +80,67 @@
 			margin-bottom: 5px;
 
 		}
+
+
 	}
+
 	.cell {
 		padding: 0 5px;
 	}
 	
 	input, select {
 		margin: 0;
+	}
+}
+
+.pixelnet-list {
+	max-width: 800px;
+
+	@include output-row(pixelnet) {
+		&-index {
+			width: 24px;
+			text-align: center;
+		}
+		&-active {
+			width: 50px;
+			text-align: center;
+		}
+		&-type {
+			//flex: 2 auto;
+		}
+		&-start {
+			width: 100px;
+		}
+
+	}
+
+}
+
+.output-list {
+	max-width: 800px;
+
+	@include output-row(output) {
+		&-index {
+			width: 24px;
+			text-align: center;
+		}
+		&-active {
+			width: 50px;
+			text-align: center;
+		}
+		&-type {
+			//flex: 2 auto;
+		}
+
+		&-size {
+
+		}
+		
+		&-config {
+			flex: 1 auto;
+		}
+		&-start {
+			width: 100px;
+		}
 	}
 }

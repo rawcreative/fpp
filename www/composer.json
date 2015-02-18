@@ -14,7 +14,8 @@
 		"illuminate/html": "~5.0",
 	  	
 		"league/csv": "~7.0@dev",
-		"barryvdh/laravel-debugbar": "~2.0@dev"
+		"barryvdh/laravel-debugbar": "~2.0@dev",
+		"react/datagram": "dev-master"
 
 	},
 	"require-dev": {

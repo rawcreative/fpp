@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "47fef6fc9cc3076d31856d434ae28585",
+    "hash": "983c3e2d2f39af3c2688a39837284bcf",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1730,6 +1730,138 @@
             "time": "2015-02-03 19:31:20"
         },
         {
+            "name": "react/cache",
+            "version": "v0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/cache.git",
+                "reference": "9882ab5d8b00617baae83c6996f5a34668c11beb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/cache/zipball/9882ab5d8b00617baae83c6996f5a34668c11beb",
+                "reference": "9882ab5d8b00617baae83c6996f5a34668c11beb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "react/promise": "~2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "React\\Cache\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Async caching.",
+            "keywords": [
+                "cache"
+            ],
+            "time": "2014-02-02 01:11:26"
+        },
+        {
+            "name": "react/datagram",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/datagram.git",
+                "reference": "a476b743cd4beed93ba7c83abb0288b87f8206b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/datagram/zipball/a476b743cd4beed93ba7c83abb0288b87f8206b6",
+                "reference": "a476b743cd4beed93ba7c83abb0288b87f8206b6",
+                "shasum": ""
+            },
+            "require": {
+                "evenement/evenement": "~1.0|~2.0",
+                "php": ">=5.3",
+                "react/dns": ">=0.2, <0.5",
+                "react/event-loop": ">=0.2, <0.5",
+                "react/promise": "~1.0|~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "React\\Datagram\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Lück",
+                    "email": "christian@lueck.tv"
+                }
+            ],
+            "description": "UDP datagram socket client and server for reactphp",
+            "homepage": "https://github.com/reactphp/datagram",
+            "keywords": [
+                "Socket",
+                "async",
+                "client",
+                "datagram",
+                "dgram",
+                "react",
+                "server",
+                "udp"
+            ],
+            "time": "2014-10-23 22:14:56"
+        },
+        {
+            "name": "react/dns",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/dns.git",
+                "reference": "e1eaadb8ac637e61d1b642ebed37fa46c568ae9d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/dns/zipball/e1eaadb8ac637e61d1b642ebed37fa46c568ae9d",
+                "reference": "e1eaadb8ac637e61d1b642ebed37fa46c568ae9d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "react/cache": "0.4.*",
+                "react/promise": "~2.0",
+                "react/socket": "0.4.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "React\\Dns\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Async DNS resolver.",
+            "keywords": [
+                "dns",
+                "dns-resolver"
+            ],
+            "time": "2014-08-23 11:13:50"
+        },
+        {
             "name": "react/event-loop",
             "version": "v0.4.1",
             "source": {
@@ -1771,6 +1903,50 @@
                 "event-loop"
             ],
             "time": "2014-02-26 17:36:58"
+        },
+        {
+            "name": "react/promise",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/promise.git",
+                "reference": "365fcee430dfa4ace1fbc75737ca60ceea7eeeef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/promise/zipball/365fcee430dfa4ace1fbc75737ca60ceea7eeeef",
+                "reference": "365fcee430dfa4ace1fbc75737ca60ceea7eeeef",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "React\\Promise\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Sorgalla",
+                    "email": "jsorgalla@googlemail.com"
+                }
+            ],
+            "description": "A lightweight implementation of CommonJS Promises/A for PHP",
+            "time": "2014-12-30 13:32:42"
         },
         {
             "name": "react/socket",
@@ -3778,7 +3954,8 @@
         "jamesmoss/flywheel": 20,
         "mrrio/shellwrap": 20,
         "league/csv": 20,
-        "barryvdh/laravel-debugbar": 20
+        "barryvdh/laravel-debugbar": 20,
+        "react/datagram": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

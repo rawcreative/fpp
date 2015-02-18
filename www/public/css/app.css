@@ -2056,6 +2056,78 @@ meter {
   .universe-list input, .universe-list select {
     margin: 0; }
 
+.pixelnet-list {
+  max-width: 800px; }
+  .pixelnet-list .pixelnet {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 5px 0; }
+    .pixelnet-list .pixelnet-index {
+      width: 24px;
+      text-align: center; }
+    .pixelnet-list .pixelnet-active {
+      width: 50px;
+      text-align: center; }
+    .pixelnet-list .pixelnet-start {
+      width: 100px; }
+    .pixelnet-list .pixelnet .button {
+      margin: 0;
+      font-size: 15px;
+      padding: 5px 10px;
+      border: none; }
+    .pixelnet-list .pixelnet.header-row {
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 600;
+      text-align: center;
+      border-bottom: 1px solid #aeb9be;
+      margin-bottom: 5px; }
+
+.output-list {
+  max-width: 800px; }
+  .output-list .output {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 5px 0; }
+    .output-list .output-index {
+      width: 24px;
+      text-align: center; }
+    .output-list .output-active {
+      width: 50px;
+      text-align: center; }
+    .output-list .output-config {
+      -webkit-flex: 1 auto;
+          -ms-flex: 1 auto;
+              flex: 1 auto; }
+    .output-list .output-start {
+      width: 100px; }
+    .output-list .output .button {
+      margin: 0;
+      font-size: 15px;
+      padding: 5px 10px;
+      border: none; }
+    .output-list .output.header-row {
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 600;
+      text-align: center;
+      border-bottom: 1px solid #aeb9be;
+      margin-bottom: 5px; }
+
 /*!
   Ionicons, v2.0.0
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
