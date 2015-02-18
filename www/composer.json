@@ -11,11 +11,12 @@
 		"jenssegers/model": "dev-master",
 		"jamesmoss/flywheel": "dev-master",
 		"mrrio/shellwrap": "dev-master",
-		"illuminate/html": "~5.0",
+	 	"laravelcollective/html": "~5.0",
+
 	  	
 		"league/csv": "~7.0@dev",
-		"barryvdh/laravel-debugbar": "~2.0@dev",
-		"react/datagram": "dev-master"
+		"barryvdh/laravel-debugbar": "~2.0@dev"
+
 
 	},
 	"require-dev": {
