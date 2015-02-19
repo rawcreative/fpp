@@ -39,6 +39,8 @@ class AppServiceProvider extends ServiceProvider {
 
 			return $app->make('\FPP\Services\FPP');
 		});
+
+		
 	}
 
 }

@@ -90,6 +90,9 @@ Route::group(['namespace' => 'Api\v1', 'prefix' => 'api'], function() {
 });
 
 // Temporary
-
+//Event::listen('status.request', function($data) {
+//
+//		return \BrainSocket::message('status.request',[ 'status' => 'test' ] );
+//});
 
 

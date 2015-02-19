@@ -1,21 +1,21 @@
 <?php namespace FPP\Handlers\Events;
 
-use BrainSocket\BrainSocket;
-use FPP\Events\StatusRequest;
-
+use BrainSocket;
+use FPP\Services\FPP;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
 
 class StatusRequest {
+	protected $fpp;
 
 	/**
 	 * Create the event handler.
 	 *
 	 * @return void
 	 */
-	public function __construct()
+	public function __construct(FPP $fpp)
 	{
-		//
+		$this->fpp = $fpp;
 	}
 
 	/**
@@ -24,9 +24,14 @@ class StatusRequest {
 	 * @param  StatusRequest  $event
 	 * @return void
 	 */
-	public function handle()
+	public function handle($event)
 	{
-		BrainSocket::message('status.request',array('message'=>'A message from a generic event fired in Laravel!'));
+		//
+	}
+
+	public function getStatus()
+	{
+		return BrainSocket::message('status.request', ['message'=> $this->fpp->status()]);
 	}
 
 }

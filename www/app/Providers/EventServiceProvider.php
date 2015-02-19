@@ -13,13 +13,13 @@ class EventServiceProvider extends ServiceProvider {
 	 * @var array
 	 */
 	protected $listen = [
-		'event.name' => [
-			'EventListener',
-		],
+//		'event.name' => [
+//			'EventListener',
+//		],
 
-//		'status.request' => [
-//			'FPP\Handlers\Events\StatusRequest@handle'
-//		]
+		'status.request' => [
+			'FPP\Handlers\Events\StatusRequest@getStatus'
+		]
 	];
 
 }

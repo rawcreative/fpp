@@ -12,6 +12,8 @@ class Kernel extends ConsoleKernel {
 	 */
 	protected $commands = [
 		'FPP\Console\Commands\InspireCommand',
+		'FPP\Console\Commands\CreatePlaylist',
+		'FPP\Console\Commands\DeletePlaylist',
 	];
 
 	/**
