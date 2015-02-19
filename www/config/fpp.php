@@ -31,7 +31,8 @@ return [
             'screensaver'            => false,
             'forceLocalAudio'        => false,
             'E131Bridging'           => false,
-            'emailenable'           => false,
+            'emailenable'            => false,
+            'piRTC'                  => 'N',
 
         ]
     ],

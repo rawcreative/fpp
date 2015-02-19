@@ -7,7 +7,6 @@ use FPP\Exceptions\FPPSettingsException;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
-use Pi;
 use Socket\Raw\Exception;
 
 class FPP
@@ -51,7 +50,7 @@ class FPP
         // date format: D M d H:i:s T Y
 
         $status = explode(',', $status);
-        $time   = Carbon::now(Pi::getTimezone())->format('D M d H:i:s T Y');
+        $time   = Carbon::now(\Pi::getTimezone())->format('D M d H:i:s T Y');
 
         $data = [
             'fppd'        => 'running',
@@ -121,6 +120,8 @@ class FPP
             $raw = Storage::disk('pi')->get('settings');
 //            $settings = $this->parseSettings($raw);
             $settings = parse_ini_string($raw);
+
+            $settings = array_merge(config('fpp.settings.defaults'), $settings);
             return $settings;
         }
         return config('fpp.settings.defaults');

@@ -3,10 +3,20 @@
 use FPP\Http\Requests;
 use FPP\Http\Controllers\Controller;
 
+use FPP\Services\FPP;
+use FPP\Services\Pi;
 use Illuminate\Http\Request;
 
 class DateTimeController extends Controller {
 
+	protected $pi;
+	protected $fpp;
+
+	public function __construct(Pi $pi, FPP $fpp)
+	{
+		$this->fpp = $fpp;
+		$this->pi = $pi;
+	}
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -14,7 +24,12 @@ class DateTimeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('settings.date');
+		$currentTimezone = urlencode($this->pi->getTimezone());
+		$timezones = $this->pi->getTimezones();
+		$ntp = $this->pi->ntpEnabled();
+		$rtc = $this->fpp->getSetting('piRTC');
+
+		return view('settings.date', compact('currentTimezone', 'timezones', 'ntp', 'rtc'));
 	}
 
 	/**

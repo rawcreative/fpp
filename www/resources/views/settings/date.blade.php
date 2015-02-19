@@ -33,16 +33,16 @@
 						'1' => 'RasClock',
 						'2' => 'DS1305',
 						'3' => 'PiFace'
-						]) !!}
+						], $rtc) !!}
 				</div>
 			</section>
 			<section>
 				<h3>NTP</h3>
 				<div class="field">
 					
-					{!! Form::radio('ntp', 'enabled') !!}
+					{!! Form::radio('ntp', 'enabled', $ntp) !!}
 					{!! Form::label('ntp', 'Enabled') !!}
-					{!! Form::radio('ntp', 'disabled') !!}
+					{!! Form::radio('ntp', 'disabled', !$ntp) !!}
 					{!! Form::label('ntp', 'Disabled') !!}
 					
 				</div>
@@ -51,9 +51,7 @@
 				<h3>Time Zone</h3>
 					<div class="field">
 					
-					{!! Form::select('timezone', [
-						
-						]) !!}
+					{!! Form::select('timezone', $timezones, $currentTimezone) !!}
 				</div>
 			</section>
 			<div class="form-actions">
