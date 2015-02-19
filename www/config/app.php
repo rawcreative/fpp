@@ -133,6 +133,7 @@ return [
         //'Dingo\Api\Provider\ApiServiceProvider',
         //'Way\Generators\GeneratorsServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
+      
         /*
          * Application Service Providers...
          */
@@ -141,6 +142,7 @@ return [
         'FPP\Providers\ConfigServiceProvider',
         'FPP\Providers\EventServiceProvider',
         'FPP\Providers\RouteServiceProvider',
+        'FPP\Providers\PluginsServiceProvider',
 
     ],
     /*
@@ -186,15 +188,14 @@ return [
         'URL'         => 'Illuminate\Support\Facades\URL',
         'Validator'   => 'Illuminate\Support\Facades\Validator',
         'View'        => 'Illuminate\Support\Facades\View',
-        //'Form'        => 'Illuminate\Html\FormFacade',
-        //'Html'        => 'Illuminate\Html\HtmlFacade',
-        'Form' => 'Collective\Html\FormFacade',
-        'Html' => 'Collective\Html\HtmlFacade',
+        'Form'        => 'Collective\Html\FormFacade',
+        'Html'        => 'Collective\Html\HtmlFacade',
         'BrainSocket' => 'BrainSocket\BrainSocketFacade',
         'Model'       => 'Jenssegers\Model\Model',
         'Debugbar'    => 'Barryvdh\Debugbar\Facade',
         'Pi'          => 'FPP\Facades\Pi',
         'FPP'         => 'FPP\Facades\FPP',
+        'Plugins'     => 'FPP\Facades\Plugins',
         //'API' => 'Dingo\Api\Facade\API',
 
     ],

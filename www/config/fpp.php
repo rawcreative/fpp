@@ -75,4 +75,53 @@ return [
         'to'       => '',
     ],
 
+    'plugins' => [
+    /*
+   |--------------------------------------------------------------------------
+   | Plugins Paths
+   |--------------------------------------------------------------------------
+   |
+   | Here are the default plugin paths for the application. If the
+   | same plugin (determined by the plugin's slug) is found in multiple
+   | paths, the later plugin will be used. Order is important.
+   |
+   */
+
+        'paths' => array(
+            __DIR__.'/../plugins',
+            __DIR__.'/../workbench',
+        ),
+
+        /*
+        |--------------------------------------------------------------------------
+        | Auto Register
+        |--------------------------------------------------------------------------
+        |
+        | Here you may specify if the plugins are registered when the service
+        | provider is booted. This will locate all plugins and register them.
+        |
+        | Supported: true, false.
+        |
+        */
+
+        'auto_register' => true,
+
+        /*
+        |--------------------------------------------------------------------------
+        | Auto Boot
+        |--------------------------------------------------------------------------
+        |
+        | Here you may specify if the plugins are booted when all plugins
+        | have been registered, similar to Laravel service providers. It allows you
+        | to fire a callback once all plugins are available.
+        |
+        | Plugins must be auto-registered to be auto-booted.
+        |
+        | Supported: true, false.
+        |
+        */
+
+        'auto_boot' => true,
+    ]
+
 ];
