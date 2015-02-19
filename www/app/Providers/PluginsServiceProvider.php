@@ -42,6 +42,10 @@ class PluginsServiceProvider extends ServiceProvider
      */
     public function register()
     {
+
+       $this->app->bind('FPP\Plugins\Repositories\PluginRepositoryInterface',
+           'FPP\Plugins\Repositories\PluginRepository');
+
        $this->registerPluginsFinder();
        $this->registerPlugins();
     }

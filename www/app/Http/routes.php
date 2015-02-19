@@ -27,6 +27,13 @@ get('/schedule', ['as' => 'schedule', 'uses' => 'Content\ScheduleController@inde
 
 
 /**
+ * Plugins
+ */
+
+get('/plugins', ['as' => 'plugins', 'uses' => 'Content\PluginController@index']);
+
+
+/**
  * Outputs
  */
 

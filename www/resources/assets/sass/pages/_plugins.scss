@@ -1,0 +1,96 @@
+.content-wrapper.plugins {
+	.content {
+		padding: 25px;
+	}
+}
+
+.plugin-section {
+	
+	padding: 30px 0;
+
+
+	> h4 {
+		//text-transform: uppercase;
+		letter-spacing: 1px;
+		color: $primary-color;
+		margin-bottom: 25px;
+	}
+
+	&.installed-plugins {
+		padding-top: 10px;
+	}
+	&.available-plugins {}
+}
+
+.plugin-list {
+
+	.list-item {
+		padding: 0 15px 15px 0;
+		vertical-align: top;
+		display: inline-block;
+		float: none;
+		margin: 0 -1px;
+		width: 100%;
+
+		.inner {
+			background: white;
+			padding: 20px;
+			background-color: #ffffff;
+			border: 1px solid #dedede;
+			position: relative;
+		}
+
+		
+
+		&-details {
+			padding-right: 10px;
+		}
+
+		&-desc {
+			font-size: 14px;
+			line-height: 1.5;
+		}
+
+		.button {
+			
+			margin: 0;
+
+			&:focus {
+				outline: none;
+			}
+			&.disable,
+			&.enable {
+				@include gradient-button();
+			}
+			&.remove {
+				color: #666;
+				background: none;
+				border: none;
+				margin: 0;
+				font-size: 12px;
+
+				&:hover {
+					color: $danger-color;
+				}
+			}
+		}
+
+		.thumb {
+			width: 128px;
+			height: 128px;
+			background: $sidebar-bg-color;
+			color: white;
+			text-align: center;
+			font-size: 60px;
+			i {
+				line-height: 2;
+			}
+		}
+
+		@include breakpoint($desktop-min) {
+			width: 50%;
+		}
+
+	}
+}
+

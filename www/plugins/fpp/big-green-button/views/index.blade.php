@@ -46,6 +46,7 @@
     </style>
 @stop
 
+
 @section('content')
     <div class="button-container">
         <input class="button" onClick="StartPlaylist();" type="submit" value="Start" />

@@ -49,7 +49,7 @@ return [
 	| users to view when they are installing the plugin.
 	|
 	*/
-	'description' => 'Adds a big green play button.',
+	'description' => 'Adds a big green play button that can be used to start a playlist.',
 
 	/*
 	|--------------------------------------------------------------------------

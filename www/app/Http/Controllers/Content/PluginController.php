@@ -2,9 +2,17 @@
 
 use FPP\Http\Requests;
 use FPP\Http\Controllers\Controller;
+use FPP\Plugins\Repositories\PluginRepositoryInterface;
 
 class PluginController extends Controller {
 
+	public function __construct(
+		PluginRepositoryInterface $plugins
+	)
+	{
+		$this->plugins = $plugins;
+
+	}
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -12,7 +20,9 @@ class PluginController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		$installedPlugins = $this->plugins->findInstalled();
+
+		return view('plugins.index', compact('installedPlugins'));
 	}
 
 	/**
