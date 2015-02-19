@@ -516,7 +516,7 @@ detectFalconHardware() {
 }
 
 startWSServer() {
-	/usr/bin/php /opt/fpp/www/artisan brainsocket:start
+	/usr/bin/nohup /usr/bin/php /opt/fpp/www/artisan brainsocket:start &
 }
 
 stopWSServer() {
