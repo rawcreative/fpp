@@ -1,0 +1,35 @@
+{
+	"name": "fpp/big-green-button",
+	"type": "fpp-plugin",
+	"description": "Manage all the menus throughout your website.",
+	"keywords": [
+		"falcon player",
+		"laravel",
+		"plugin",
+		"menus"
+	],
+	
+	"require": {
+		"php": ">=5.4.0",
+		
+	},
+	"require-dev": {
+		
+	},
+	"autoload": {
+		"classmap": [
+			"database/migrations",
+			"database/seeds"
+		],
+		"psr-4": {
+			"FPP\\BigGreenButton\\" : "src/"
+		}
+	},
+	"extra": {
+		"component": "plugin",
+		"branch-alias": {
+			"dev-master": "2.0.x-dev"
+		}
+	},
+	"minimum-stability": "dev"
+}
