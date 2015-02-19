@@ -515,3 +515,11 @@ detectFalconHardware() {
 	fi
 }
 
+startWSServer() {
+	/usr/bin/php /opt/fpp/www/artisan brainsocket:start
+}
+
+stopWSServer() {
+	kill $(ps aux | grep '[p]hp artisan brainsocket:start' | awk '{print $2}')
+}
+

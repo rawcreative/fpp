@@ -29,6 +29,6 @@ fi
 sleep 2
 
 startWebSocketServer
-
+startWSServer
 runPostStartScripts
 
