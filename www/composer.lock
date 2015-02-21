@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5aacc3022569c16d48454630e3ec1a2c",
+    "hash": "b2397c5d7dcc94012ed497ce397ac1d5",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1308,6 +1308,69 @@
             "time": "2015-02-15 18:02:18"
         },
         {
+            "name": "league/fractal",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/fractal.git",
+                "reference": "d0516d0318691ef00e6afc7f2ec68c2dd90059d6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/d0516d0318691ef00e6afc7f2ec68c2dd90059d6",
+                "reference": "d0516d0318691ef00e6afc7f2ec68c2dd90059d6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "illuminate/contracts": "~5.0",
+                "mockery/mockery": "~0.9",
+                "pagerfanta/pagerfanta": "~1.0.0",
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~1.5",
+                "zendframework/zend-paginator": "~2.3"
+            },
+            "suggest": {
+                "illuminate/pagination": "The Illuminate Pagination component.",
+                "pagerfanta/pagerfanta": "Pagerfanta Paginator",
+                "zendframework/zend-paginator": "Zend Framework Paginator"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.12-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\Fractal\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Phil Sturgeon",
+                    "email": "me@philsturgeon.uk",
+                    "homepage": "http://philsturgeon.uk/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Handle the output of complex data structures ready for JSON output.",
+            "homepage": "http://fractal.thephpleague.com/",
+            "keywords": [
+                "api",
+                "json",
+                "league",
+                "rest"
+            ],
+            "time": "2015-02-17 18:33:50"
+        },
+        {
             "name": "maximebf/debugbar",
             "version": "dev-master",
             "source": {
@@ -1619,6 +1682,246 @@
                 "php"
             ],
             "time": "2015-02-13 17:03:18"
+        },
+        {
+            "name": "orchestra/asset",
+            "version": "3.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/orchestral/asset.git",
+                "reference": "2b2b0b1a9ac987ac08778732750c08590b210de3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/orchestral/asset/zipball/2b2b0b1a9ac987ac08778732750c08590b210de3",
+                "reference": "2b2b0b1a9ac987ac08778732750c08590b210de3",
+                "shasum": ""
+            },
+            "require": {
+                "orchestra/html": "3.0.*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "illuminate/filesystem": "5.0.*",
+                "mockery/mockery": "0.9.*"
+            },
+            "suggest": {
+                "illuminate/filesystem": "Allow using orchestra/asset component outside of Laravel app",
+                "laravel/framework": "Allow using orchestra/asset component outside of Orchestra Platform",
+                "orchestra/foundation": "Allow using orchestra/asset with Orchestra Platform"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Orchestra\\Asset\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mior Muhammad Zaki",
+                    "email": "crynobone@gmail.com",
+                    "homepage": "https://github.com/crynobone"
+                }
+            ],
+            "description": "Asset Component for Orchestra Platform",
+            "homepage": "http://orchestraplatform.com/docs/latest/components/asset/",
+            "keywords": [
+                "asset",
+                "laravel",
+                "orchestra-platform",
+                "orchestral"
+            ],
+            "time": "2015-02-16 11:41:22"
+        },
+        {
+            "name": "orchestra/contracts",
+            "version": "3.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/orchestral/contracts.git",
+                "reference": "f248cf23718375afbfb8f5e9ee41e19fb56f93c9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/orchestral/contracts/zipball/f248cf23718375afbfb8f5e9ee41e19fb56f93c9",
+                "reference": "f248cf23718375afbfb8f5e9ee41e19fb56f93c9",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "5.0.*",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Orchestra\\Contracts\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mior Muhammad Zaki",
+                    "email": "crynobone@gmail.com",
+                    "homepage": "https://github.com/crynobone"
+                }
+            ],
+            "description": "Contracts for Orchestra Platform",
+            "time": "2015-02-10 09:20:46"
+        },
+        {
+            "name": "orchestra/html",
+            "version": "3.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/orchestral/html.git",
+                "reference": "f4e569532bd40d6a330c71a46c6e53f85fe16f13"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/orchestral/html/zipball/f4e569532bd40d6a330c71a46c6e53f85fe16f13",
+                "reference": "f4e569532bd40d6a330c71a46c6e53f85fe16f13",
+                "shasum": ""
+            },
+            "require": {
+                "orchestra/support": "3.0.*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "illuminate/database": "5.0.*",
+                "illuminate/routing": "5.0.*",
+                "illuminate/translation": "5.0.*",
+                "mockery/mockery": "0.9.*"
+            },
+            "suggest": {
+                "laravel/framework": "Allow using orchestra/html component outside of Orchestra Platform",
+                "orchestra/foundation": "Allow using orchestra/html with Orchestra Platform"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Orchestra\\Html\\": "src/"
+                },
+                "files": [
+                    "src/Support/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mior Muhammad Zaki",
+                    "email": "crynobone@gmail.com",
+                    "homepage": "https://github.com/crynobone"
+                }
+            ],
+            "description": "HTML Component for Orchestra Platform",
+            "homepage": "http://orchestraplatform.com/docs/latest/components/html/",
+            "keywords": [
+                "form",
+                "html",
+                "laravel",
+                "orchestra-platform",
+                "orchestral",
+                "table"
+            ],
+            "time": "2015-02-05 05:41:09"
+        },
+        {
+            "name": "orchestra/support",
+            "version": "3.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/orchestral/support.git",
+                "reference": "a14f0d2624a8fcdf2d4aeeafbe2fd52910b16063"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/orchestral/support/zipball/a14f0d2624a8fcdf2d4aeeafbe2fd52910b16063",
+                "reference": "a14f0d2624a8fcdf2d4aeeafbe2fd52910b16063",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.0.*",
+                "orchestra/contracts": "3.0.*",
+                "php": ">=5.4.0"
+            },
+            "replace": {
+                "orchestra/support-core": "self.version",
+                "orchestra/support-facades": "self.version",
+                "orchestra/support-providers": "self.version"
+            },
+            "require-dev": {
+                "illuminate/database": "5.0.*",
+                "illuminate/events": "5.0.*",
+                "illuminate/session": "5.0.*",
+                "illuminate/validation": "5.0.*",
+                "mockery/mockery": "0.9.*",
+                "symfony/http-kernel": "2.6.*"
+            },
+            "suggest": {
+                "laravel/framework": "Allow using orchestra/support component outside of Orchestra Platform",
+                "orchestra/foundation": "Allow using orchestra/support with Orchestra Platform",
+                "orchestra/messages": "Allow using Messages component"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Orchestra\\Support\\Facades\\": "src/Facades/",
+                    "Orchestra\\Support\\Ftp\\": "src/Ftp/",
+                    "Orchestra\\Support\\Providers\\": "src/Providers/",
+                    "Orchestra\\Support\\": "src/Support/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mior Muhammad Zaki",
+                    "email": "crynobone@gmail.com",
+                    "homepage": "https://github.com/crynobone"
+                }
+            ],
+            "description": "Support Component for Orchestra Platform",
+            "homepage": "http://orchestraplatform.com/docs/latest/components/support/",
+            "keywords": [
+                "laravel",
+                "orchestra-platform",
+                "orchestral",
+                "utilities",
+                "validator"
+            ],
+            "time": "2015-02-14 01:39:46"
         },
         {
             "name": "psr/log",
@@ -3782,7 +4085,8 @@
         "jamesmoss/flywheel": 20,
         "mrrio/shellwrap": 20,
         "league/csv": 20,
-        "barryvdh/laravel-debugbar": 20
+        "barryvdh/laravel-debugbar": 20,
+        "league/fractal": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

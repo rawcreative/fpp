@@ -15,6 +15,13 @@ class ChannelController extends Controller {
 		return view('outputs.other');
 	}
 
+
+	public function remap()
+	{
+		return view('outputs.remap');
+	}
+
+
 	/**
 	 * Show the form for creating a new resource.
 	 *

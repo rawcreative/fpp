@@ -1,3 +1,4 @@
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "partials/variables";
 @import "partials/theme";
 @import "partials/colors";
@@ -9,7 +10,7 @@
 
 // Components
 //@import "bower_components/foundation-apps/scss/components/typography";
-@import "partials/typography";
+@import "modules/typography";
 @import "partials/fonts";
 @import "partials/normalize";
 @import "partials/structure";

@@ -1,7 +1,7 @@
 <aside id="sidebar-left" class="sidebar affix">
 
     <div class="logo">
-        <a class="navbar-brand" href="" title="Falcon Player"><img src="{{ asset('images/logo.png') }}"></a>
+        <a href="" title="Falcon Player"><img src="{{ asset('images/logo.png') }}"></a>
     </div>
 
     <div class="sidebar-menu">

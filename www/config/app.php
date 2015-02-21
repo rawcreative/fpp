@@ -142,6 +142,7 @@ return [
         'FPP\Providers\ConfigServiceProvider',
         'FPP\Providers\EventServiceProvider',
         'FPP\Providers\RouteServiceProvider',
+        'FPP\Providers\HttpServiceProvider',
         'FPP\Providers\PluginsServiceProvider',
 
     ],

@@ -15,7 +15,9 @@
 
 	  	
 		"league/csv": "~7.0@dev",
-		"barryvdh/laravel-debugbar": "~2.0@dev"
+		"barryvdh/laravel-debugbar": "~2.0@dev",
+		"orchestra/asset": "3.0.*",
+		"league/fractal": "0.12.*@dev"
 
 
 	},

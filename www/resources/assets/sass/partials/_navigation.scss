@@ -9,6 +9,13 @@
       &.active {
       	font-weight: bold;
       }
+
+      a {
+        padding: 0;
+        &:hover {
+          background: none;
+        }
+      }
     }
 
   }

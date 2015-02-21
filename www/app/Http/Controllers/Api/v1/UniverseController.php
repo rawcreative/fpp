@@ -1,20 +1,16 @@
 <?php namespace FPP\Http\Controllers\Api\v1;
 
 use FPP\Http\Requests;
-use FPP\Http\Controllers\Controller;
-
+use FPP\Http\Responses\Output;
 use FPP\Services\Outputs\E131;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Storage;
-use League\Csv\Reader;
 
-class UniverseController extends Controller
+class UniverseController extends ApiController
 {
     public $e131;
 
-    public function __construct(E131 $e131)
+    public function __construct(Output $output, E131 $e131)
     {
+        parent::__construct($output);
         $this->e131 = $e131;
     }
 
@@ -22,11 +18,18 @@ class UniverseController extends Controller
     {
         $universes = $this->e131->getUniverses();
 
-        return response()->json([
-            'response' => [
-                'universes' => $universes
-            ]
-        ]);
+
+        return $this->respondWithCollection($universes, function ($universe) {
+            return [
+                'active'         => (boolean)$universe['active'],
+                'universe'       => (integer)$universe['universe'],
+                'startAddress'   => (integer)$universe['startAddress'],
+                'size'           => (integer)$universe['size'],
+                'type'           => (integer)$universe['type'],
+                'unicastAddress' => $universe['unicastAddress'],
+            ];
+        });
+
 
     }
 
@@ -36,14 +39,22 @@ class UniverseController extends Controller
         $results = $this->e131->getUniverse($universe);
 
         if ( ! empty($results)) {
-            return response()->json([
-                'response' => [
-                    'universe' => $results
-                ]
-            ]);
-        }
+            return $this->respondWithItem($results, function($universe) {
+                return [
+                    'active'         => (boolean)$universe['active'],
+                    'universe'       => (integer)$universe['universe'],
+                    'startAddress'   => (integer)$universe['startAddress'],
+                    'size'           => (integer)$universe['size'],
+                    'type'           => (integer)$universe['type'],
+                    'unicastAddress' => $universe['unicastAddress'],
+                ];
+            });
 
-        return reponse()->json(['error' => 'Universe not found']);
+        }
+        $this->statusCode = static::REQUEST_FAILED;
+
+        return $this->respondWithError('Universe Not Found', static::BAD_REQUEST);
+
 
     }
 
@@ -56,7 +67,5 @@ class UniverseController extends Controller
     {
 
     }
-
-
 
 }

@@ -40,6 +40,7 @@ get('/plugins', ['as' => 'plugins', 'uses' => 'Content\PluginController@index'])
 get('/outputs', ['as' => 'outputs', 'uses' => 'IO\E131Controller@index']);
 get('/outputs/pixelnet', ['as' => 'outputs.pixelnet', 'uses' => 'IO\PixelnetController@index']);
 get('/outputs/other', ['as' => 'outputs.other', 'uses' => 'IO\ChannelController@index']);
+get('/outputs/remap', ['as' => 'outputs.remap', 'uses' => 'IO\ChannelController@remap']);
 
 
 /**
