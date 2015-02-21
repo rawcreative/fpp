@@ -27,6 +27,13 @@ get('/schedule', ['as' => 'schedule', 'uses' => 'Content\ScheduleController@inde
 
 
 /**
+ * Content
+ */
+
+get('/files', ['as' => 'files', 'uses' => 'Content\FileController@index']);
+
+
+/**
  * Plugins
  */
 

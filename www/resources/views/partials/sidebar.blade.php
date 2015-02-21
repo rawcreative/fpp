@@ -21,7 +21,7 @@
             <h4>Content</h4>
             <ul class="nav">
                 @section('menu-content')
-                <li class="{{set_active('/')}}"> <a href="">File Manager</a></li>
+                <li class="{{set_active('/files')}}"> <a href="{{route('files')}}">File Manager</a></li>
                 <li class="{{set_active('/')}}"> <a href="#">Playlists</a></li>
                 <li class="{{set_active('/')}}"> <a href="{{route('schedule')}}">Schedule</a></li>
                 <li class="{{set_active('/plugins')}}"> <a href="{{route('plugins')}}">Plugins</a></li>

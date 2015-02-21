@@ -5,6 +5,7 @@
 @import "partials/functions";
 @import "mixins/icons";
 @import "mixins/images";
+@import "mixins/misc";
 @import "bower_components/breakpoint-sass/stylesheets/breakpoint";
 @import "bower_components/susy/sass/susy";
 
@@ -25,6 +26,8 @@
 @import "partials/icons";
 @import "bower_components/foundation-apps/scss/components/forms";
 @import "partials/switch";
+@import "modules/tabs_accordian";
+@import "vendor/dropzone";
 //@import "bower_components/foundation-apps/scss/components/switch";
 
 
@@ -34,6 +37,7 @@
 @import "pages/settings";
 @import "pages/outputs";
 @import "pages/plugins";
+@import "pages/files";
 
 // Icons
 @import "vendor/ionicons.scss";

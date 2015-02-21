@@ -1,0 +1,17 @@
+
+.file-tab {
+	.info {
+		text-align: center;
+		padding: 10px 20px 0;
+		color: $primary-color;
+	}
+}
+
+.files {
+	.dropzone {
+		min-height: 250px;
+		padding: 25px;
+		border: 1px dashed $secondary-color;
+		border-radius: 2px;
+	}
+}

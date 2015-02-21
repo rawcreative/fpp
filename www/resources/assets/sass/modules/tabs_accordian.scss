@@ -328,7 +328,7 @@
               background: none repeat scroll 0 0 $color-success;
               border: 1px solid $color-success;
               content: "";
-              height: calc(~'100% + 1px');
+              height: calc('100% + 1px');
               left: 0;
               position: absolute;
               top: 0;
@@ -411,7 +411,7 @@
     & > li {
       & > a {
           &:after {
-              width: calc(~'100% + 1px');
+              width: calc('100% + 1px');
               height: 100%;
           }
       }
