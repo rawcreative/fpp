@@ -86,7 +86,7 @@ Route::group(['namespace' => 'Api\v1', 'prefix' => 'api'], function() {
 	get('/fppd/fstatus', 'FPPDController@fstatus');
 
 	get('/playlists', 'PlaylistController@getPlaylists');
-	get('/playlist/{playlist}', 'PlaylistController@getPlaylist');
+	get('/playlists/{playlist}', 'PlaylistController@getPlaylist');
 
 	get('/schedule', 'ScheduleController@getSchedule');
 
@@ -96,11 +96,11 @@ Route::group(['namespace' => 'Api\v1', 'prefix' => 'api'], function() {
 	get('/files/sequence', 'MediaController@getSequenceFiles');
 
 	get('/universes', 'UniverseController@universes');
-	get('/universe/{universe}', 'UniverseController@getUniverse');
+	get('/universes/{universe}', 'UniverseController@getUniverse');
 
 	get('/settings', 'SettingController@getAllSettings');
-	get('/setting/{setting}', 'SettingController@getSetting');
-	put('/setting/{setting}', 'SettingController@update');
+	get('/settings/{setting}', 'SettingController@getSetting');
+	put('/settings/{setting}', 'SettingController@update');
 
 });
 

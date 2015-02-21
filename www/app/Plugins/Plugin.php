@@ -634,7 +634,7 @@ class Plugin implements Arrayable, PluginInterface
     {
         if ($this->autoload instanceof Closure) {
             return $this->registerClosureAutoloading();
-        } elseif ($this->autoload === 'platform') {
+        } elseif ($this->autoload === 'fpp') {
             return $this->registerDefaultAutoloading();
         }
     }

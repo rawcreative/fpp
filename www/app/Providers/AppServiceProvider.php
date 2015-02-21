@@ -30,12 +30,12 @@ class AppServiceProvider extends ServiceProvider {
 			'FPP\Services\Registrar'
 		);
 
-		$this->app->bind('pi', function ($app) {
+		$this->app->singleton('pi', function ($app) {
 
 			return new \FPP\Services\Pi;
 		});
 
-		$this->app->bind('fpp', function ($app) {
+		$this->app->singleton('fpp', function ($app) {
 
 			return $app->make('\FPP\Services\FPP');
 		});

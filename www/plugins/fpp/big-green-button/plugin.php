@@ -103,7 +103,7 @@ return [
 	|
 	*/
 
-	'autoload' => 'composer',
+	'autoload' => 'fpp',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -116,7 +116,7 @@ return [
 	*/
 
     'providers' => [
-       // 'Foo\Bar\FooBarServiceProvider',
+        'FPP\BigGreenButton\BigGreenButtonProvider',
     ],
 
     /*

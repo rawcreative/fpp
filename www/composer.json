@@ -6,6 +6,7 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "5.0.*",
+	  	"fpp/fpp-installer": "dev-master",
 		"clue/socket-raw": "dev-master",
 		"brainboxlabs/brain-socket": "dev-master",
 		"jenssegers/model": "dev-master",
@@ -17,7 +18,9 @@
 		"league/csv": "~7.0@dev",
 		"barryvdh/laravel-debugbar": "~2.0@dev",
 		"orchestra/asset": "3.0.*",
-		"league/fractal": "0.12.*@dev"
+		"league/fractal": "0.12.*@dev",
+	    "fpp/big-green-button": "dev-master",
+	    "fpp/menu": "dev-master"
 
 
 	},
@@ -55,6 +58,20 @@
 			"php artisan key:generate"
 		]
 	},
+	"repositories": [
+	  {
+		"type": "vcs",
+		"url": "https://github.com/rawcreative/fpp-installer"
+	  },
+	  {
+		"type": "vcs",
+		"url": "https://github.com/rawcreative/big-green-button"
+	  },
+	  {
+		"type": "vcs",
+		"url": "https://github.com/rawcreative/fpp-menu.git"
+	  }
+	],
 	"config": {
 		"preferred-install": "dist"
 	},

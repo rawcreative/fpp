@@ -14,6 +14,9 @@ class Kernel extends ConsoleKernel {
 		'FPP\Console\Commands\InspireCommand',
 		'FPP\Console\Commands\CreatePlaylist',
 		'FPP\Console\Commands\DeletePlaylist',
+		'FPP\Console\Commands\PluginCommand',
+		'FPP\Console\Commands\PluginInstall',
+		'FPP\Console\Commands\PluginEnable',
 	];
 
 	/**
