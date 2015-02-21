@@ -3,6 +3,7 @@
 use FPP\Http\Requests;
 use FPP\Http\Controllers\Controller;
 use FPP\Services\FPP;
+use FPP\Services\Pi;
 
 class SettingsController extends Controller {
 
@@ -11,9 +12,9 @@ class SettingsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index(FPP $fpp)
+	public function index(FPP $fpp, Pi $pi)
 	{
-		$soundCards = $fpp->getSoundCards();
+		$soundCards = $pi->getSoundCards();
 		$settings = $fpp->getSettings();
 
 		return view('settings.index', compact('soundCards', 'settings'));
