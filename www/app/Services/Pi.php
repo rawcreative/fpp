@@ -26,6 +26,26 @@ class Pi {
 
     }
 
+    public function getSoundCards()
+    {
+        $cardArr = [];
+        exec("for card in /proc/asound/card*/id; do echo -n \$card | sed 's/.*card\\([0-9]*\\).*/\\1:/g'; cat \$card; done",
+            $output, $return_val);
+
+        if ( ! $return_val) {
+            Log::error('Error getting alsa cards for output!');
+        }
+
+        foreach ($output as $card) {
+            $card              = explode(':', $card);
+            $cardArr[$card[0]] = $card[1];
+        }
+
+        return $cardArr;
+
+    }
+
+
     /**
      * Get current timezone setting
      * @return string

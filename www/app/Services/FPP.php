@@ -36,7 +36,6 @@ class FPP
             return ['fppd' => 'stopped'];
         }
 
-
     }
 
     protected function getStatus()
@@ -76,25 +75,6 @@ class FPP
         return $this->modes->get($mode, 'player');
     }
 
-    public function getSoundCards()
-    {
-        $cardArr = [];
-        exec("for card in /proc/asound/card*/id; do echo -n \$card | sed 's/.*card\\([0-9]*\\).*/\\1:/g'; cat \$card; done",
-            $output, $return_val);
-
-        if ( ! $return_val) {
-            Log::error('Error getting alsa cards for output!');
-        }
-
-        foreach ($output as $card) {
-            $card              = explode(':', $card);
-            $cardArr[$card[0]] = $card[1];
-        }
-
-        return $cardArr;
-
-    }
-
     public function isFPPDRunning()
     {
         $status = exec("if ps cax | grep -q fppd; then echo \"true\"; else echo \"false\"; fi");
@@ -125,7 +105,6 @@ class FPP
             return $settings;
         }
         return config('fpp.settings.defaults');
-
 
     }
 
@@ -163,6 +142,5 @@ class FPP
 
         return $parsed;
     }
-
 
 }
