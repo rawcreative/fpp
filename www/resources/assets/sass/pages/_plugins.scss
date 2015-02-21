@@ -82,11 +82,20 @@
 			color: white;
 			text-align: center;
 			font-size: 60px;
+			margin: 0 auto;
 			i {
 				line-height: 2;
 			}
 		}
-
+		@include breakpoint($iphone6-ls) {
+			td {
+				display: block;
+				width: 100%;
+				text-align: center;
+			}
+			
+		}
+		
 		@include breakpoint($desktop-min) {
 			width: 50%;
 		}

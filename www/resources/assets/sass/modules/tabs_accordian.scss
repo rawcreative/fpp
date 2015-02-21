@@ -106,8 +106,8 @@
           -webkit-backface-visibility: hidden;
           width: 100%;
           display: block;
-          background-color: $color-danger;
-          height: 0px;
+          background-color: transparent; //$color-danger;
+          height: 3px;
           content: '';
           z-index: 125;
           .nav-tabs-primary &{
@@ -140,7 +140,8 @@
       &.active, 
       &:hover {
           &:after {
-              height: 3px;
+             // height: 3px;
+             background-color: $color-danger;
           }
       }
   }

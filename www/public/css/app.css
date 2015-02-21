@@ -5982,8 +5982,41 @@ a {
       font-weight: bold; }
     .nav li a {
       padding: 0; }
-      .nav li a:hover {
+      .nav li a:hover, .nav li a:focus {
         background: none; }
+
+.mobile-header {
+  background: #363C47;
+  position: relative;
+  padding: 5px;
+  height: 55px; }
+  .mobile-header .toggle-panel {
+    font-size: 35px;
+    color: white;
+    padding: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    line-height: 1; }
+  .mobile-header .mobile-logo {
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 5px 0; }
+    .mobile-header .mobile-logo img {
+      display: block;
+      height: 100%;
+      width: auto;
+      margin: 0 auto; }
+  @media  (min-width: 769px) {
+    .mobile-header {
+      display: none; } }
 
 .sidebar {
   width: 155px;
@@ -5992,15 +6025,17 @@ a {
   background: #363C47;
   z-index: 10;
   padding: 20px;
-  transition: width 0.25s; }
+  transition: all 0.25s;
+  left: -155px; }
   @media  (min-width: 769px) {
     .sidebar {
+      left: 0;
       width: 155px; } }
   @media  (min-width: 1281px) {
     .sidebar {
       width: 200px; } }
   .sidebar .logo {
-    margin-bottom: 40px; }
+    margin: 0 0 40px; }
     .sidebar .logo img {
       width: 100%;
       height: auto; }
@@ -6809,8 +6844,8 @@ meter {
       -webkit-backface-visibility: hidden;
       width: 100%;
       display: block;
-      background-color: #f55753;
-      height: 0px;
+      background-color: transparent;
+      height: 3px;
       content: '';
       z-index: 125; }
       .nav-tabs-primary .nav-tabs-simple > li:after {
@@ -6829,7 +6864,7 @@ meter {
       background-color: transparent;
       border-color: transparent; }
     .nav-tabs-simple > li.active:after, .nav-tabs-simple > li:hover:after {
-      height: 3px; }
+      background-color: #f55753; }
   .nav-tabs-simple.nav-tabs-left:after, .nav-tabs-simple.nav-tabs-right:after {
     border-bottom: 0px; }
   .nav-tabs-simple.nav-tabs-left > li:after, .nav-tabs-simple.nav-tabs-right > li:after {
@@ -7548,7 +7583,8 @@ meter {
     text-transform: uppercase;
     color: #aaaaaa;
     font-size: 13px;
-    letter-spacing: 1px; }
+    letter-spacing: 1px;
+    background: none; }
   .dashboard .player-status .player-header .status {
     -webkit-flex: 1 auto;
         -ms-flex: 1 auto;
@@ -7929,9 +7965,15 @@ meter {
     background: #363C47;
     color: white;
     text-align: center;
-    font-size: 60px; }
+    font-size: 60px;
+    margin: 0 auto; }
     .plugin-list .list-item .thumb i {
       line-height: 2; }
+  @media  (max-width: 667px) {
+    .plugin-list .list-item td {
+      display: block;
+      width: 100%;
+      text-align: center; } }
   @media  (min-width: 1281px) {
     .plugin-list .list-item {
       width: 50%; } }

@@ -26,7 +26,10 @@
         @section('left-sidebar')
             @include('partials.sidebar')
         @show
-
+        <section class="mobile-header">
+            <a href="#" class="toggle-panel"><i class="ion-navicon"></i></a>
+                <a href="/" class="mobile-logo" title="Falcon Player"><img src="{{ asset('images/logo.png') }}"></a>
+        </section>
         <section class="content-wrapper @yield('content-class', 'frame')">
             @section('header')
                 @include('partials.header')
