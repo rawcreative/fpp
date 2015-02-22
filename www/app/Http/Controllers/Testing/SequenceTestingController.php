@@ -1,9 +1,11 @@
-<?php namespace FPP\Http\Controllers\IO;
+<?php namespace FPP\Http\Controllers\Testing;
 
 use FPP\Http\Requests;
 use FPP\Http\Controllers\Controller;
 
-class ModelsController extends Controller {
+use Illuminate\Http\Request;
+
+class SequenceTestingController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -12,8 +14,7 @@ class ModelsController extends Controller {
 	 */
 	public function index()
 	{
-		$models = [];
-		return view('models.index', compact('models'));
+		return view('testing.sequence');
 	}
 
 	/**

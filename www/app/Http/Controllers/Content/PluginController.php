@@ -3,6 +3,7 @@
 use FPP\Http\Requests;
 use FPP\Http\Controllers\Controller;
 use FPP\Plugins\Repositories\PluginRepositoryInterface;
+use Illuminate\Http\Request;
 
 class PluginController extends Controller {
 
@@ -77,6 +78,40 @@ class PluginController extends Controller {
 	{
 		//
 	}
+
+	public function enablePlugin(Request $request)
+	{
+
+		if(!$slug = $request->input('slug')) {
+			flash()->error('Plugin Enable Failed');
+			return redirect()->back();
+		}
+
+		$this->plugins->enable($slug);
+
+		flash()->success('Plugin Enabled');
+
+		return redirect()->back();
+
+
+	}
+
+	public function disablePlugin(Request $request)
+	{
+
+		if(!$slug = $request->input('slug')) {
+			flash()->error('Plugin Disable Failed');
+			return redirect()->back();
+		}
+
+		$this->plugins->disable($slug);
+		flash()->success('Plugin Disabled');
+
+		return redirect()->back();
+
+
+	}
+
 
 	/**
 	 * Remove the specified resource from storage.

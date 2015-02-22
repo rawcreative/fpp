@@ -4,30 +4,6 @@
 	position: relative;
 	min-height: calc(100vh - 40px);
 	
-	.settings-sidebar {
-		
-		position: absolute;
-		top: 0;
-		left: 0;
-		bottom:0;
-		width: $sidebar-width;
-		padding: 20px;
-		background: $settings-sb-bg;	
-		border-right: 1px solid darken($settings-sb-bg, 5%);
-		transition: width 0.35s;
-		h2 {
-			margin: 0 0 15px;
-			//text-align: center;
-			font-weight: 300;
-
-		}	
-
-		@include breakpoint($desktop-min) {
-			width: $sidebar-width-desktop;
-		}
-
-	}
-
 	.page-content {
 		margin-left: 0;
 		padding: 20px 30px;
@@ -133,6 +109,28 @@
 
 }
 
+.settings-sidebar {
+		
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom:0;
+		width: $sidebar-width;
+		padding: 20px;
+		background: $settings-sb-bg;	
+		border-right: 1px solid darken($settings-sb-bg, 5%);
+		transition: width 0.35s;
+		h2 {
+			margin: 0 0 15px;
+			//text-align: center;
+			font-weight: 300;
 
+		}	
+
+		@include breakpoint($desktop-min) {
+			width: $sidebar-width-desktop;
+		}
+
+	}
 
 

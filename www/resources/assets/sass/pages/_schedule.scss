@@ -1,0 +1,41 @@
+
+.schedule-list {
+
+	@include output-row(schedule) {
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 5px 0;
+
+
+		&-index {
+			width: 24px;
+			text-align: center;
+		}
+		&-active {
+			width: 50px;
+			text-align: center;
+		}
+		&-dates {
+
+		}
+		&-playlist {
+
+		}
+		&-times {
+
+		}
+		&-repeat {
+
+		}
+	}
+
+	.no-schedule p{
+		text-transform: uppercase;
+		text-align: center;
+		padding: 20px;
+		letter-spacing: 1px;
+		font-weight: 600px;
+	}
+}

@@ -38,7 +38,8 @@ get('/files', ['as' => 'files', 'uses' => 'Content\FileController@index']);
  */
 
 get('/plugins', ['as' => 'plugins', 'uses' => 'Content\PluginController@index']);
-
+put('/plugins/disable', ['as' => 'plugins.disable', 'uses' => 'Content\PluginController@disablePlugin']);
+put('/plugins/enable', ['as' => 'plugins.enable', 'uses' => 'Content\PluginController@enablePlugin']);
 
 /**
  * Outputs
@@ -68,6 +69,25 @@ post('/settings/email',	 ['as' => 'settings.email.store',    'uses' => 'Settings
 
 get('/settings/date',	 ['as' => 'settings.date',   		 'uses' => 'Settings\DateTimeController@index']);
 post('/settings/date',	 ['as' => 'settings.date.store',    'uses' => 'Settings\DateTimeController@store']);
+
+
+/**
+ * Models
+ */
+
+get('/models', ['as' => 'models', 'uses' => 'IO\ModelsController@index']);
+
+
+
+/**
+ * Testing
+ */
+
+get('/testing', ['as' => 'testing', 'uses' => 'Testing\OutputTestingController@index']);
+get('/testing/sequence', ['as' => 'testing.sequence', 'uses' => 'Testing\SequenceTestingController@index']);
+
+
+
 
 
 /**
@@ -103,6 +123,35 @@ Route::group(['namespace' => 'Api\v1', 'prefix' => 'api'], function() {
 	put('/settings/{setting}', 'SettingController@update');
 
 });
+
+
+Menu::make('control', function($menu){
+
+	$menu->add('Dashboard', ['route' => 'dashboard']);
+	$menu->add('Display Testing', ['route' => 'testing']);
+	$menu->add('Events', '#');
+	$menu->add('Effects',  '#');
+
+});
+
+Menu::make('content', function($menu){
+
+	$menu->add('File Manager', ['route' => 'files']);
+	$menu->add('Playlists',    '#');
+	$menu->add('Schedule', ['route' => 'schedule']);
+	$menu->add('Plugins',  ['route' => 'plugins']);
+
+});
+
+Menu::make('settings', function($menu){
+
+	$menu->add('General', ['route' => 'settings']);
+	$menu->add('Network', ['route' => 'settings.network']);
+	$menu->add('Channel Outputs', ['route' => 'outputs']);
+	$menu->add('Overlay Models',  ['route' => 'models']);
+
+});
+
 
 // Temporary
 //Event::listen('status.request', function($data) {

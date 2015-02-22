@@ -53,7 +53,7 @@ class Menu {
 	 */
 	public function loadConf($name) {
 		
-		$options = \Config::get('menu::settings');
+		$options = config('fpp.menu');
 		$name    = strtolower($name);
 		
 		if( isset($options[$name]) && is_array($options[$name]) ) {

@@ -12,7 +12,8 @@ class ScheduleController extends Controller {
 	 */
 	public function index()
 	{
-		return view('schedule.index');
+		$schedules = [];
+		return view('schedule.index', compact('schedules'));
 	}
 
 	/**

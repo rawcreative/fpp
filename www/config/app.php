@@ -133,7 +133,8 @@ return [
         //'Dingo\Api\Provider\ApiServiceProvider',
         //'Way\Generators\GeneratorsServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
-      
+        'Laracasts\Flash\FlashServiceProvider',
+
         /*
          * Application Service Providers...
          */
@@ -144,6 +145,7 @@ return [
         'FPP\Providers\RouteServiceProvider',
         'FPP\Providers\HttpServiceProvider',
         'FPP\Providers\PluginsServiceProvider',
+        'FPP\Providers\MenuServiceProvider',
 
     ],
     /*
@@ -197,6 +199,8 @@ return [
         'Pi'          => 'FPP\Facades\Pi',
         'FPP'         => 'FPP\Facades\FPP',
         'Plugins'     => 'FPP\Facades\Plugins',
+        'Menu'        => 'FPP\Facades\Menu',
+        'Flash'        => 'Laracasts\Flash\Flash',
         //'API' => 'Dingo\Api\Facade\API',
 
     ],

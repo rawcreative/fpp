@@ -20,7 +20,7 @@
 		"orchestra/asset": "3.0.*",
 		"league/fractal": "0.12.*@dev",
 	    "fpp/big-green-button": "dev-master",
-	    "fpp/menu": "dev-master"
+	  	"laracasts/flash": "dev-master"
 
 
 	},

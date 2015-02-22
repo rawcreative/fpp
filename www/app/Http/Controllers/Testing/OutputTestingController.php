@@ -12,7 +12,7 @@ class OutputTestingController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		return view('testing.index');
 	}
 
 	/**

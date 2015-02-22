@@ -27,6 +27,8 @@
 @import "bower_components/foundation-apps/scss/components/forms";
 @import "partials/switch";
 @import "modules/tabs_accordian";
+@import "modules/notifications";
+@import "modules/buttons";
 @import "vendor/dropzone";
 //@import "bower_components/foundation-apps/scss/components/switch";
 
@@ -38,6 +40,9 @@
 @import "pages/outputs";
 @import "pages/plugins";
 @import "pages/files";
+@import "pages/testing";
+@import "pages/models";
+@import "pages/schedule";
 
 // Icons
 @import "vendor/ionicons.scss";

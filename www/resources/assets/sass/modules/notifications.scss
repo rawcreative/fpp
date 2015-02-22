@@ -124,33 +124,33 @@
 
 
 // Pages Notification customizations
-body > .pgn-wrapper[data-position="top"] {
+body > .fpn-wrapper[data-position="top"] {
     top: $layout-header-height;
     left: $layout-sidepanel-width-collapsed;
 }
-body > .pgn-wrapper[data-position="bottom"] {
+body > .fpn-wrapper[data-position="bottom"] {
     left: $layout-sidepanel-width-collapsed;
 }
 
-body > .pgn-wrapper[data-position$='-left'] {
+body > .fpn-wrapper[data-position$='-left'] {
     left: $layout-sidepanel-width-collapsed + 20px;
     right: auto;
 }
 
-body > .pgn-wrapper[data-position^='top-'] {
+body > .fpn-wrapper[data-position^='top-'] {
     top: $layout-header-height + 20px;
     bottom: auto;
 }
 
 
-body > .pgn-wrapper[data-position^='top-'] .pgn-flip {
+body > .fpn-wrapper[data-position^='top-'] .fpn-flip {
     top: -30px - $layout-header-height;
 }
 
-.pgn-circle .alert .close {
+.fpn-circle .alert .close {
     margin-top: -4px;
     }
-body > .pgn-wrapper{
+body > .fpn-wrapper{
     z-index: $zIndex-notifications;
 }
 // Simple alerts

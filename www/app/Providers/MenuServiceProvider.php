@@ -1,8 +1,9 @@
 <?php namespace FPP\Providers;
 
+use FPP\Menu\Menu;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
-class Menu\ServiceProvider extends BaseServiceProvider {
+class MenuServiceProvider extends BaseServiceProvider {
 
 	/**
 	 * Indicates if loading of the provider is deferred.
@@ -18,12 +19,11 @@ class Menu\ServiceProvider extends BaseServiceProvider {
 	 */
 	public function boot()
 	{
-		$settings   = $this->app['files']->getRequire(__DIR__ .'/../config/settings.php');
 
-        $this->app['config']->set('fpp/menu::config', $settings);
+        //$this->app['config']->set('fpp/menu::config', $settings);
 
 		// Extending Blade engine
-		require_once('Extensions/BladeExtension.php');
+		//require_once('Extensions/BladeExtension.php');
 	}
 
 	/**
@@ -33,7 +33,7 @@ class Menu\ServiceProvider extends BaseServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app->alias('Menu', 'FPP\Menu\Facade');
+
 		$this->app['menu'] = $this->app->share(function($app){
 
 		 		return new Menu();

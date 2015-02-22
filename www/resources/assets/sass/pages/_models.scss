@@ -1,0 +1,38 @@
+
+.model-overlay-list {
+
+	@include output-row(model) {
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 5px 0;
+
+
+		&-name {
+
+		}
+		&-start {
+
+		}
+		&-count {
+
+		}
+
+		&-orientation {
+
+		}
+		
+		&-start-corner {
+
+		}
+	}
+
+	.no-models p{
+		text-transform: uppercase;
+		text-align: center;
+		padding: 20px;
+		letter-spacing: 1px;
+		font-weight: 600px;
+	}
+}
