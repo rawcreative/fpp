@@ -1,9 +1,9 @@
-<?php namespace FPP\Http\Controllers\Settings;
+<?php namespace FPP\Http\Controllers\Testing;
 
 use FPP\Http\Requests;
 use FPP\Http\Controllers\Controller;
 
-class TestingController extends Controller {
+class OutputTestingController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
