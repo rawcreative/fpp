@@ -45,7 +45,7 @@ return [
     |
     |
     */
-    'media'     => env('PI_MEDIA').'/media',
+    'media'     => env('PI_MEDIA') ? env('PI_MEDIA').'/media' : '/home/pi/media',
     'music'     => '/music',
     'sequences' => '/sequences',
     'playlists' => '/playlists',
