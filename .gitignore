@@ -28,3 +28,4 @@ www/.idea
 www/node_modules
 www/vendor
 www/storage/pi
+www/plugins/
