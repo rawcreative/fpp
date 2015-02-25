@@ -1,6 +1,7 @@
 var React = require('react');
 var Classable = require('../mixins/classable');
 var Icon = require('./icon');
+var PanelControl = require('./panelcontrol');
 
 var PanelControls = React.createClass({
 		mixins:[Classable],
@@ -26,12 +27,13 @@ var PanelControls = React.createClass({
 
       		// switch(control.type) {
       		// 	case 'toggle' : 
-      				component = (
-      					<li>
-	      					<a href="#" className={control.classname}>
-	      						<Icon className={control.icon} />
-	      					</a>
-      					</li>);
+      				// component = (
+      				// 	<li key={i}>
+	      			// 		<a href="#" className={control.classname}>
+	      			// 			<Icon className={control.icon} />
+	      			// 		</a>
+      				// 	</li>);
+      				component = <PanelControl key={i} index={i} onSelect={this.props.onSelect} icon={control.icon} className={control.classname} />
       		// 		break;
       		// }
       		children.push(component);
@@ -39,6 +41,8 @@ var PanelControls = React.createClass({
 
       	return children;
 	}
+
+
 
 });
 

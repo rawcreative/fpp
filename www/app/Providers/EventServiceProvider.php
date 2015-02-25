@@ -19,7 +19,10 @@ class EventServiceProvider extends ServiceProvider {
 
 		'status.request' => [
 			'FPP\Handlers\Events\StatusRequest@getStatus'
-		]
+		],
+		'file.uploaded' => [
+			'FPP\Handlers\Events\FileEventHandler@fileUploaded'
+		],
 	];
 
 }

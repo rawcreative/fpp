@@ -17,8 +17,8 @@ class ScheduleController extends Controller
     {
         if (Storage::disk('pi')->exists("schedule")) {
 
-            $csv = Reader::createFromPath(config('fpp.schedule'));
-
+            $csv = Reader::createFromPath(fpp_media().'/schedule');
+            
             $entries = $csv->fetchAssoc([
                 'enabled',
                 'playlist',

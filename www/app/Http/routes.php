@@ -23,6 +23,17 @@ Route::controllers([
 
 get('/', ['as' => 'dashboard', 'uses' => 'DashboardController@index']);
 
+
+/**
+ * Playlists
+ */
+
+get('/playlists', ['as' => 'playlists', 'uses' => 'Content\PlaylistController@index']);
+
+
+/**
+ * Scheduler
+ */
 get('/schedule', ['as' => 'schedule', 'uses' => 'Content\ScheduleController@index']);
 
 
@@ -31,7 +42,7 @@ get('/schedule', ['as' => 'schedule', 'uses' => 'Content\ScheduleController@inde
  */
 
 get('/files', ['as' => 'files', 'uses' => 'Content\FileController@index']);
-
+post('/files/upload', ['as' => 'files.upload', 'uses' => 'Content\FileController@store']);
 
 /**
  * Plugins
@@ -60,6 +71,10 @@ post('/settings',		 ['as' => 'settings.store', 	     'uses' => 'Settings\Setting
 
 get('/settings/network', ['as' => 'settings.network', 		 'uses' => 'Settings\NetworkController@index']);
 post('/settings/network',['as' => 'settings.network.store',  'uses' => 'Settings\NetworkController@store']);
+
+get('/settings/network/dns', ['as' => 'settings.network.dns', 		 'uses' => 'Settings\NetworkController@dns']);
+post('/settings/network/dns',['as' => 'settings.network.dns.store',  'uses' => 'Settings\NetworkController@storeDNS']);
+
 
 get('/settings/logs',	 ['as' => 'settings.logs',    		 'uses' => 'Settings\LogsController@index']);
 post('/settings/logs',	 ['as' => 'settings.logs.store',     'uses' => 'Settings\LogsController@store']);
@@ -124,33 +139,6 @@ Route::group(['namespace' => 'Api\v1', 'prefix' => 'api'], function() {
 
 });
 
-
-Menu::make('control', function($menu){
-
-	$menu->add('Dashboard', ['route' => 'dashboard']);
-	$menu->add('Display Testing', ['route' => 'testing']);
-	$menu->add('Events', '#');
-	$menu->add('Effects',  '#');
-
-});
-
-Menu::make('content', function($menu){
-
-	$menu->add('File Manager', ['route' => 'files']);
-	$menu->add('Playlists',    '#');
-	$menu->add('Schedule', ['route' => 'schedule']);
-	$menu->add('Plugins',  ['route' => 'plugins']);
-
-});
-
-Menu::make('settings', function($menu){
-
-	$menu->add('General', ['route' => 'settings']);
-	$menu->add('Network', ['route' => 'settings.network']);
-	$menu->add('Channel Outputs', ['route' => 'outputs']);
-	$menu->add('Overlay Models',  ['route' => 'models']);
-
-});
 
 
 // Temporary

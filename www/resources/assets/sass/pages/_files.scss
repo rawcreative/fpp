@@ -7,6 +7,14 @@
 	}
 }
 
+.file-list {
+	//background: #f1f1f1;
+
+	.table tbody tr td {
+		background: transparent;
+	}
+}
+
 .files {
 	.dropzone {
 		min-height: 250px;

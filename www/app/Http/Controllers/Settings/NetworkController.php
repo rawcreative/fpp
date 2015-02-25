@@ -1,9 +1,18 @@
 <?php namespace FPP\Http\Controllers\Settings;
 
+use FPP\Services\Pi;
 use FPP\Http\Requests;
 use FPP\Http\Controllers\Controller;
 
 class NetworkController extends Controller {
+
+	protected $pi;
+
+	public function __construct(Pi $pi)
+	{
+		$this->pi = $pi;
+	}
+
 
 	/**
 	 * Display a listing of the resource.
@@ -12,8 +21,33 @@ class NetworkController extends Controller {
 	 */
 	public function index()
 	{
-		return view('settings.network');
+
+		if(env('APP_DEV')) {
+			$interfaces = ['eth0' => 'eth0', 'wlan0' => 'wlan0'];
+		} else {
+			$ifaces = $this->pi->getNetworkInterfaces();
+			$interfaces = [];
+			foreach($ifaces as $iface) {
+				$interfaces[$iface] = $iface;
+			}
+		}		
+
+		return view('settings.network', compact('interfaces'));
 	}
+
+	public function dns()
+	{
+		$dns = $this->pi->getDNSInfo();
+		$hostname = \FPP::getSetting('hostname');
+		$dhcp = true;
+
+		if(!$dns['DNS1'] || !$dns['DNS2']) {
+			$dhcp = false;
+		}
+
+		return view('settings.network-dns', compact('dns', 'hostname', 'dhcp'));
+	}
+
 
 	/**
 	 * Show the form for creating a new resource.

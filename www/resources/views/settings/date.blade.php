@@ -5,13 +5,14 @@
 @section('main')
 
     <div class="page-content date">
-        <header class="page-title">
-            <h2>Date & Time Settings</h2>
-        </header>
+       
         <div class="main">
+        <div class="panel panel-transparent">
+        	<div class="panel-heading"><div class="panel-title">Date & Time Settings</div></div>
+			<div class="panel-body">
             {!! Form::open() !!}
 			<section>
-				<h3>Manually Set Date/Time</h3>
+				<h4><span class="semi-bold">Manually Set</span> Date & Time</h4>
 				<div class="field columns half">
 					<div class="left">
 						{!! Form::label('manual_date', 'Date') !!}
@@ -24,10 +25,11 @@
 				</div>
 			
 			</section>
+			<hr/>
 			<section>
-				<h3>Real Time Clock</h3>
+				
 				<div class="field">
-					
+					{!! Form::label('piRTC', 'Real Time Clock') !!}
 					{!! Form::select('piRTC', [
 						'N' => 'None',
 						'1' => 'RasClock',
@@ -37,20 +39,20 @@
 				</div>
 			</section>
 			<section>
-				<h3>NTP</h3>
+			
 				<div class="field">
-					
+					{!! Form::label('ntp', 'NTP') !!}
+					<div>
 					{!! Form::radio('ntp', 'enabled', $ntp) !!}
 					{!! Form::label('ntp', 'Enabled') !!}
 					{!! Form::radio('ntp', 'disabled', !$ntp) !!}
 					{!! Form::label('ntp', 'Disabled') !!}
-					
+					</div>
 				</div>
 			</section>
 			<section>
-				<h3>Time Zone</h3>
 					<div class="field">
-					
+					{!! Form::label('timezone', 'Time Zone') !!}
 					{!! Form::select('timezone', $timezones, $currentTimezone) !!}
 				</div>
 			</section>
@@ -58,6 +60,7 @@
 				{!! Form::submit('Save Settings', ['class' => 'button']) !!}
 			</div>
             {!! Form::close() !!}
+        </div>
         </div>
     </div>
 

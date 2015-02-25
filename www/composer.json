@@ -13,8 +13,7 @@
 		"jamesmoss/flywheel": "dev-master",
 		"mrrio/shellwrap": "dev-master",
 	 	"laravelcollective/html": "~5.0",
-
-	  	
+	 	"laracasts/utilities": "~2.0",	  	
 		"league/csv": "~7.0@dev",
 		"barryvdh/laravel-debugbar": "~2.0@dev",
 		"orchestra/asset": "3.0.*",
@@ -66,10 +65,6 @@
 	  {
 		"type": "vcs",
 		"url": "https://github.com/rawcreative/big-green-button"
-	  },
-	  {
-		"type": "vcs",
-		"url": "https://github.com/rawcreative/fpp-menu.git"
 	  }
 	],
 	"config": {

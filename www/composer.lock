@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b2edfee0fd29c1e4cb1ee1fe7a083276",
+    "hash": "7275655ea422ebf63d43054849aeeff9",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1123,17 +1123,61 @@
             "time": "2015-02-02 06:58:38"
         },
         {
+            "name": "laracasts/utilities",
+            "version": "2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer.git",
+                "reference": "fb96d2de843086af87b175c890d75561da66d393"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laracasts/PHP-Vars-To-Js-Transformer/zipball/fb96d2de843086af87b175c890d75561da66d393",
+                "reference": "fb96d2de843086af87b175c890d75561da66d393",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Laracasts\\Utilities\\JavaScript\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeffrey Way",
+                    "email": "jeffrey@laracasts.com"
+                }
+            ],
+            "description": "Transform your PHP to JavaScript",
+            "keywords": [
+                "javascript",
+                "laravel"
+            ],
+            "time": "2015-02-06 17:35:14"
+        },
+        {
             "name": "laravel/framework",
             "version": "5.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "68571f07e6645ef49cbef9d0b20165a0fec472d5"
+                "reference": "ea2f12837ed07864f58e2648e032c06d47ffb093"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/68571f07e6645ef49cbef9d0b20165a0fec472d5",
-                "reference": "68571f07e6645ef49cbef9d0b20165a0fec472d5",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/ea2f12837ed07864f58e2648e032c06d47ffb093",
+                "reference": "ea2f12837ed07864f58e2648e032c06d47ffb093",
                 "shasum": ""
             },
             "require": {
@@ -1150,7 +1194,7 @@
                 "mtdowling/cron-expression": "~1.0",
                 "nesbot/carbon": "~1.0",
                 "php": ">=5.4.0",
-                "psy/psysh": "0.3.*",
+                "psy/psysh": "0.4.*",
                 "swiftmailer/swiftmailer": "~5.1",
                 "symfony/console": "2.6.*",
                 "symfony/debug": "2.6.*",
@@ -1245,7 +1289,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-02-21 04:20:15"
+            "time": "2015-02-23 22:48:09"
         },
         {
             "name": "laravelcollective/html",
@@ -1303,12 +1347,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/csv.git",
-                "reference": "ea558086e9550d4a020a5ad7a7e96bddc82317db"
+                "reference": "36007ebf94371005d73dea552ff901998d6a7b60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/csv/zipball/ea558086e9550d4a020a5ad7a7e96bddc82317db",
-                "reference": "ea558086e9550d4a020a5ad7a7e96bddc82317db",
+                "url": "https://api.github.com/repos/thephpleague/csv/zipball/36007ebf94371005d73dea552ff901998d6a7b60",
+                "reference": "36007ebf94371005d73dea552ff901998d6a7b60",
                 "shasum": ""
             },
             "require": {
@@ -1350,7 +1394,7 @@
                 "read",
                 "write"
             ],
-            "time": "2015-02-20 09:32:34"
+            "time": "2015-02-23 09:14:02"
         },
         {
             "name": "league/flysystem",
@@ -1358,12 +1402,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "f2e041428fb4b565bf65de708a12882a5273350e"
+                "reference": "a2f5629fb0e6a85b749b3f49bd790b61381c14a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/f2e041428fb4b565bf65de708a12882a5273350e",
-                "reference": "f2e041428fb4b565bf65de708a12882a5273350e",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a2f5629fb0e6a85b749b3f49bd790b61381c14a9",
+                "reference": "a2f5629fb0e6a85b749b3f49bd790b61381c14a9",
                 "shasum": ""
             },
             "require": {
@@ -1433,7 +1477,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2015-02-20 11:50:32"
+            "time": "2015-02-22 18:36:34"
         },
         {
             "name": "league/fractal",
@@ -1560,12 +1604,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "f05ed3a44a8e40533d4cf60a0669db6b1887b499"
+                "reference": "fa3bc975c2ff42a40c4c565b191a31a7e7ca08b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/f05ed3a44a8e40533d4cf60a0669db6b1887b499",
-                "reference": "f05ed3a44a8e40533d4cf60a0669db6b1887b499",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/fa3bc975c2ff42a40c4c565b191a31a7e7ca08b1",
+                "reference": "fa3bc975c2ff42a40c4c565b191a31a7e7ca08b1",
                 "shasum": ""
             },
             "require": {
@@ -1624,7 +1668,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-02-11 14:20:33"
+            "time": "2015-02-23 00:57:27"
         },
         {
             "name": "mrrio/shellwrap",
@@ -2096,16 +2140,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "dev-develop",
+            "version": "v0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "c0115488891e46f40561d12beeb5b8f51d275c02"
+                "reference": "eee16e9525405b32646b5a0f8a12fb84d566905d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/c0115488891e46f40561d12beeb5b8f51d275c02",
-                "reference": "c0115488891e46f40561d12beeb5b8f51d275c02",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/eee16e9525405b32646b5a0f8a12fb84d566905d",
+                "reference": "eee16e9525405b32646b5a0f8a12fb84d566905d",
                 "shasum": ""
             },
             "require": {
@@ -2123,6 +2167,7 @@
             },
             "suggest": {
                 "ext-pcntl": "Enabling the PCNTL extension makes PsySH a lot happier :)",
+                "ext-pdo-sqlite": "The doc command requires SQLite to work.",
                 "ext-posix": "If you have PCNTL, you'll want the POSIX extension as well.",
                 "ext-readline": "Enables support for arrow-key history navigation, and showing and manipulating command history."
             },
@@ -2162,7 +2207,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2015-02-20 16:52:22"
+            "time": "2015-02-23 21:21:17"
         },
         {
             "name": "react/event-loop",

@@ -103,6 +103,12 @@
   text-align: center;
   right: -10px;
   top: -10px;
+    svg {
+
+        display: none;
+        width: 40px;
+        height: 40px; }
+  
 }
 .dropzone .dz-preview .dz-success-mark,
 .dropzone-previews .dz-preview .dz-success-mark {

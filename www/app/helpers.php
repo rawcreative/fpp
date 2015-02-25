@@ -14,13 +14,15 @@ if ( ! function_exists('fpp_dir')) {
 if ( ! function_exists('fpp_media')) {
     function fpp_media($directory = false)
     {
-        $conf = 'fpp.media';
+        $conf = config('fpp.media');
+
 
         if ($directory) {
-            $conf = 'fpp.' . $directory;
+            $sub = config('fpp.' . $directory);
+            $conf = $conf.$sub;
         }
 
-        return config($conf);
+        return $conf;
     }
 }
 

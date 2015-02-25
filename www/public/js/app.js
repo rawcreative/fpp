@@ -12,6 +12,11 @@ window.app = {};
 		    console.log(msg);
 		});
 
+		app.BrainSocket.Event.listen('file.uploaded',function(msg)
+		{
+			console.log(msg);
+		});
+
 		app.BrainSocket.Event.listen('app.success',function(msg)
 		{
 		    console.log(msg);

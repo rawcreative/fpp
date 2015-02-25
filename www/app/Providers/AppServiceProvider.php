@@ -11,7 +11,7 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		//
+
 	}
 
 	/**
@@ -40,7 +40,10 @@ class AppServiceProvider extends ServiceProvider {
 			return $app->make('\FPP\Services\FPP');
 		});
 
-		
+		$this->app->singleton('media', function ($app) {
+
+			return $app->make('\FPP\Services\Media');
+		});
 	}
 
 }

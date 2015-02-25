@@ -15,7 +15,7 @@ class MediaController extends Controller
      */
     public function getMusicFiles()
     {
-        $files = $this->getFiles(config('fpp.music'));
+        $files = $this->getFiles(fpp_media('music'));
 
         return response()->json(['response' => ['musicFiles' => $files]]);
     }
@@ -28,7 +28,7 @@ class MediaController extends Controller
     public function getSequenceFiles()
     {
 
-        $files = $this->getFiles(config('fpp.sequences'));
+        $files = $this->getFiles(fpp_media('sequences'));
 
         return response()->json(['response' => ['sequenceFiles' => $files]]);
     }
@@ -40,7 +40,7 @@ class MediaController extends Controller
      */
     public function getVideoFiles()
     {
-        $files = $this->getFiles(config('fpp.videos'));
+        $files = $this->getFiles(fpp_media('videos'));
 
         return response()->json(['response' => ['videoFiles' => $files]]);
     }

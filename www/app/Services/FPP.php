@@ -7,6 +7,7 @@ use FPP\Exceptions\FPPSettingsException;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use League\Csv\Reader;
 use Socket\Raw\Exception;
 
 class FPP
@@ -40,16 +41,15 @@ class FPP
 
     protected function getStatus()
     {
-
         return $this->command->send('s');
     }
 
+
     protected function parseStatus($status)
     {
-        // date format: D M d H:i:s T Y
 
         $status = explode(',', $status);
-        $time   = Carbon::now(\Pi::getTimezone())->format('D M d H:i:s T Y');
+        $time   = Pi::getLocalTime();
 
         $data = [
             'fppd'        => 'running',
@@ -70,17 +70,33 @@ class FPP
         return $data;
     }
 
+    /**
+     * Parse mode integer into a user recognizable string
+     *
+     * @param $mode
+     * @return mixed
+     */
     public function parseFPPDMode($mode)
     {
         return $this->modes->get($mode, 'player');
     }
 
+    /**
+     * Check if FPPD is currently running
+     *
+     * @return bool
+     */
     public function isFPPDRunning()
     {
         $status = exec("if ps cax | grep -q fppd; then echo \"true\"; else echo \"false\"; fi");
         return ($status === 'true');
     }
 
+    /**
+     * Return current fppd mode
+     *
+     * @return string
+     */
     public function getFPPDMode()
     {
         $settings = $this->getSettings();
@@ -142,5 +158,47 @@ class FPP
 
         return $parsed;
     }
+
+    /**
+     * Gather and return playlists
+     *
+     * @return array
+     */
+    public function getPlaylists()
+    {
+        return array_values(array_filter(scandir(fpp_media('playlists')), function ($file) {
+            return $file != '.' && $file != '..';
+        }));
+    }
+
+    /**
+     * Return playlist data
+     *
+     * @param $playlist
+     * @return array|bool
+     */
+    public function getPlaylist($playlist)
+    {
+        if (Storage::disk('pi')->exists("playlists/$playlist")) {
+            $csv       = Reader::createFromPath(trailingslashit(fpp_media('playlists')) . $playlist);
+            $firstLast = $csv->fetchOne();
+            $entries   = $csv->setOffset(1)->fetchAssoc(['type', 'sequence', 'media']);
+
+            return [
+                    'name'       => $playlist,
+                    'first_once' => $firstLast[0],
+                    'last_once'  => $firstLast[1],
+                    'entries'    => $entries
+              ];
+        }
+
+        return false;
+    }
+
+    public function getVolume()
+    {
+        return $this->getSetting('volume');
+    }
+
 
 }

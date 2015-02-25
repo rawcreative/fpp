@@ -12,7 +12,9 @@
 
 				&.player-status {
 					@include span(5 of 10 last);
-					min-height: 202px;
+					// min-height: 202px;
+
+					// &.collapsed { min-height: inherit; }
 				}
 
 				&.playlist-info {
@@ -79,14 +81,27 @@
 						outline: none;
 					}
 				}
+				.form-group {
+					margin: 0;
+					display: inline-block;
+					width: 60%;
+					> select {
+						width: 100%;
+					}
+				}
 				select {
 					width: 60%;
+					height: auto;
 					display: inline-block;
 					padding: .25rem;
 					margin-bottom: 0;
 					background-color: transparent;
 					border-color: darken($secondary-color, 15%);
 					border-radius: 2px;
+					box-shadow: none;
+					line-height: inherit;
+					background: #fafafa url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="32" height="24" viewBox="0 0 32 24"><polygon points="0,0 32,0 16,24" style="fill: #000"></polygon></svg>') right 10px center no-repeat;
+					background-size: 8px 8px;
 					color: #888;
 					font-size: 13px;
 
@@ -152,6 +167,12 @@
 					.button {
 						display: inline-block;
 					}
+					.form-group {
+						margin: 0;
+						display:inline-block;
+						width: 85%;
+						>select { width: 95%; }
+					}
 					.playlist {
 						padding: .25rem;
 						border-radius: 2px;
@@ -159,6 +180,12 @@
 						font-size: 13px;
 						width: 85%;
 						margin: 0;
+						box-shadow: none;
+						line-height: inherit;
+						height: inherit;
+						background: #fafafa url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="32" height="24" viewBox="0 0 32 24"><polygon points="0,0 32,0 16,24" style="fill: #000"></polygon></svg>') right 10px center no-repeat;
+						background-size: 8px 8px;
+
 					}
 					.button {
 						vertical-align: middle;

@@ -33,6 +33,8 @@ return [
             'E131Bridging'           => false,
             'emailenable'            => false,
             'piRTC'                  => 'N',
+            'volume'                 => 75,
+            'hostname'               => 'FPP',
 
         ]
     ],
@@ -43,23 +45,24 @@ return [
     |
     |
     */
-    'media'     => '/home/pi/media',
-    'music'     => '/home/pi/media/music',
-    'sequences' => '/home/pi/media/sequences',
-    'playlists' => '/home/pi/media/playlists',
-    'events'    => '/home/pi/media/events',
-    'videos'    => '/home/pi/media/videos',
-    'effects'   => '/home/pi/media/effects',
-    'scripts'   => '/home/pi/media/scripts',
-    'logs'      => '/home/pi/media/logs',
-    'upload'    => '/home/pi/media/upload',
-    'universes' => '/home/pi/media/universes',
-    'pixelnet'  => '/home/pi/media/pixelnetDMX',
-    'schedule'  => '/home/pi/media/schedule',
-    'bytes'     => '/home/pi/media/bytesReceived',
-    'remap'     => '/home/pi/media/channelremap',
-    'exim'      => '/home/pi/media/exim4',
+    'media'     => env('PI_MEDIA').'/media',
+    'music'     => '/music',
+    'sequences' => '/sequences',
+    'playlists' => '/playlists',
+    'events'    => '/events',
+    'videos'    => '/videos',
+    'effects'   => '/effects',
+    'scripts'   => '/scripts',
+    'logs'      => '/logs',
+    'upload'    => '/upload',
+    'universes' => '/universes',
+    'pixelnet'  => '/pixelnetDMX',
+    'schedule'  => '/schedule',
+    'bytes'     => '/bytesReceived',
+    'remap'     => '/channelremap',
+    'exim'      => '/exim4',
     'docs'      => fpp_dir() . '/docs',
+  
     /*
     |--------------------------------------------------------------------------
     | FPP Email Settings

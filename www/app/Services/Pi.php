@@ -11,14 +11,30 @@ use Illuminate\Support\Facades\Storage;
 
 class Pi {
 
+    /**
+     * Finds and returns available network interfaces
+     *
+     * @return array
+     */
     public function getNetworkInterfaces()
     {
-        // ifconfig | cut -f1 -d' ' | grep -v ^$ | grep -v lo | grep -v eth0:0
+
+        return explode("\n",trim(shell_exec("/sbin/ifconfig | cut -f1 -d' ' | grep -v ^$ | grep -v lo | grep -v eth0:0")));
     }
 
     public function getInterfaceInfo($interface)
     {
         //compile and return network interface info
+    }
+
+    public function getDNSInfo()
+    {
+        if(Storage::disk('pi')->exists('config/dns')) {
+            $cfg = Storage::disk('pi')->get('config/dns');
+            return parse_ini_string($cfg);
+        }
+
+        return [];
     }
 
     public function rebootPi()
@@ -53,11 +69,11 @@ class Pi {
     public function getTimezone()
     {
 
-            if (Storage::disk('pi')->exists('timezone')) {
-                $timezone = trim(Storage::disk('pi')->get('timezone'));
-                return $timezone;
-            }
-            return Carbon::now()->timezoneName;
+        if (Storage::disk('pi')->exists('timezone')) {
+            $timezone = trim(Storage::disk('pi')->get('timezone'));
+            return $timezone;
+        }
+        return Carbon::now()->timezoneName;
 
 
     }
@@ -85,6 +101,18 @@ class Pi {
         return $zones;
 
     }
+
+    /**
+     * Get local time in friendly format
+     * Format ex: Mon Feb 23 20:54:46 EST 2015
+     *
+     * @return string
+     */
+    public function getLocalTime()
+    {
+        return Carbon::now($this->getTimezone())->format('D M d H:i:s T Y');
+    }
+
 
     /**
      * Checks if NTP is enabled

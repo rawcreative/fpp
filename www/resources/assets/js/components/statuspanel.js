@@ -1,10 +1,8 @@
 var React = require('react/addons');
 var Button = require('./button');
 var Icon = require('./icon');
+var Input = require('react-bootstrap').Input;
 
-function capitalize(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
 
 var StatusPanel = React.createClass({
 	getInitialState: function() {
@@ -76,13 +74,14 @@ var StatusPanel = React.createClass({
 					<span className="widget-icon"><span className="mode-icon">{icon}</span></span>
 					<span className="widget-text">{mode}</span>
 					<div className="widget-buttons">
-						<select className="fppd-mode-select">
-							<option value="standalone">Standalone</option>
+					<Input type="select" className="fppd-mode-select" defaultValue="standalone">
+				        	<option value="standalone">Standalone</option>
 							<option value="master" >Master</option>
 							<option value="remote" >Remote</option>
 							<option value="bridge" >Bridge</option>
-						</select>
-						<Button className="fppd-mode-apply" small="true" gradient="true" label="Apply"  />
+				     </Input>
+						
+					<Button className="fppd-mode-apply" small="true" gradient="true" label="Apply"  />
 					</div>
 				</div>		
 			);

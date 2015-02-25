@@ -127,13 +127,13 @@ return [
         'Illuminate\Translation\TranslationServiceProvider',
         'Illuminate\Validation\ValidationServiceProvider',
         'Illuminate\View\ViewServiceProvider',
-        //'Illuminate\Html\HtmlServiceProvider',
         'Collective\Html\HtmlServiceProvider',
         'BrainSocket\BrainSocketServiceProvider',
         //'Dingo\Api\Provider\ApiServiceProvider',
-        //'Way\Generators\GeneratorsServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
         'Laracasts\Flash\FlashServiceProvider',
+        'Laracasts\Utilities\JavaScript\JavascriptServiceProvider',
+
 
         /*
          * Application Service Providers...
@@ -143,9 +143,10 @@ return [
         'FPP\Providers\ConfigServiceProvider',
         'FPP\Providers\EventServiceProvider',
         'FPP\Providers\RouteServiceProvider',
+        'FPP\Providers\MenuServiceProvider',
         'FPP\Providers\HttpServiceProvider',
         'FPP\Providers\PluginsServiceProvider',
-        'FPP\Providers\MenuServiceProvider',
+        
 
     ],
     /*
@@ -198,8 +199,10 @@ return [
         'Debugbar'    => 'Barryvdh\Debugbar\Facade',
         'Pi'          => 'FPP\Facades\Pi',
         'FPP'         => 'FPP\Facades\FPP',
-        'Plugins'     => 'FPP\Facades\Plugins',
         'Menu'        => 'FPP\Facades\Menu',
+        'Plugins'     => 'FPP\Facades\Plugins',
+
+        'Media'        => 'FPP\Facades\Media',
         'Flash'        => 'Laracasts\Flash\Flash',
         //'API' => 'Dingo\Api\Facade\API',
 

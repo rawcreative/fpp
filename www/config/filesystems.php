@@ -50,7 +50,7 @@ return [
 
 		'pi' => [
 			'driver' => 'local',
-			'root' => env('APP_DEV') ? storage_path().'/pi' : '/home/pi/media'
+			'root' => env('APP_DEV') ? storage_path().'/pi/media' : '/home/pi/media'
 		],
 
 		's3' => [

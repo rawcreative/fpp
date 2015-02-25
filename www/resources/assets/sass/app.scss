@@ -29,9 +29,22 @@
 @import "modules/tabs_accordian";
 @import "modules/notifications";
 @import "modules/buttons";
+@import "modules/tables";
 @import "vendor/dropzone";
 //@import "bower_components/foundation-apps/scss/components/switch";
 
+//@import "node_modules/material-ui-sass/material-ui/variables/colors";
+//@import "node_modules/material-ui-sass/material-ui/variables/media-queries";
+//@import "node_modules/material-ui-sass/material-ui/variables/spacing";
+//@import "node_modules/material-ui-sass/material-ui/variables/custom-variables";
+//@import "node_modules/material-ui-sass/material-ui/mixins/mixins";
+//
+//@import "node_modules/material-ui-sass/material-ui/components/toolbar";
+//@import "node_modules/material-ui-sass/material-ui/components/drop-down-icon";
+//@import "node_modules/material-ui-sass/material-ui/components/drop-down-menu";
+//@import "node_modules/material-ui-sass/material-ui/components/menu";
+//@import "node_modules/material-ui-sass/material-ui/components/icon";
+//@import "node_modules/material-ui-sass/material-ui/components/icon-button";
 
 // Pages
 @import "pages/common";
@@ -43,6 +56,7 @@
 @import "pages/testing";
 @import "pages/models";
 @import "pages/schedule";
+@import "pages/playlists";
 
 // Icons
 @import "vendor/ionicons.scss";

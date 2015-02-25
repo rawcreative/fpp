@@ -13,7 +13,8 @@ class PlaylistController extends Controller {
 	 */
 	public function index()
 	{
-
+		$playlists = [];
+		return view('playlists.index', compact('playlists'));
 	}
 
 	/**

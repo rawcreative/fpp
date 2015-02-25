@@ -27,7 +27,7 @@ var Panel = React.createClass({
 			<div className={classes}>
 				<div className={headingClass}>
 					<div className="panel-title">{this.props.title}</div>
-					<PanelControls controls={this.props.controls} />
+					<PanelControls controls={this.props.controls} onSelect={this._nestedItemClick} />
 				</div>
 				<div className="panel-body" ref="panel">
 					{this.props.children}
@@ -51,6 +51,13 @@ var Panel = React.createClass({
 			this.setState({ collapsed: !this.state.collapsed });
 		}.bind(this));
 		
+	},
+	_nestedItemClick: function(e, index, key) {
+		var control = this.props.controls[index];
+
+		if(control.onSelect == 'collapse') {
+			this.handleCollapse(e);
+		}
 	}
 
 });

@@ -15,7 +15,7 @@ class PlaylistController extends Controller
      */
     public function getPlaylists()
     {
-        $playlists = array_values(array_filter(scandir(config('fpp.playlists')), function ($file) {
+        $playlists = array_values(array_filter(scandir(fpp_media('playlists')), function ($file) {
             return $file != '.' && $file != '..';
         }));
 
@@ -32,7 +32,7 @@ class PlaylistController extends Controller
     {
         if (Storage::disk('pi')->exists("playlists/$playlist")) {
 
-            $csv       = Reader::createFromPath(trailingslashit(config('fpp.playlists')) . $playlist);
+            $csv       = Reader::createFromPath(trailingslashit(fpp_media('playlists')) . $playlist);
             $firstLast = $csv->fetchOne();
             $entries   = $csv->setOffset(1)->fetchAssoc(['type', 'sequence', 'media']);
 

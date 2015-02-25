@@ -20,7 +20,7 @@ class E131 {
 
         if ( ! Cache::has('fpp_universes')) {
 
-            $csv       = Reader::createFromPath(fpp_config('universes'));
+            $csv       = Reader::createFromPath(fpp_media('universes'));
             $universes = $csv->fetchAssoc(['active', 'universe', 'startAddress', 'size', 'type', 'unicastAddress']);
 
             Cache::put('fpp_universes', $universes, 60);
