@@ -2,6 +2,7 @@
 
 use FPP\Commands\Command;
 
+use FPP\Services\FPPCommand;
 use Illuminate\Contracts\Bus\SelfHandling;
 
 class StartPlaylist extends Command implements SelfHandling {
@@ -27,9 +28,11 @@ class StartPlaylist extends Command implements SelfHandling {
 	 *
 	 * @return void
 	 */
-	public function handle()
+	public function handle(FPPCommand $command)
 	{
-
+		$cmd = sprintf('%s,%s,%d,', $this->repeat ? 'p' : 'P', $this->playlist, $this->entry);
+		$command->send($cmd);
+		event('playlist.start', compact($this));
 	}
 
 }
