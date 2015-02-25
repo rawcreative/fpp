@@ -9,8 +9,8 @@ src/fppversion.c
 cscope.out
 tags
 pixelnetDMX
-schedule
-universes
+./schedule
+./universes
 fppdLog.txt
 _notes
 www/.htaccess
