@@ -514,12 +514,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/rawcreative/big-green-button.git",
-                "reference": "b984f9bf5d511fcef0aec783007ab41f50b0ed77"
+                "reference": "bbad6627e299f657447d27d764b337a7caec7aa9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rawcreative/big-green-button/zipball/b984f9bf5d511fcef0aec783007ab41f50b0ed77",
-                "reference": "b984f9bf5d511fcef0aec783007ab41f50b0ed77",
+                "url": "https://api.github.com/repos/rawcreative/big-green-button/zipball/bbad6627e299f657447d27d764b337a7caec7aa9",
+                "reference": "bbad6627e299f657447d27d764b337a7caec7aa9",
                 "shasum": ""
             },
             "require": {
@@ -543,7 +543,7 @@
             "support": {
                 "source": "https://github.com/rawcreative/big-green-button/tree/master"
             },
-            "time": "2015-02-25 04:50:45"
+            "time": "2015-02-25 05:50:24"
         },
         {
             "name": "fpp/fpp-installer",
