@@ -909,3 +909,4 @@
     $.fn.fppcalendar.settings = {}
 
 })(jQuery);
+
