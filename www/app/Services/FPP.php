@@ -49,7 +49,7 @@ class FPP
     {
 
         $status = explode(',', $status);
-        $time   = Pi::getLocalTime();
+        $time   = \Pi::getLocalTime();
 
         $data = [
             'fppd'        => 'running',
