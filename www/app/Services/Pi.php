@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use FPP\Exceptions\FPPSettingsException;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
+use Log;
 
 class Pi {
 
