@@ -1,15 +1,21 @@
 
+.file-tabs {
+	.tab-content {
+		padding-top: 0;
+	}
+}
 .file-tab {
 	.info {
 		text-align: center;
-		padding: 10px 20px 0;
+		padding: 20px 20px 0;
 		color: $primary-color;
+		border-top: 1px solid $secondary-color;
 	}
 }
 
 .file-list {
 	//background: #f1f1f1;
-
+	margin-bottom: 15px;
 	.table tbody tr td {
 		background: transparent;
 	}

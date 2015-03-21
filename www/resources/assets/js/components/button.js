@@ -17,13 +17,14 @@ var Button = React.createClass({
 			'button' : true,
 			'gradient' : this.props.gradient ? this.props.gradient : false,
 			'small' : this.props.small ? this.props.small : false,
+			'btn-xs' : this.props.xsmall ? this.props.xsmall : false,
 		}, classNames);
 
 		classes = React.addons.classSet(classes);
 		var icon = this.renderIcon();
 
 		return ( 
-			<button className={classes} onClick={this._handleClick}>
+			<button className={classes} onClick={this._handleClick} title={this.props.title}>
 			{icon}
 			{this.props.label}
 			</button>

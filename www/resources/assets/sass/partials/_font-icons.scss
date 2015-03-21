@@ -8,6 +8,348 @@
 	font-weight: normal;
 	font-style: normal;
 }
+@font-face {
+	font-family: 'falcon';
+	src:url('../fonts/falcon.eot?-kisv41');
+	src:url('../fonts/falcon.eot?#iefix-kisv41') format('embedded-opentype'),
+		url('../fonts/falcon.woff?-kisv41') format('woff'),
+		url('../fonts/falcon.ttf?-kisv41') format('truetype'),
+		url('../fonts/falcon.svg?-kisv41#falcon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.fp {
+	font-family: 'falcon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.fp-number:before {
+	content: "\e655";
+}
+
+.fp-number2:before {
+	content: "\e656";
+}
+
+.fp-number3:before {
+	content: "\e657";
+}
+
+.fp-number4:before {
+	content: "\e658";
+}
+
+.fp-number5:before {
+	content: "\e659";
+}
+
+.fp-number6:before {
+	content: "\e65a";
+}
+
+.fp-number7:before {
+	content: "\e65b";
+}
+
+.fp-number8:before {
+	content: "\e65c";
+}
+
+.fp-number9:before {
+	content: "\e65d";
+}
+
+.fp-number10:before {
+	content: "\e65e";
+}
+
+.fp-number11:before {
+	content: "\e65f";
+}
+
+.fp-number12:before {
+	content: "\e660";
+}
+
+.fp-number13:before {
+	content: "\e661";
+}
+
+.fp-number14:before {
+	content: "\e662";
+}
+
+.fp-number15:before {
+	content: "\e663";
+}
+
+.fp-number16:before {
+	content: "\e664";
+}
+
+.fp-number17:before {
+	content: "\e665";
+}
+
+.fp-number18:before {
+	content: "\e666";
+}
+
+.fp-number19:before {
+	content: "\e667";
+}
+
+.fp-number20:before {
+	content: "\e668";
+}
+
+.fp-quote:before {
+	content: "\e669";
+}
+
+.fp-quote2:before {
+	content: "\e66a";
+}
+
+.fp-cabinet:before {
+	content: "\e66b";
+}
+
+.fp-calendar:before {
+	content: "\e66c";
+}
+
+.fp-calendar2:before {
+	content: "\e66d";
+}
+
+.fp-file:before {
+	content: "\e66e";
+}
+
+.fp-camera:before {
+	content: "\e66f";
+}
+
+.fp-film:before {
+	content: "\e670";
+}
+
+.fp-notice:before {
+	content: "\e671";
+}
+
+.fp-cogs:before {
+	content: "\e672";
+}
+
+.fp-watch:before {
+	content: "\e673";
+}
+
+.fp-chronometer:before {
+	content: "\e674";
+}
+
+.fp-headphones:before {
+	content: "\e675";
+}
+
+.fp-sitemap:before {
+	content: "\e676";
+}
+
+.fp-sitemap2:before {
+	content: "\e677";
+}
+
+.fp-upload:before {
+	content: "\e678";
+}
+
+.fp-zoomin:before {
+	content: "\e679";
+}
+
+.fp-zoomout:before {
+	content: "\e67a";
+}
+
+.fp-lamp:before {
+	content: "\e67b";
+}
+
+.fp-lamp2:before {
+	content: "\e67c";
+}
+
+.fp-lamp3:before {
+	content: "\e67d";
+}
+
+.fp-cube:before {
+	content: "\e67e";
+}
+
+.fp-box:before {
+	content: "\e67f";
+}
+
+.fp-box2:before {
+	content: "\e680";
+}
+
+.fp-ruler:before {
+	content: "\e681";
+}
+
+.fp-screwdriver:before {
+	content: "\e682";
+}
+
+.fp-equalizer:before {
+	content: "\e683";
+}
+
+.fp-pencil:before {
+	content: "\e684";
+}
+
+.fp-music:before {
+	content: "\e685";
+}
+
+.fp-info:before {
+	content: "\e686";
+}
+
+.fp-piano:before {
+	content: "\e687";
+}
+
+.fp-rain:before {
+	content: "\e688";
+}
+
+.fp-snow:before {
+	content: "\e689";
+}
+
+.fp-lightning:before {
+	content: "\e68a";
+}
+
+.fp-sun:before {
+	content: "\e68b";
+}
+
+.fp-moon:before {
+	content: "\e68c";
+}
+
+.fp-cloudy:before {
+	content: "\e68d";
+}
+
+.fp-cloudy2:before {
+	content: "\e68e";
+}
+
+.fp-stop:before {
+	content: "\e68f";
+}
+
+.fp-globe:before {
+	content: "\e690";
+}
+
+.fp-globe2:before {
+	content: "\e691";
+}
+
+.fp-zip:before {
+	content: "\e692";
+}
+
+.fp-zip2:before {
+	content: "\e693";
+}
+
+.fp-usb:before {
+	content: "\e694";
+}
+
+.fp-clipboard:before {
+	content: "\e695";
+}
+
+.fp-clipboard2:before {
+	content: "\e696";
+}
+
+.fp-clipboard3:before {
+	content: "\e697";
+}
+
+.fp-switch:before {
+	content: "\e698";
+}
+
+.fp-ruler2:before {
+	content: "\e699";
+}
+
+.fp-fpp-bridge .path1:before {
+	content: "\e69a";
+	color: rgb(120, 139, 148);
+}
+.fp-fpp-bridge .path2:before {
+	content: "\e69b";
+	margin-left: -1em;
+	color: rgb(255, 255, 255);
+}
+
+.fp-fpp-master .path1:before {
+	content: "\e69c";
+	color: rgb(120, 139, 148);
+}
+.fp-fpp-master .path2:before {
+	content: "\e69d";
+	margin-left: -1em;
+	color: rgb(255, 255, 255);
+}
+
+.fp-fpp-remote .path1:before {
+	content: "\e69e";
+	color: rgb(120, 139, 148);
+}
+.fp-fpp-remote .path2:before {
+	content: "\e69f";
+	margin-left: -1em;
+	color: rgb(255, 255, 255);
+}
+
+.fp-fpp-standalone .path1:before {
+	content: "\e6a0";
+	color: rgb(120, 139, 148);
+}
+.fp-fpp-standalone .path2:before {
+	content: "\e6a1";
+	margin-left: -1em;
+	color: rgb(255, 255, 255);
+}
+
+
 
 .pg {
 	font-family: 'fpp-icon';

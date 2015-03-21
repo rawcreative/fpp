@@ -1,11 +1,8 @@
 <?php
 namespace FPP\Services;
 
-
-use Carbon\Carbon;
 use FPP\Exceptions\FPPSettingsException;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use League\Csv\Reader;
 use Socket\Raw\Exception;
@@ -15,15 +12,15 @@ class FPP
     private $command;
     private $modes;
 
-    function __construct(FPPCommand $command)
+    public function __construct(FPPCommand $command)
     {
         $this->command = $command;
-        $this->modes   = new Collection([
+        $this->modes = new Collection([
             '0' => 'unknown',
             '1' => 'bridge',
             '2' => 'player',
             '6' => 'master',
-            '8' => 'remote'
+            '8' => 'remote',
         ]);
     }
 
@@ -44,23 +41,21 @@ class FPP
         return $this->command->send('s');
     }
 
-
     protected function parseStatus($status)
     {
 
         $status = explode(',', $status);
-        $time   = \Pi::getLocalTime();
+        $time = \Pi::getLocalTime();
 
         $data = [
-            'fppd'        => 'running',
-            'mode'        => $this->parseFPPDMode($status[0]),
-            'status'      => (int)$status[1],
-            'volume'      => (int)$status[2],
-            'playlist'    => $status[3],
+            'fppd' => 'running',
+            'mode' => $this->parseFPPDMode($status[0]),
+            'status' => (int) $status[1],
+            'volume' => (int) $status[2],
+            'playlist' => $status[3],
             'currentDate' => $time,
-            'repeatMode'  => 0
+            'repeatMode' => 0,
         ];
-
 
         if ($data['status'] == '0' && $data['playlist'] !== 'No playlist scheduled.') {
             $data['nextPlaylistStartTime'] = $status[4];
@@ -148,11 +143,11 @@ class FPP
     protected function parseSettings($data)
     {
         $parsed = [];
-        $rows   = explode("\n", $data);
+        $rows = explode("\n", $data);
 
         foreach ($rows as $row) {
 
-            $rowData               = explode('=', $row);
+            $rowData = explode('=', $row);
             $parsed[trim($row[0])] = trim($row[1]);
         }
 
@@ -164,11 +159,19 @@ class FPP
      *
      * @return array
      */
-    public function getPlaylists()
+    public function getPlaylists($details = false)
     {
-        return array_values(array_filter(scandir(fpp_media('playlists')), function ($file) {
+        $playlists = collect(array_values(array_filter(scandir(fpp_media('playlists')), function ($file) {
             return $file != '.' && $file != '..';
-        }));
+        })));
+
+        if ($details) {
+            $playlists = $playlists->map(function ($playlist) {
+                return $this->getPlaylist($playlist);
+            });
+        }
+
+        return $playlists;
     }
 
     /**
@@ -180,16 +183,16 @@ class FPP
     public function getPlaylist($playlist)
     {
         if (Storage::disk('pi')->exists("playlists/$playlist")) {
-            $csv       = Reader::createFromPath(trailingslashit(fpp_media('playlists')) . $playlist);
+            $csv = Reader::createFromPath(trailingslashit(fpp_media('playlists')) . $playlist);
             $firstLast = $csv->fetchOne();
-            $entries   = $csv->setOffset(1)->fetchAssoc(['type', 'sequence', 'media']);
+            $entries = $csv->setOffset(1)->fetchAssoc(['type', 'sequence', 'media']);
 
             return [
-                    'name'       => $playlist,
-                    'first_once' => $firstLast[0],
-                    'last_once'  => $firstLast[1],
-                    'entries'    => $entries
-              ];
+                'name' => $playlist,
+                'first_once' => $firstLast[0],
+                'last_once' => $firstLast[1],
+                'entries' => $entries,
+            ];
         }
 
         return false;
@@ -199,6 +202,5 @@ class FPP
     {
         return $this->getSetting('volume');
     }
-
 
 }

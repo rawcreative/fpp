@@ -135,10 +135,11 @@
 		}
 
 		.player-header {
-			display: flex;
-			justify-content: space-between;
-			flex-flow: row-wrap;
+			// display: flex;
+			// justify-content: space-between;
+			// flex-flow: row-wrap;
 			align-items: center;
+			display: flex;
 
 			.label {
 				text-transform: uppercase;
@@ -148,55 +149,91 @@
 				background: none;
 			}
 			.status {
-				flex: 1 auto;
+				// flex: 1 auto;
+				@include span(1 of 3);
+				flex: 1;
 			}
 			> .playlist {
-				flex:3 0px;		
+				// flex:3 0px;		
+				// display: flex;
+				// flex-flow: row-wrap;
+				// justify-content: flex-end;		
+				// align-items: center;
+				@include span(2 of 3);
+				flex: 1;
 				display: flex;
-				flex-flow: row-wrap;
-				justify-content: flex-end;		
 				align-items: center;
+
 				.label {
-					flex: 0 auto;
+					// flex: 0 auto;
 					padding: 0 5px 0 0;
+
+				}
+				.form-group {
+					flex: 1;
+					margin: 0;
 				}
 				.playlist-select {
-					flex: 3 0px;
+					// flex: 3 0px;
 					
-					.playlist,
-					.button {
-						display: inline-block;
-					}
-					.form-group {
-						margin: 0;
-						display:inline-block;
-						width: 85%;
-						>select { width: 95%; }
-					}
-					.playlist {
-						padding: .25rem;
-						border-radius: 2px;
-						border-color: #c4c4c4;
-						font-size: 13px;
-						width: 85%;
-						margin: 0;
-						box-shadow: none;
-						line-height: inherit;
-						height: inherit;
-						background: #fafafa url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="32" height="24" viewBox="0 0 32 24"><polygon points="0,0 32,0 16,24" style="fill: #000"></polygon></svg>') right 10px center no-repeat;
-						background-size: 8px 8px;
 
-					}
-					.button {
-						vertical-align: middle;
-						margin:0;
-					}
+					padding: .25rem;
+					border-radius: 2px;
+					border-color: #c4c4c4;
+					font-size: 13px;
+					//width: 85%;
+					margin: 0;
+					box-shadow: none;
+					line-height: inherit;
+					height: inherit;
+					background: #fafafa url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="32" height="24" viewBox="0 0 32 24"><polygon points="0,0 32,0 16,24" style="fill: #000"></polygon></svg>') right 10px center no-repeat;
+					background-size: 8px 8px;
+
+
+					// .playlist,
+					// .button {
+					// 	display: inline-block;
+					// }
+					// .form-group {
+					// 	margin: 0;
+					// 	display:inline-block;
+					// 	width: 85%;
+					// 	>select { width: 95%; }
+					// }
+					// .playlist {
+					// 	padding: .25rem;
+					// 	border-radius: 2px;
+					// 	border-color: #c4c4c4;
+					// 	font-size: 13px;
+					// 	width: 85%;
+					// 	margin: 0;
+					// 	box-shadow: none;
+					// 	line-height: inherit;
+					// 	height: inherit;
+					// 	background: #fafafa url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="32" height="24" viewBox="0 0 32 24"><polygon points="0,0 32,0 16,24" style="fill: #000"></polygon></svg>') right 10px center no-repeat;
+					// 	background-size: 8px 8px;
+
+					// }
+					// .button {
+					// 	vertical-align: middle;
+					// 	margin:0;
+					// }
 				}
 			}
 		}
 
 		.player-buttons {
-
+			display: flex;
+			// margin-top: 15px;
+			// padding-top: 15px;
+			> button {
+				flex: 1;
+				text-align: center;
+				font-size: 16px;
+				background: #fff;
+				border: none;
+				outline: none;
+			}
 			.button {
 				border-radius: 25px;
 			}
@@ -226,6 +263,80 @@
 					width: 15px;
 					height: 15px;
 					border-radius: 10px;
+				}
+			}
+		}
+			
+		.now-playing {
+			display: flex;
+			border-top: 1px solid #eee;
+			//border-bottom: 1px solid #eee;
+			padding: 15px 0;
+
+			.track-desc {
+				flex: 1;
+				.label {
+					background: none;
+					text-transform: uppercase;
+					color: darken($secondary-color,25%);
+					font-size: 13px;
+					letter-spacing: 1px;
+				}
+			}
+			.track-time {
+				padding-right: 5px;
+			}
+		}
+
+		.player-items {
+			padding-top: 25px;
+			.table {
+				thead tr th {
+					font-size: 9px;
+					padding: 0;
+					text-transform: uppercase;
+					font-weight: normal;
+					color: darken($gray-dark, 10%);
+					&:last-child {
+						padding: 0 !important;
+						text-align: right;
+					}
+				}
+				tbody tr {
+					
+					&.active {
+						td {
+							background-color: rgba($info-color, .5) !important;
+						}
+					}
+					td {
+						vertical-align: middle;
+						padding: 10px 0;
+						
+						&.play {
+							text-align: center;
+							color: #ccc;
+							i {
+								cursor: pointer;
+							}
+						}
+						&.media {
+
+						}
+
+						&.play-once {
+							
+							.po-block {
+								padding: 3px 8px;
+								border: 1px solid #ddd;
+								font-size: 12px;
+								display: inline-block;
+								margin: 0 3px;
+								color: #ddd;
+							}
+						}
+
+					}
 				}
 			}
 		}

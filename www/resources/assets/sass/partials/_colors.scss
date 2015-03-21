@@ -4,7 +4,7 @@
 $default-color: #999;
 //$primary-color: #428bca;
 $success-color: #5cb85c;
-$info-color: #5bc0de;
+$info-color: $info-color; //#5bc0de;
 $warning-color: #f0ad4e;
 $danger-color: #d9534f;
 $alert-color: #7857ca;

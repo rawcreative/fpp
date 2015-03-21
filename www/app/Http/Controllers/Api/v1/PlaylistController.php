@@ -1,6 +1,5 @@
 <?php namespace FPP\Http\Controllers\Api\v1;
 
-use FPP\Http\Requests;
 use FPP\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use League\Csv\Reader;
@@ -15,6 +14,7 @@ class PlaylistController extends Controller
      */
     public function getPlaylists()
     {
+        //$details = \Request::query('details', false);
         $playlists = array_values(array_filter(scandir(fpp_media('playlists')), function ($file) {
             return $file != '.' && $file != '..';
         }));
@@ -32,19 +32,19 @@ class PlaylistController extends Controller
     {
         if (Storage::disk('pi')->exists("playlists/$playlist")) {
 
-            $csv       = Reader::createFromPath(trailingslashit(fpp_media('playlists')) . $playlist);
+            $csv = Reader::createFromPath(trailingslashit(fpp_media('playlists')) . $playlist);
             $firstLast = $csv->fetchOne();
-            $entries   = $csv->setOffset(1)->fetchAssoc(['type', 'sequence', 'media']);
+            $entries = $csv->setOffset(1)->fetchAssoc(['type', 'sequence', 'media']);
 
             return response()->json([
                 'response' => [
                     'playlist' => [
-                        'name'       => $playlist,
+                        'name' => $playlist,
                         'first_once' => $firstLast[0],
-                        'last_once'  => $firstLast[1],
-                        'entries'    => $entries
-                    ]
-                ]
+                        'last_once' => $firstLast[1],
+                        'entries' => $entries,
+                    ],
+                ],
             ]);
         }
     }
@@ -108,6 +108,5 @@ class PlaylistController extends Controller
     {
 
     }
-
 
 }

@@ -66,12 +66,19 @@ var StatusPanel = React.createClass({
 
 	renderModeWidget: function() {
 		var mode = this.props.data.mode || 'stopped';
-		var icon = mode == 'stopped' ? 'x' : mode.charAt(0); //this.getModeIcon(mode);		
+		var icons = {
+			'player' : 'fp-fpp-standlone',
+			'bridge' : 'fp-fpp-bridge',
+			'remote' : 'fp-fpp-remote',
+			'master' : 'fp-fpp-master'
+		};
+
+		var icon = mode == 'stopped' ? 'icon ion-close-circled danger' : icons[mode]; //this.getModeIcon(mode);		
 
 		return (
 				<div className="widget text-center current-mode">
 					<span className="widget-header">Mode</span>
-					<span className="widget-icon"><span className="mode-icon">{icon}</span></span>
+					<span className="widget-icon"><i className={icon}></i></span>
 					<span className="widget-text">{mode}</span>
 					<div className="widget-buttons">
 					<Input type="select" className="fppd-mode-select" defaultValue="standalone">
