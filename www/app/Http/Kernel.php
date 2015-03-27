@@ -30,6 +30,7 @@ class Kernel extends HttpKernel {
 		'auth' => 'FPP\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
 		'guest' => 'FPP\Http\Middleware\RedirectIfAuthenticated',
+		'api' => 'FPP\Http\Middleware\ApiMiddleware',
 
 	];
 

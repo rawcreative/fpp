@@ -1,10 +1,12 @@
 <?php namespace FPP\Http\Controllers\Api\v1;
 
+use FPP\Http\Controllers\Api\v1\Transformers\PlaylistsTransformer;
 use FPP\Http\Controllers\Controller;
+use FPP\Services\FPP;
 use Illuminate\Support\Facades\Storage;
 use League\Csv\Reader;
 
-class PlaylistController extends Controller
+class PlaylistController extends ApiController
 {
 
     /**
@@ -12,14 +14,11 @@ class PlaylistController extends Controller
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function getPlaylists()
+    public function getPlaylists(FPP $fpp)
     {
-        //$details = \Request::query('details', false);
-        $playlists = array_values(array_filter(scandir(fpp_media('playlists')), function ($file) {
-            return $file != '.' && $file != '..';
-        }));
 
-        return response()->json(['response' => ['playlists' => $playlists]]);
+        $playlists = $fpp->getPlaylists(true);
+        return $this->respondWithCollection($playlists, new PlaylistsTransformer);
     }
 
     /**

@@ -2,6 +2,8 @@
 namespace FPP\Services;
 
 use FPP\Exceptions\FPPSettingsException;
+use FPP\Playlist;
+use FPP\PlaylistEntry;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
 use League\Csv\Reader;
@@ -163,12 +165,16 @@ class FPP
     {
         $playlists = collect(array_values(array_filter(scandir(fpp_media('playlists')), function ($file) {
             return $file != '.' && $file != '..';
-        })));
+        })))->map(function($playlist) {
+            return new Playlist(['name' => $playlist]);
+        });
 
         if ($details) {
             $playlists = $playlists->map(function ($playlist) {
-                return $this->getPlaylist($playlist);
+
+                return $this->getPlaylist($playlist->name);
             });
+
         }
 
         return $playlists;
@@ -185,14 +191,18 @@ class FPP
         if (Storage::disk('pi')->exists("playlists/$playlist")) {
             $csv = Reader::createFromPath(trailingslashit(fpp_media('playlists')) . $playlist);
             $firstLast = $csv->fetchOne();
-            $entries = $csv->setOffset(1)->fetchAssoc(['type', 'sequence', 'media']);
+            $entries = collect($csv->setOffset(1)->fetchAssoc(['type', 'sequence', 'media']));
 
-            return [
+            $entries = $entries->map(function($entry) {
+                return new PlaylistEntry($entry);
+            });
+
+            return new Playlist([
                 'name' => $playlist,
                 'first_once' => $firstLast[0],
                 'last_once' => $firstLast[1],
                 'entries' => $entries,
-            ];
+            ]);
         }
 
         return false;

@@ -59,4 +59,8 @@ class Output {
         $root = $this->fractal->createData($resource);
         return $root->toArray();
     }
+
+    public function parseIncludes($includes) {
+        $this->fractal->parseIncludes($includes);
+    }
 }

@@ -4,6 +4,8 @@ namespace FPP\Http\Controllers\Api\v1;
 use FPP\Http\Controllers\Controller;
 use FPP\Http\Responses\Output;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Input;
+use League\Fractal\Manager;
 use UnexpectedValueException;
 
 class ApiController extends Controller
@@ -24,6 +26,8 @@ class ApiController extends Controller
      */
     protected $output;
 
+
+
     /**
      * Current status code of the given request.
      *
@@ -39,6 +43,7 @@ class ApiController extends Controller
     public function __construct(Output $output)
     {
         $this->output = $output;
+        $this->output->parseIncludes(Input::get('include', array()));
     }
 
     /**
