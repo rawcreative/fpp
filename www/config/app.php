@@ -127,6 +127,7 @@ return [
         'Illuminate\Translation\TranslationServiceProvider',
         'Illuminate\Validation\ValidationServiceProvider',
         'Illuminate\View\ViewServiceProvider',
+        'Illuminate\Broadcasting\BroadcastServiceProvider',
         'Collective\Html\HtmlServiceProvider',
         'BrainSocket\BrainSocketServiceProvider',
         //'Dingo\Api\Provider\ApiServiceProvider',
