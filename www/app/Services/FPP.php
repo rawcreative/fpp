@@ -193,7 +193,9 @@ class FPP
             $firstLast = $csv->fetchOne();
             $entries = collect($csv->setOffset(1)->fetchAssoc(['type', 'sequence', 'media']));
 
-            $entries = $entries->map(function($entry) {
+            $entries = $entries->filter(function($item) {
+                return array_filter($item);
+            })->map(function($entry) {
                 return new PlaylistEntry($entry);
             });
 
